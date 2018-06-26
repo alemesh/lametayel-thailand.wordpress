@@ -1,0 +1,17 @@
+/*
+Theme Name: thailand Child
+Template: thailand
+Theme URI: http://www.gofmans.co.il/
+Author: Key-Design
+Author URI: http://www.gofmans.co.il/
+Version: 1.0
+Description: thailand Child is a creative and colorful, highly engaging, dynamic and professional onepage WordPress theme.
+Author: Gofman Creative
+Author URI: http://www.gofmans.co.il/
+Tags: one-column, custom-menu
+
+/* Below you can write your style */
+
+@import url("../thailand/style.css");
+@import url("../thailand/dist/styles/rtl.css");
+
