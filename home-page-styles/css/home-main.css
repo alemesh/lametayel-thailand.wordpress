@@ -1,0 +1,115 @@
+ol, ul {
+    margin-right: 0;
+}
+.button{
+    background: transparent;
+    font-size: 17px;
+}
+.button:hover{
+    background: transparent;
+}
+.hlt-wraper .header .form-grow-5 span{
+    transform: translateY(-21%);
+}
+.top-bar, .top-bar ul{
+    background: transparent;
+}
+.sticky-container{
+    /*margin-bottom: -103px;*/
+}
+.hlt-wraper .header{
+    /*margin-top: -103px;*/
+    margin-top: -187px;
+}
+
+/*Header settings*/
+/*color menu for home page*/
+a, input, label, li, p{
+    color: white;
+}
+#masthead .search label .search_icon{
+    color: white;
+}
+#masthead #menu-main-menu li.is-dropdown-submenu-parent>a:after{
+    border-color: #fff transparent transparent;
+}
+
+
+
+/*color menu for home page finish*/
+#masthead .top-bar .logo{
+    height: 65px;
+}
+#masthead .thailand_header_wrapper.is-stuck .top-bar .logo{
+    height: 57px;
+}
+.sticky.is-stuck{
+    background: rgba(0,0,0,.8);
+    border-bottom: 1px solid black;
+    z-index: 99;
+}
+.hlt-wraper .third-section .items a .text{
+    z-index: 1;
+}
+.hlt-wraper .fourth-section h3:after, .hlt-wraper .fifth-section h3:after, .hlt-wraper .seventh-section h3:after, .hlt-wraper .second-section h3:after, .hlt-wraper .custom-select-wrapper .custom-select-trigger:after, .hlt-wraper .header .form-grow-5 span, .hlt-wraper .third-section .wrap-button .button:after, .hlt-wraper .sixth-section .wrap-button .button:after{
+    z-index: 1;
+}
+#masthead .top_bar_header{
+    background: #01013b;
+}
+#masthead .top_bar_header a.contact{
+    background: #fcaf17;
+    border-radius: 25px;
+    margin: 5px 0;
+}
+#masthead .top_bar_header a.contact:hover{
+    background: #fcaf17;
+    color: white;
+}
+#masthead .top_bar_header a.fb{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*Header settings finish*/
+@media only screen and (max-width : 1200px){
+    .thailand_mobile_header_wrapper .title-bar{
+        background: transparent;
+    }
+    .title-bar{
+        background: transparent;
+    }
+}
+@media only screen and (max-width : 1023px) {
+    a, input, label, li, p {
+        color: #103756;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .hlt-wraper .header {
+        margin-top: -130px;
+    }
+}
+.menu-icon:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    top: 0;
+    left: 0;
+    box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+}
+#masthead #menu-main-menu li.is-dropdown-submenu-parent .submenu{
+    background: rgba(0,0,0,.8);;
+}
+.thailand_mobile_header_wrapper .title-bar .fb .fa{
+    background: transparent;
+    color: white;
+    font-size: 22px;
+}
+a img{
+    height: 57px;
+}
