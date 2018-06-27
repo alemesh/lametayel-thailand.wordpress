@@ -18,6 +18,19 @@ $settings = new settings();
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script> -->
     <?php wp_head(); ?>
+
+
+
+    <?php
+    if( is_front_page() ) {
+        ?>
+        <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/css/home-main.css">
+    <?php
+    }
+    ?>
+
+
+
     <!-- Please create favicon files with http://iconogen.com/
     and put them in assets/images/favicon directory -->
 

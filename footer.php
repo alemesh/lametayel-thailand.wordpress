@@ -13,6 +13,7 @@
 <!--    <img src="--><?php //echo get_template_directory_uri();?><!--/dist/images/shoes_footer.jpg" class="footer_shoes_img" />-->
 <?php } ?>
 <section class="footer_blue_section">
+    <div class="image-holder-right"></div>
     <div class="row">
         <div class="small-12 medium-3 columns first_column">
             <?php dynamic_sidebar( 'footer-1' ); ?>
@@ -36,13 +37,14 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="row">
         <div class="site-info small-12 medium-6 columns text-center medium-text-right">
-            <p>כל הזכויות שמורות למרכז למטייל תאילנד 2016</p>
+<!--            <p>כל הזכויות שמורות למרכז למטייל תאילנד 2016</p>-->
+            <p>כל הזכויות שמורות למרכז למטייל תאילנד 2018</p>
         </div>
         <div class="site-info small-12 medium-6 columns text-center medium-text-left">
-            <p><img src="<?php echo get_template_directory_uri(); ?>/dist/images/logo-footer.png" class="logo-footer" alt="למטייל תאילנד"/>
-                <a href="http://talisinay.com" target="_blank">עיצוב ובניית אתר: טלי סיני</a>
-                <a href=" https://www.idanbenor.co.il/" target="_blank" class="credit">קידום אתרים: עידן בן אור</a>
-            </p>
+<!--            <p><img src="--><?php //echo get_template_directory_uri(); ?><!--/dist/images/logo-footer.png" class="logo-footer" alt="למטייל תאילנד"/>-->
+<!--                <a href="http://talisinay.com" target="_blank">עיצוב ובניית אתר: טלי סיני</a>-->
+<!--                <a href=" https://www.idanbenor.co.il/" target="_blank" class="credit">קידום אתרים: עידן בן אור</a>-->
+<!--            </p>-->
 
         </div>
     </div><!-- .site-info -->

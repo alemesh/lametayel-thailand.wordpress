@@ -290,61 +290,63 @@ get_header();
             <div class="background-holder"></div>
             <div class="main-holder">
                 <div class="wrap-insta">
-                    <a href="#" target="_blank" class="insta"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/lametayel_thailand/" target="_blank" class="insta"><i class="fab fa-instagram"></i></a>
                 </div>
                 <h3>עקבו אחרנו</h3>
-                <ul class="instagram-pics instagram-size-thumbnail">
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-1.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-2.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-3.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-4.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-5.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-5.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                    <li class="mobile-hidden">
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-4.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                    <li class="mobile-hidden">
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-3.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                    <li class="mobile-hidden">
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-2.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                    <li class="mobile-hidden">
-                        <a href="#" target="_blank">
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/insta-item-1.png" alt="alt" title="title">
-                        </a>
-                    </li>
-                </ul>
+                <?php dynamic_sidebar( 'instagram-1' ); ?>
+
+<!--                <ul class="instagram-pics instagram-size-thumbnail">-->
+<!--                    <li>-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-1.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-2.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-3.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-4.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-5.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-5.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="mobile-hidden">-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-4.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="mobile-hidden">-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-3.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="mobile-hidden">-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-2.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="mobile-hidden">-->
+<!--                        <a href="#" target="_blank">-->
+<!--                            <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/insta-item-1.png" alt="alt" title="title">-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
             </div>
         </div>
 

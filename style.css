@@ -14,5 +14,45 @@ Tags: one-column, custom-menu
 
 @import url("../thailand/style.css");
 @import url("../thailand/dist/styles/rtl.css");
-@import url("home-page-styles/css/home-main.css");
+/*@import url("home-page-styles/css/home-main.css");*/
 
+#masthead .top-bar .logo{
+    height: 65px;
+}
+/*Footer settings*/
+.footer_blue_section{
+    background: #01013b;
+}
+#colophon{
+    background: #000025;
+}
+#colophon a, #colophon p{
+    color: white;
+}
+.footer_blue_section .first_column .contact{
+    border-radius: 25px;
+    background: #fcaf17;
+}
+.footer_blue_section{
+    position: relative;
+    padding: 50px 0;
+}
+.image-holder-right{
+    position: absolute;
+    width: 140px;
+    height: 270px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(dist/images/image-holder-right.png);
+    background-size: cover;
+}
+@media only screen and (max-width : 1500px) {
+    .image-holder-right{
+        display: none;
+    }
+}
+
+
+
+/*Footer settings finish*/
