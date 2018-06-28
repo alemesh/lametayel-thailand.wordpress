@@ -26,8 +26,11 @@ $settings = new settings();
         ?>
         <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/css/home-main.css">
     <?php
-    }
+    }elseif ( is_page_template('restaurants-page.php') ) {?>
+        <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/css/restaurants-main.css">
+    <?php }
     ?>
+
 
 
 

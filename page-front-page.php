@@ -22,7 +22,7 @@ get_header();
 
 
     <div class="hlt-wraper">
-
+        <div class="massange"><span>דברו איתנו </span></div>
         <div class="header" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/background-header.png)">
             <div class="htl-contactform-section">
                 <div class="main-holder-form">
@@ -222,7 +222,7 @@ get_header();
                         </a>
                     </li>
                     <li class="item">
-                        <a href="#">
+                        <a href="/restaurants/">
 							<span class="wrap-img">
 								<img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/fifth-section-item-5.png" alt="">
 							</span>

@@ -56,3 +56,72 @@ Tags: one-column, custom-menu
 
 
 /*Footer settings finish*/
+
+
+/*facebook massanger*/
+#fbmsg .fbmsg-badge.my-class{
+    position: fixed !important;
+    right: 0 !important;
+    bottom: 45% !important;
+    width: 70px !important;
+    height: 55px !important;
+    z-index: 1999998999 !important;
+    background: #1585fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 37px 0 0 37px;
+}
+
+.massange{
+    position: fixed !important;
+    right: 0 !important;
+    bottom: 38% !important;
+    width: 180px !important;
+    height: 50px !important;
+    z-index: 1999998999 !important;
+    background: #fcaf17;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 37px 0 0 37px;
+
+}
+.massange span{
+    color: white;
+    font-size: 21px;
+    font-family: almoni-dl-aaa-regular;
+}
+
+/*facebook massanger finish*/
+
+
+
+#masthead #menu-main-menu li{
+    padding: 0 5px;
+}
+
+
+
+
+
+/*flights page*/
+.hlt-wraper .wrap-holder{
+    direction: ltr;
+}
+.button{
+    background: transparent;
+    display: flex;
+}
+.button:hover{
+    background: transparent;
+}
+.tabs{
+    border: none;
+}
+/*flights page finish*/
+/*attractions page*/
+.hlt-wraper.attractions-main-page .wrap-text-sections{
+    direction: ltr; !important;
+}
+/*attractions page finish*/

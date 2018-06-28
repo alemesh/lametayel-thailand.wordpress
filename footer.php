@@ -152,5 +152,7 @@
 the_field( 'codes_footer', 'option' );
 the_field( 'codes_unique_footer' ); ?>
 
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW6GlD57glHFIOUZGbgUmqv06BJyW2q3o&callback=initMap" async defer></script>
 </body>
 </html>
