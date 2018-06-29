@@ -100,7 +100,7 @@ get_header();
                     if($lnk){?>
                         <?php $image = get_field('featured_img', 'destinations_'.$cat->term_id);?>
                     <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo $image['sizes']['thailand-square']; ?>)">
+                        <a href="<?php echo $lnk;?>" class="image" style="background-image: url(<?php echo $image['sizes']['thailand-square-2']; ?>)">
                             <span class="text-item"></span>
                             <span class="text"><?php echo  $cat->name;?></span>
                         </a>
@@ -108,63 +108,6 @@ get_header();
                     <?php  }
                     } ?>
 
-
-
-
-                    <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/item-img-22.png)">
-                            <span class="text-item"></span>
-                            <span class="text">קוסמוי</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/item-img-33.png)">
-                            <span class="text-item"></span>
-                            <span class="text">צ’אנג מאי</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/item-img-44.png)">
-                            <span class="text-item"></span>
-                            <span class="text">קופנגן</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/item-img-55.png)">
-                            <span class="text-item"></span>
-                            <span class="text">קנצ’נבורי</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/item-img-66.png)">
-                            <span class="text-item"></span>
-                            <span class="text">פוקט</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/item-img-77.png)">
-                            <span class="text-item"></span>
-                            <span class="text">בנגקוק</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/item-img-88.png)">
-                            <span class="text-item"></span>
-                            <span class="text">קו טאו</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/item-img-99.png)">
-                            <span class="text-item"></span>
-                            <span class="text">פאטייה</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/item-img-11.png)">
-                            <span class="text-item"></span>
-                            <span class="text">הואה הין</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
 

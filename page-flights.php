@@ -29,54 +29,67 @@ get_header();
             <div class="wrap-holder tabs">
                 <div class="left-section ">
                     <ul class="items tabs__caption menu-lisy">
-                        <li class="item active">
-								<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/item-img-2.png)">
+
+                        <?php
+                        $lem_parent_cat_id = [];
+                        $categories = get_terms( array('taxonomy' => 'destinations', 'parent' => 0) );
+                        $counter = 0;
+                        foreach ($categories as $cat){
+
+                        $term_id = $cat->term_id;
+                        $taxonomy_name = 'destinations';
+                        $termchildren = get_term_children( $term_id, $taxonomy_name );
+                        $lnk = "";
+                        foreach ( $termchildren as $child ) {
+                            $term = get_term_by( 'id', $child, $taxonomy_name );
+                            $type = get_field('type_destination', 'destinations_'.$term->term_id);
+                            if($type === 'flights'){
+                                $lnk = get_term_link( $child, $taxonomy_name );
+                            }
+                        }
+                        //only if destination has child category type hotel display it
+                        if($lnk){?>
+                            <?php $image = get_field('featured_img', 'destinations_'.$cat->term_id); ?>
+
+<!--                            --><?php //var_dump($cat->term_id);
+                            $lem_parent_cat_id[] = $cat->term_id;
+                            ?>
+
+                            <li class="item <?php echo ($counter == 0)?'active':'';?>">
+								<span class="image" style="background-image: url(<?php echo $image['sizes']['thailand-square-3']; ?>)">
 									<span class="text-item"></span>
-									<span class="text">טיסות לבנגקוק</span>
+									<span class="text">טיסות ל<?php echo  $cat->name;?></span>
 								</span>
-                        </li>
-                        <li class="item">
-								<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/item-img-1.png)">
-									<span class="text-item"></span>
-									<span class="text">טיסות לצ’אנג מאי</span>
-								</span>
-                        </li>
-                        <li class="item">
-								<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/item-img-4.png)">
-									<span class="text-item"></span>
-									<span class="text">טיסות לקוסמוי</span>
-								</span>
-                        </li>
-                        <li class="item">
-								<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/item-img-3.png)">
-									<span class="text-item"></span>
-									<span class="text">טיסות לפוקט</span>
-								</span>
-                        </li>
-                        <li class="item">
-								<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/item-img-6.png)">
-									<span class="text-item"></span>
-									<span class="text">טיסות לפאטייה</span>
-								</span>
-                        </li>
-                        <li class="item">
-								<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/item-img-5.png)">
-									<span class="text-item"></span>
-									<span class="text">טיסות לצ’אנג ראי</span>
-								</span>
-                        </li>
-                        <li class="item">
-								<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/item-img-8.png)">
-									<span class="text-item"></span>
-									<span class="text">טיסות לקו צ’אנג</span>
-								</span>
-                        </li>
-                        <li class="item">
-								<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/item-img-7.png)">
-									<span class="text-item"></span>
-									<span class="text">טיסות לקראבי</span>
-								</span>
-                        </li>
+                            </li>
+
+                        <?php  }
+                            $counter++;
+                        } ?>
+
+
+
+
+
+
+
+
+                        <?php
+                        var_dump($lem_parent_cat_id);
+                        $term = get_term_children(51, 'destinations');
+                        var_dump($term);
+
+                        ?>
+
+
+
+
+
+
+
+
+
+
+
                     </ul>
                     <ul class="buttons tabs__content active">
                         <li class="button">

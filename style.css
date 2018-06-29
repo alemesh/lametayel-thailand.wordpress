@@ -125,3 +125,35 @@ Tags: one-column, custom-menu
     direction: ltr; !important;
 }
 /*attractions page finish*/
+ol, ul{
+    margin-right: 0;
+}
+.hlt-wraper.attractions-main-page .wrap-img-section .items{
+    direction: ltr;
+}
+/*header menu styles*/
+.top-bar, .top-bar ul{
+    background: #24b2c5;
+}
+li a{
+    color: white;
+}
+#masthead .search label .search_icon{
+    color: white;
+}
+
+#masthead .thailand_header_wrapper .dropdown.menu li.is-dropdown-submenu-parent>a:after, #masthead #menu-main-menu li.is-dropdown-submenu-parent>a:after{
+    border-color: white transparent transparent;
+}
+#masthead #menu-main-menu li.active>a, #masthead #menu-main-menu li:focus>a, #masthead #menu-main-menu li:hover>a{
+    color: white;
+    text-decoration: underline;
+}
+#masthead #menu-main-menu li.is-dropdown-submenu-parent .submenu{
+    background-color: #24b2c5;
+}
+#masthead{
+    z-index: 999;
+}
+/*header menu styles finish*/
+

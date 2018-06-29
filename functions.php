@@ -69,3 +69,6 @@ function podium_child_widgets_init() {
     ));
 }
 add_action( 'widgets_init', 'podium_child_widgets_init' );
+
+add_image_size( 'thailand-square-2', 437, 246, true );
+add_image_size( 'thailand-square-3', 302, 172, true );
