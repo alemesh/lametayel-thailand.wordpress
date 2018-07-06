@@ -18,9 +18,6 @@ get_header();
 ?>
 
 <div class="hlt-wraper">
-
-
-
     <div class="wrap-header-section">
         <div class="main-holder">
             <div class="button-section">
@@ -29,8 +26,8 @@ get_header();
             <div class="wrap-holder tabs">
                 <div class="left-section ">
                     <ul class="items tabs__caption menu-lisy">
-
                         <?php
+                        $my_arr =[];
                         $lem_parent_cat_id = [];
                         $categories = get_terms( array('taxonomy' => 'destinations', 'parent' => 0) );
                         $counter = 0;
@@ -41,9 +38,11 @@ get_header();
                         $termchildren = get_term_children( $term_id, $taxonomy_name );
                         $lnk = "";
                         foreach ( $termchildren as $child ) {
+
                             $term = get_term_by( 'id', $child, $taxonomy_name );
                             $type = get_field('type_destination', 'destinations_'.$term->term_id);
                             if($type === 'flights'){
+                                $my_arr[] = $child;
                                 $lnk = get_term_link( $child, $taxonomy_name );
                             }
                         }
@@ -51,7 +50,7 @@ get_header();
                         if($lnk){?>
                             <?php $image = get_field('featured_img', 'destinations_'.$cat->term_id); ?>
 
-<!--                            --><?php //var_dump($cat->term_id);
+                            <?php
                             $lem_parent_cat_id[] = $cat->term_id;
                             ?>
 
@@ -67,124 +66,58 @@ get_header();
                         } ?>
 
 
+                    </ul>
 
+                    <?php
+                    $counter_acriv = 0;
+                    foreach ($my_arr as $flights_buttoms){
+                        if ($flights_buttoms == 75){
+                            continue;
+                        }
 
-
-
-
-
-                        <?php
-                        var_dump($lem_parent_cat_id);
-                        $term = get_term_children(51, 'destinations');
-                        var_dump($term);
-
+                        $posts = get_posts(array(
+                            'numberposts'=>-1,
+                            'post_type' => 'flight',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'destinations',
+                                    'field' => 'term_id',
+                                    'terms' => $flights_buttoms,
+                                    'operator' => 'AND',
+                                )
+                            )
+                        ));
                         ?>
 
+                        <ul class="buttons tabs__content <?php echo ($counter_acriv === 0)?'active':'';?>">
 
+                            <?php
+                            foreach ($posts as $flights_buttom){?>
+                                <li class="button">
+                                    <a href="<?php echo get_the_permalink($flights_buttom->ID);?>">
+                                            <?php if(get_field('from',$flights_buttom->ID)){
+                                                $from = get_term_by('id', get_field('from',$flights_buttom->ID), 'destinations');
+                                                echo 'מ'.$from->name;
+                                            }
+                                            if(get_field('too',$flights_buttom->ID)){
+                                                $too = get_term_by('id', get_field('too',$flights_buttom->ID), 'destinations');
+                                                echo ' ל'.$too->name;
+                                            }?>
+                                    </a>
 
+                                </li>
 
+                                <?php
+                            }
+                            ?>
 
+                        </ul>
+                        <?php
+                        $counter_acriv++;
+                    }
 
+                    ?>
 
-
-
-
-
-                    </ul>
-                    <ul class="buttons tabs__content active">
-                        <li class="button">
-                            <a href="">מפוקט לבנגקוק</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מקוסמוי לבנגקוק</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מקו צ’אנג לבנגקוק</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מקראבי לבנגקוק</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מצ’אנג ראי לבנגקוק</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מצ’אנג מאי לבנגקוק</a>
-                        </li>
-                    </ul>
-                    <ul class="buttons tabs__content">
-                        <li class="button">
-                            <a href="">מפאטאייה לצ’אנג מאי</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מקוסמוי לצ’אנג מאי</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מקראבי לצ’אנג מאי</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מבנגקוק לצ’אנג מאי</a>
-                        </li>
-                    </ul>
-
-                    <ul class="buttons tabs__content">
-                        <li class="button">
-                            <a href="">מפוקט לקוסמוי</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מבנגקוק לקוסמוי</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מצ’אנג מאי לקוסמוי</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מקראבי לקוסמוי</a>
-                        </li>
-                    </ul>
-
-                    <ul class="buttons tabs__content">
-                        <li class="button">
-                            <a href="">מפאטאייה לפוקט</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מקוסמוי לפוקט</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מצ’אנג מאי לפוקט</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מבנגקוק לפוקט</a>
-                    </ul>
-                    <ul class="buttons tabs__content">
-                        <li class="button">
-                            <a href="">מפאטאייה לפוקט</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מקוסמוי לפאטאייה</a>
-                        </li>
-
-                    </ul>
-
-                    <ul class="buttons tabs__content">
-                        <li class="button">
-                            <a href="">מבנגקוק לצ’אנג ראי</a>
-                        </li>
-                    </ul>
-                    <ul class="buttons tabs__content">
-                        <li class="button">
-                            <a href="">מבנגקוק לקו צ’אנג</a>
-                        </li>
-                    </ul>
-                    <ul class="buttons tabs__content">
-                        <li class="button">
-                            <a href="">מקוסמוי לקראבי</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מבנגקוק לקראבי</a>
-                        </li>
-                        <li class="button">
-                            <a href="">מצ’אנג מאי לקראבי</a>
-                        </li>
-                    </ul>
                 </div>
 
                 <div class="right-section">

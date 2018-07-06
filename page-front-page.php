@@ -32,27 +32,38 @@ get_header();
                         <h3 class="mob"><span>תודה!</span><br> פרטיך התקבלו בהצלחה.</h3>
                     </div>
                     <div class="contact-form">
-                        <form action="" id="ajax_form" class="form form-validation" method="post">
+                        <form action="" name="search-attractions" id="ajax_form" class="form form-validation" method="post">
                             <div class="form-row-wrap">
                                 <div class="form-row center">
-                                    <select required name="sources" id="sources" class="form-control custom-select sources" placeholder="מי אתם?">
-                                        <!--<option value="" selected data-default>*בחר סניף</option>-->
-                                        <option value="בחר 1">בחר 1</option>
-                                        <option value="בחר 2">בחר 2</option>
+                                    <select required name="people" id="sources" class="form-control custom-select people" placeholder="מי אתם?">
+                                        <?php
+                                        $taxonomy_name = 'destinations';
+                                        $category = get_term_by('name', 'People', $taxonomy_name);
+                                        $children = get_term_children($category->term_id, 'destinations');
+                                        foreach ($children as $child) {
+                                            $term = get_term_by('id', $child, $taxonomy_name)
+                                            ?>
+                                            <option value="<?=$child ?>"><?= $term->name ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-row center">
                                     <select required name="sources-2" id="sources-2" class="form-control custom-select sources" placeholder="לכמה זמן?">
-                                        <!--<option value="" selected data-default>*בחר סניף</option>-->
-                                        <option value="בחר 1">בחר 1</option>
-                                        <option value="בחר 2">בחר 2</option>
+                                        <option value="בחר 1">עד עשרה ימים</option>
+                                        <option value="בחר 2">מעל עשרה ימים</option>
                                     </select>
                                 </div>
                                 <div class="form-row center">
-                                    <select required name="sources-3" id="sources-3" class="form-control custom-select sources" placeholder="מעוניינים לשמוע על...">
-                                        <!--<option value="" selected data-default>*בחר סניף</option>-->
-                                        <option value="בחר 1">בחר 1</option>
-                                        <option value="בחר 2">בחר 2</option>
+                                    <select required name="attractions" id="sources-3" class="form-control custom-select attractions" placeholder="מעוניינים לשמוע על...">
+                                        <?php
+                                        $taxonomy_name = 'destinations';
+                                        $category = get_term_by('name', 'Attractions', $taxonomy_name);
+                                        $children = get_term_children($category->term_id, 'destinations');
+                                        foreach ($children as $child) {
+                                            $term = get_term_by('id', $child, $taxonomy_name)
+                                            ?>
+                                            <option value="<?=$child ?>"><?= $term->name ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-row button form-grow-5">
@@ -94,6 +105,7 @@ get_header();
                 <h3>יעדים נבחרים</h3>
             </div>
         </div>
+
 
         <div class="third-section">
             <ul class="items">
@@ -173,54 +185,38 @@ get_header();
             </div>
         </div>
 
+
         <div class="fifth-section">
             <div class="main-holder">
                 <h3>הפופולריים שלנו</h3>
+
+
                 <ul class="items slick-slider-2">
-                    <li class="item">
-                        <a href="/%D7%9E%D7%9C%D7%95%D7%A0%D7%95%D7%AA-%D7%91%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93/">
-							<span class="wrap-img">
-								<img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/fifth-section-item-1.png" alt="">
-							</span>
-                            <span class="wrap-title order-1">
-								<span class="title">מלונות בתאילנד</span>
-							</span>
-                            <span class="description">מחפשים מלונות בתאילנד? המרכז למטייל פורש בפניכם שלל אפשרויות לינה בעריה השונות של המדינה היפהפייה הזאת</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="/%D7%98%D7%99%D7%95%D7%9C%D7%99-%D7%9E%D7%A9%D7%A4%D7%97%D7%95%D7%AA/">
-							<span class="wrap-img">
-								<img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/fifth-section-item-2.png" alt="">
-							</span>
-                            <span class="wrap-title order-2">
-								<span class="title">טיולי משפחות</span>
-							</span>
-                            <span class="description">תאילנד הפכה בשנים האחרונות ליעד מועדף ביותר לחופשה למשפחות, הביקוש עבור טיולי משפחות בתאילנד גואה ולא בכדי</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="/attraction/%D7%98%D7%99%D7%95%D7%9C-42-%D7%94%D7%90%D7%99%D7%99%D7%9D/">
-							<span class="wrap-img">
-								<img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/fifth-section-item-3.png" alt="">
-							</span>
-                            <span class="wrap-title order-3">
-								<span class="title">טיול 42 האיים</span>
-							</span>
-                            <span class="description">טיול 42 האיים נחשב לטיול חובה לכל מי שמגיע לאי הטרופי קוסמוי</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="/attraction/%D7%98%D7%90%D7%A0%D7%94-%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93-%D7%98%D7%99%D7%95%D7%9C-%D7%92%D7%99%D7%A4%D7%99%D7%9D-%D7%91%D7%A6%D7%A4%D7%95%D7%9F-%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93/">
-							<span class="wrap-img">
-								<img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/fifth-section-item-4.png" alt="">
-							</span>
-                            <span class="wrap-title order-4">
-								<span class="title">טאנה תאילנד טיול<br> ג'יפים בצפון תאילנד</span>
-							</span>
-                            <span class="description">טאנה טיול ג'יפים בצפון תאילנד הינו הטיול המפורסם ביותר לקהל הישראלי</span>
-                        </a>
-                    </li>
+                    <?php
+                    if( have_rows('pages') ):?>
+                        <?php while ( have_rows('pages') ) : the_row();
+                            $post_object = get_sub_field('post');
+                            if( $post_object ):
+                                $post = $post_object;
+                                setup_postdata( $post );
+                                ?>
+                                <?php get_template_part( 'directives/content', 'post_block' ); ?>
+                            <?php endif;
+                            wp_reset_postdata();?>
+                        <?php endwhile; ?>
+                    <?php endif;?>
+                    <?php while ( have_rows('posts') ) : the_row();
+                        $post_object = get_sub_field('post');
+                        if( $post_object ):
+                            $post = $post_object;
+                            setup_postdata( $post );
+                            ?>
+                                <?php get_template_part( 'directives/content', 'post_block' ); ?>
+                        <?php endif;
+                        wp_reset_postdata();?>
+                    <?php endwhile; ?>
+
+
                     <li class="item">
                         <a href="/restaurants/">
 							<span class="wrap-img">
@@ -233,6 +229,7 @@ get_header();
                         </a>
                     </li>
                 </ul>
+
             </div>
         </div>
 
