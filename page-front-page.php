@@ -200,7 +200,7 @@ get_header();
                                 $post = $post_object;
                                 setup_postdata( $post );
                                 ?>
-                                <?php get_template_part( 'directives/content', 'post_block' ); ?>
+                                <?php get_template_part( 'directives/content', 'post_block_1' ); ?>
                             <?php endif;
                             wp_reset_postdata();?>
                         <?php endwhile; ?>
@@ -211,7 +211,7 @@ get_header();
                             $post = $post_object;
                             setup_postdata( $post );
                             ?>
-                                <?php get_template_part( 'directives/content', 'post_block' ); ?>
+                                <?php get_template_part( 'directives/content', 'post_block_1' ); ?>
                         <?php endif;
                         wp_reset_postdata();?>
                     <?php endwhile; ?>

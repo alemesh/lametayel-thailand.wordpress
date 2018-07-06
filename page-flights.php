@@ -28,6 +28,7 @@ get_header();
                     <ul class="items tabs__caption menu-lisy">
                         <?php
                         $my_arr =[];
+                        $my_link =[];
                         $lem_parent_cat_id = [];
                         $categories = get_terms( array('taxonomy' => 'destinations', 'parent' => 0) );
                         $counter = 0;
@@ -52,6 +53,7 @@ get_header();
 
                             <?php
                             $lem_parent_cat_id[] = $cat->term_id;
+                            $my_link[] = $lnk;
                             ?>
 
                             <li class="item <?php echo ($counter == 0)?'active':'';?>">
@@ -69,6 +71,7 @@ get_header();
                     </ul>
 
                     <?php
+//                    var_dump($my_link);
                     $counter_acriv = 0;
                     foreach ($my_arr as $flights_buttoms){
                         if ($flights_buttoms == 75){
@@ -94,7 +97,8 @@ get_header();
                             <?php
                             foreach ($posts as $flights_buttom){?>
                                 <li class="button">
-                                    <a href="<?php echo get_the_permalink($flights_buttom->ID);?>">
+<!--                                    <a href="--><?php //echo get_the_permalink($flights_buttom->ID);?><!--">-->
+                                    <a href="<?php echo $my_link[$counter_acriv];?>">
                                             <?php if(get_field('from',$flights_buttom->ID)){
                                                 $from = get_term_by('id', get_field('from',$flights_buttom->ID), 'destinations');
                                                 echo 'מ'.$from->name;

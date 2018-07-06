@@ -135,7 +135,7 @@ ol, ul{
 .top-bar, .top-bar ul{
     background: #24b2c5;
 }
-li a{
+#menu-main-menu li a{
     color: white;
 }
 #masthead .search label .search_icon{

@@ -206,6 +206,29 @@ a img{
 /*===========================================================*/
 
 
+/*.fancybox-stage{*/
+    /*direction: rtl;*/
+/*}*/
+
+
+/* 1-2 -- FIX THE RTL PROBLEM */
+html[dir="rtl"] .fancybox-stage {
+    direction: inherit;
+}
+html[dir="rtl"] .fancybox-slide > * {
+    text-align: initial;
+}
+/* 2-2 -- FIX Caption Decleration */
+html[dir="rtl"] .fancybox-caption-wrap{
+    direction: inherit;
+}
+/* 3-3 - FIX close button position */
+html[dir="rtl"] .fancybox-close-small{
+    left: 0;
+    right: initial;
+}
+
+
 
 
 /*styles for restauranth pages finish*/
