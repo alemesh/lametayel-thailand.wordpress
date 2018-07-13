@@ -145,12 +145,12 @@ if($type !=  'flights'){
 
 <div class="hlt-wraper flights-page">
 
-    <div class="wrap-header-section">
+    <div class="wrap-header-section tabs">
         <div class="main-holder">
             <div class="button-section">
                 <a href="<?php echo $url;?>"><?php echo single_cat_title( '', false ); ?></a>
             </div>
-            <div class="wrap-holder tabs">
+            <div class="wrap-holder ">
 
                 <div class="left-section">
                     <div class="wrap-text">
@@ -178,21 +178,6 @@ if($type !=  'flights'){
                             </li>
 
                             <?php
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         }
 
                         ?>
@@ -215,11 +200,12 @@ if($type !=  'flights'){
 
 
 
-
-
         <?php
+        $counter = 0;
         foreach ($posts as $flights_buttom){?>
-
+        <div class="hotels-section tabs__content2 <?php echo ($counter == 0)?'active':''?>">
+            <div class="background-holder"></div>
+            <div class="main-holder">
 
 <?php
             //                            var_dump($flights_buttom->ID);
@@ -254,6 +240,10 @@ if($type !=  'flights'){
             default:
             }
             } ?>
+
+
+
+
             <?php //hotels block
             $section_var = array(
                 'repeaterName' => 'hotels',
@@ -262,7 +252,70 @@ if($type !=  'flights'){
                 'section_ttl' => 'מלונות מומלצים ב'. $too->name,
                 'section_ttl_lnk' => $all_hotel_lnk,
             );
-            include(locate_template('directives/posts_section.php')); ?>
+
+            ?>
+
+            <?php //print posts section
+            if( have_rows($section_var['repeaterName'], $section_var['id']) ){ ?>
+
+                <h3><?php echo $section_var['section_ttl']; ?>
+                    <?php if($section_var['section_ttl_lnk']){ ?>
+                        <a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a>
+                    <?php }?></h3>
+                <ul class="items slick-slider">
+                    <?php
+                    //if is mobile display posts as slider
+                    if( wp_is_mobile() ){ ?>
+
+                            <?php }
+                            while ( have_rows($section_var['repeaterName'], $section_var['id']) ) : the_row();
+                                $post_object1 = get_sub_field($section_var['subFieldName']);
+                                if( $post_object1 ){
+                                    $post = $post_object1;
+                                    setup_postdata( $post );
+                                    ?>
+                    <li class="item">
+
+                        <a href="<?php echo get_the_permalink();?>" class="wrap-list">
+                            <span class="image" style="background-image: url(<?php echo get_the_post_thumbnail_url();?>)"></span>
+                            <span class="stars">
+                                <?php if(get_post_type()==='hotel'){
+                                    $rating = get_field('rating');?>
+                                    <div class="rating"><?php
+                                    for($i=0; $i<$rating; $i++){
+                                        if ( $rating == '3.5' && $i == $rating - 0.5 || $rating == '4.5' && $i == $rating - 0.5){ ?>
+                                            <span class="fa fa-star checked"></span>
+                                        <?php }else{?>
+                                            <span class="fa fa-star checked"></span>
+                                        <?php }
+                                    } ?>
+                                    </div><?php
+                                }?>
+
+                            </span>
+                            <span class="wrap-title">
+								<span class="title"><?php echo get_the_title();?></span>
+							</span>
+                            <span class="description"><?php echo excerpt(20);?></span>
+                        </a>
+
+                    </li>
+                                    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                                <?php }
+                            endwhile;?>
+                            <?php
+                            //if is mobile display posts as slider
+                            if( wp_is_mobile() ){ ?>
+
+                <?php } ?>
+                </ul>
+
+                <?php
+            } ?>
+
+
+
+
 
             <?php //attractions block
             $section_var = array(
@@ -272,85 +325,89 @@ if($type !=  'flights'){
                 'section_ttl' => 'אטרקציות מומלצות ב' .$too->name,
                 'section_ttl_lnk' => $all_attraction_lnk,
             );
-            include(locate_template('directives/posts_section.php'));
+//            include(locate_template('directives/posts_section.php'));
             ?>
 
 
 
+            <?php //print posts section
+            if( have_rows($section_var['repeaterName'], $section_var['id']) ){ ?>
 
-
-        <?php }?>
-
-
-
-
-
-
-
-        <div class="hotels-section">
-            <div class="background-holder"></div>
-            <div class="main-holder">
-                <h3>מלונות מומלצים בבנגקוק</h3>
+                <h3><?php echo $section_var['section_ttl']; ?>
+                    <?php if($section_var['section_ttl_lnk']){ ?>
+                        <a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a>
+                    <?php }?></h3>
                 <ul class="items slick-slider">
-                    <li class="item">
-                        <a href="#" class="wrap-list">
-                            <span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/hotel-img.png)"></span>
-                            <span class="stars">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
+                    <?php
+                    //if is mobile display posts as slider
+                    if( wp_is_mobile() ){ ?>
+
+                    <?php }
+                    while ( have_rows($section_var['repeaterName'], $section_var['id']) ) : the_row();
+                        $post_object1 = get_sub_field($section_var['subFieldName']);
+                        if( $post_object1 ){
+                            $post = $post_object1;
+                            setup_postdata( $post );
+                            ?>
+                            <!--                                    <div class="small-12 medium-4 end columns text-center">-->
+                            <li class="item">
+                                <a href="<?php echo get_the_permalink();?>" class="wrap-list">
+                                    <span class="image" style="background-image: url(<?php echo get_the_post_thumbnail_url();?>)"></span>
+                                    <span class="stars">
+                                <?php if(get_post_type()==='hotel'){
+                                    $rating = get_field('rating');?>
+                                    <div class="rating"><?php
+                                    for($i=0; $i<$rating; $i++){
+                                        if ( $rating == '3.5' && $i == $rating - 0.5 || $rating == '4.5' && $i == $rating - 0.5){ ?>
+                                            <span class="fa fa-star checked"></span>
+                                        <?php }else{?>
+                                            <span class="fa fa-star checked"></span>
+                                        <?php }
+                                    } ?>
+                                    </div><?php
+                                }?>
+
                             </span>
-                            <span class="wrap-title">
-								<span class="title">Amari Watergate<br> Hotel Bangkok</span>
+                                    <span class="wrap-title">
+								<span class="title"><?php echo get_the_title();?></span>
 							</span>
-                            <span class="description">מלון אמארי ווטרגייט הינו מהמלונות המשובחים שיש בעיר בנגקוק בדרגת 5 כוכבים</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="wrap-list">
-                            <span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/hotel-img.png)"></span>
-                            <span class="stars">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </span>
-                            <span class="wrap-title">
-								<span class="title">Amari Watergate<br> Hotel Bangkok</span>
-							</span>
-                            <span class="description">מלון אמארי ווטרגייט הינו מהמלונות המשובחים שיש בעיר בנגקוק בדרגת 5 כוכבים</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="wrap-list">
-                            <span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/hotel-img.png)"></span>
-                            <span class="stars">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </span>
-                            <span class="wrap-title">
-								<span class="title">Amari Watergate<br> Hotel Bangkok</span>
-							</span>
-                            <span class="description">מלון אמארי ווטרגייט הינו מהמלונות המשובחים שיש בעיר בנגקוק בדרגת 5 כוכבים</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="wrap-list">
-                            <span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/hotel-img.png)"></span>
-                            <span class="stars">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </span>
-                            <span class="wrap-title">
-								<span class="title">Amari Watergate<br> Hotel Bangkok</span>
-							</span>
-                            <span class="description">מלון אמארי ווטרגייט הינו מהמלונות המשובחים שיש בעיר בנגקוק בדרגת 5 כוכבים</span>
-                        </a>
-                    </li>
+                                    <span class="description"><?php echo excerpt(20);?></span>
+                                </a>
+
+                            </li>
+                            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                        <?php }
+                    endwhile;?>
+                    <?php
+                    //if is mobile display posts as slider
+                    if( wp_is_mobile() ){ ?>
+
+                    <?php } ?>
                 </ul>
+
+                <?php
+            } ?>
             </div>
         </div>
+
+        <?php
+            $counter++;
+        }?>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
 </div>
