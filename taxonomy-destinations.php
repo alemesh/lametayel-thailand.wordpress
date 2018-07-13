@@ -262,7 +262,8 @@ if($type !=  'flights'){
                     <?php if($section_var['section_ttl_lnk']){ ?>
                         <a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a>
                     <?php }?></h3>
-                <ul class="items slick-slider">
+<!--                <ul class="items slick-slider">-->
+                <ul class="items">
                     <?php
                     //if is mobile display posts as slider
                     if( wp_is_mobile() ){ ?>
@@ -337,7 +338,8 @@ if($type !=  'flights'){
                     <?php if($section_var['section_ttl_lnk']){ ?>
                         <a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a>
                     <?php }?></h3>
-                <ul class="items slick-slider">
+<!--                <ul class="items slick-slider">-->
+                <ul class="items">
                     <?php
                     //if is mobile display posts as slider
                     if( wp_is_mobile() ){ ?>
