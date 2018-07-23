@@ -67,17 +67,19 @@ get_header();
         <div class="background-holder"></div>
         <div class="main-holder">
             <div class="button-block">
-                <a href="#" class="button"><span>אטרקציות בתאילנד</span></a>
+                <a href="#" class="button"><span><?php the_title();//TODO title ?></span></a>
             </div>
             <div class="wrap-text-sections">
                 <div class="left-block">
-                    <h4>למה אנחנו לא מפרסמים מחירים?</h4>
-                    <p>חתמנו על הסכמים בלעדיים לקהל הישראלי להזמנת מלונות, טיסות ואטרקציות ברחבי תאילנד. הם אסרו עלינו להציג את המחיר הזול באופן פומבי על גבי אתר האינטרנט שלנו. נשמח לשלוח לכם במהרה את ההצעה הכי זולה ליעד שתחפצו בו.</p>
+                    <?php if(get_field('txt_under_form', 'option')){ ?>
+                        <?php echo get_field('txt_under_form', 'option'); ?>
+                    <?php	}?>
                 </div>
+                <?php while ( have_posts() ) : the_post(); ?>
                 <div class="right-block">
-                    <p>ממלכת תאילנד הקסומה מציעה בפניכם שפע של אפשרויות מהנות לבילוי לכל הגילאים, לזוגות בירח דבש, למשפחות עם ילדים, למספר ח'ברה שמטיילים יחדיו ולמעשה כל אחד ואחת מכם ימצאו את האפשרות להנות מפעילות מהנה שוברת שגרה באוירה כיפית עם טעם של עוד</p>
-                    <p> תאילנד, בשונה ממדינות אחרות בעולם, מציעה לכם את האפשרות להנות ממבחר רב של מופעים מהנים, כגון מופע קברט קליפסו בבנגקוק, מופעי תרבות ופלורקלור כגון מופע סיאם נירמיט בבנגקוק, להנות משייט קיאקים בתוך מערות קטנות בים ולחזות במחזות מדהימים שלא תראו באף מקום אחר בעולם. <a href="#">קרא עוד</a></p>
+                    <?php the_content(); //TODO the content?>
                 </div>
+                <?php endwhile; // End of the loop. ?>
             </div>
 
             <div class="wrap-img-section">

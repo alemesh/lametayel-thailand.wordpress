@@ -14,7 +14,7 @@ $current_id = get_queried_object_id();
 
 
 $type = get_field('type_destination', 'destinations_'.$current_id);
-if($type !=  'flights'){
+if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel'){
 
 
 
@@ -119,7 +119,7 @@ if($type !=  'flights'){
 
 
 
-
+<!--TODO Flights page-->
 
 
 <?php } elseif($type ==  'flights'){?>
@@ -148,16 +148,20 @@ if($type !=  'flights'){
     <div class="wrap-header-section tabs">
         <div class="main-holder">
             <div class="button-section">
-                <a href="<?php echo $url;?>"><?php echo single_cat_title( '', false ); ?></a>
+                <a href="<?php echo $url;?>"><?php echo single_cat_title( '', false );?></a>
             </div>
             <div class="wrap-holder ">
 
                 <div class="left-section">
                     <div class="wrap-text">
-                        <h3>קוסמוי-בנגקוק</h3>
-<!--                        --><?php //echo term_description( $current_id, 'destinations' ) ?>
-                        <p>ע"מ לקבל הצעה אטרקטיבית לטיסות פנים בתאילנד, אנא פנו אלינו עם הפרטים הבאים:
-                            תאריכי טיסות רצויים, לאילו יעדים, ובמידה ומדובר במשפחות יש לציין את גילאי הילדים. אנא בדקו באופן שוטף את המייל שלכם לוודא שהמייל מאיתנו לא נכנס לדואר ספאם/גאנק. למי ששולח מייל מהעבודה נא לציין מייל פרטי בנוסף</p>
+<!--                        <h3>קוסמוי-בנגקוק</h3>-->
+                        <h3><?php the_title()?></h3>
+<!--                        --><?php //var_dump(wp_get_current_user())?>
+<!--                        <p>--><?php //echo $posts[0]->post_content;?><!--</p>-->
+<!--                        --><?php //echo term_description( $current_id, 'destinations' ); ?>
+
+<!--                        <p>ע"מ לקבל הצעה אטרקטיבית לטיסות פנים בתאילנד, אנא פנו אלינו עם הפרטים הבאים:-->
+<!--                            תאריכי טיסות רצויים, לאילו יעדים, ובמידה ומדובר במשפחות יש לציין את גילאי הילדים. אנא בדקו באופן שוטף את המייל שלכם לוודא שהמייל מאיתנו לא נכנס לדואר ספאם/גאנק. למי ששולח מייל מהעבודה נא לציין מייל פרטי בנוסף</p>-->
                     </div>
 
                     <ul class="buttons tabs__caption menu-lisy">
@@ -400,20 +404,309 @@ if($type !=  'flights'){
 
 
 
-
-
-
-
-
-
-
-
-
-
     </div>
 
 </div>
-<?}?>
+<?}elseif($type ==  'attraction'){?>
+
+
+<!--TODO Attractions page-->
+
+
+<?php
+$current_id = get_queried_object_id();
+$current_name = single_cat_title( '', false );
+?>
+
+<div class="content_wrapper" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="up_img">
+        <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
+        <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
+    </div>
+    <div class="up_box">
+        <div class="main_text">
+    <?php echo term_description( $current_id, 'destinations' ) ?>
+        </div>
+        <div class="main_left_up_box">
+            <div class="left_text_box">
+                <p class="black_text">
+                    למה אנחנו לא מפרסמים מחירים?
+                </p>
+                <p>
+                    חתמנו על הסכמים בלעדיים לקהל הישראלי להזמנת מלונות, טיסות ואטרקציות ברחבי תאילנד. הם אסרו עלינו
+                    להציג
+                    את המחיר הזול באופן פומבי על גבי אתר האינטרנט שלנו. נשמח לשלוח לכם במהרה את ההצעה הכי זולה ליעד
+                    שתחפצו בו.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    <?php
+    //get all hotels that are connected to this taxonomy
+    $category = get_term_by('id', $current_id, 'destinations');
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    $args = array(
+        'post_type' => 'attraction',
+        'order' => 'DESC',
+        'order_by'  => 'date',
+        'posts_per_page' => 12,
+        'destinations' => $category->name,
+        'paged' => $paged,
+    );
+    $custom_query = new WP_Query($args);
+    if($custom_query->have_posts() ) { ?>
+<!--        <div class="row posts_section" data-equalizer>-->
+        <div class="main_low_box" data-equalizer>
+            <div class="content_wrapper">
+                <span class="first_text_in_low_box">מומלצות <?php echo single_cat_title( '', false ); ?></span>
+                <div class="text_in_middle_img"><a href="<?php echo $url = get_home_url().'/אטרקציות-בתאילנד/';?>">הצג הכל</a></div>
+                <div class="just_line_in_low_box"></div>
+                <?php
+                $count_4_items = 1;
+                while($custom_query->have_posts() ) {
+                $custom_query->the_post(); ?>
+                <?php if ($count_4_items == 1 || $count_4_items == 5 || $count_4_items == 9){?>
+                <div class="content">
+                    <?php }?>
+
+                    <a href="<?php echo get_the_permalink();?>" class="content-card">
+                        <div class="card-wrapper">
+                            <div class="img_in_low_box">
+<!--                                <img class="img-responsive" src="--><?php //echo get_stylesheet_directory_uri();?><!--/Lametayel-Thailand-all-page-styles/img/img2_in_low_box.png" alt="">-->
+                                <?php get_thailand_featured_image('thailand-thumbnail');?>
+                            </div>
+                            <div class="body-card">
+                                <h3><?php echo get_the_title();?></h3>
+                                <div class="p-and-btn-to-bottom">
+                                    <p><?php echo excerpt(20);?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                <?php if ($count_4_items == 4 || $count_4_items == 8 || $count_4_items == 12){?>
+                </div>
+                <?php }?>
+                <?php
+                $count_4_items++;
+                } ?>
+                <?php if ($count_4_items <=3 || ($count_4_items <=7 && $count_4_items > 4) || ($count_4_items <= 11 && $count_4_items > 8)){?>
+                </div>
+                <?php }?>
+            </div>
+
+            <div class="pagination-content">
+                        <?php
+                        $big = 999999999; // need an unlikely integer
+                        echo paginate_links( array(
+                            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                            'format' => '?paged=%#%',
+                            'type' => 'list',
+                            'prev_text'    => __('<i class="fa fa-angle-right" aria-hidden="true"></i>'),
+                            'next_text'    => __('<i class="fa fa-angle-left" aria-hidden="true"></i>'),
+                            'current' => max( 1, get_query_var('paged') ),
+                            'total' => $custom_query->max_num_pages
+                        ) );?>
+            </div>
+
+        </div>
+        <?php	wp_reset_postdata();?>
+    <?php	}
+    ?>
+
+    <!--TODO Hotel page-->
+<?php }elseif($type ==  'hotel'){?>
+
+
+<?php
+    $current_id = get_queried_object_id();
+    $current_name = single_cat_title( '', false );
+    $ratingUrl =$_GET['rating'];
+
+    $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $link_array = explode('/',$url);
+    $count_url = count($link_array);
+
+    if( $count_url-1 == 7 || $count_url-1 == 8){
+        array_pop($link_array);
+        $sort_url  = implode('/', $link_array);
+        array_pop($link_array);
+        $sort_url  = implode('/', $link_array);
+        array_pop($link_array);
+        $sort_url  = implode('/', $link_array);
+    }elseif( $count_url-1 == 5 || $count_url-1 == 7){
+        array_pop($link_array);
+        $sort_url  = implode('/', $link_array);
+    }
+    ?>
+
+
+
+
+
+        <div class="content_wrapper">
+
+            <div class="up_img">
+                <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
+                <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
+            </div>
+
+            <div class="up_box">
+                <div class="main_text">
+                    <?php echo term_description( $current_id, 'destinations' ) ?>
+
+
+                </div>
+                <div class="main_left_up_box">
+                    <div class="left_text_box">
+                        <h4>
+                            למה אנחנו לא מפרסמים מחירים?
+                        </h4>
+                        <p>
+                            חתמנו על הסכמים בלעדיים לקהל הישראלי להזמנת מלונות, טיסות ואטרקציות ברחבי תאילנד. הם אסרו עלינו
+                            להציג את המחיר הזול באופן פומבי על גבי אתר האינטרנט שלנו. נשמח לשלוח לכם במהרה את ההצעה הכי זולה
+                            ליעד שתחפצו בו.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <div class="content_wrapper">
+
+        <div class="small_text_before_low_box">
+            <form class="sort_hotels" action="<?php echo $sort_url; ?>">
+                <label>
+                    <select name="rating">
+                        <option value="">כמה כוכבים?</option>
+                        <option value="3" <?php if($ratingUrl == '3'){ echo 'selected'; } ?>> 3 כוכבים </option>
+                        <option value="3.5" <?php if($ratingUrl == '3.5'){ echo 'selected'; } ?>> 3.5 כוכבים </option>
+                        <option value="4" <?php if($ratingUrl == '4'){ echo 'selected'; } ?>> 4 כוכבים </option>
+                        <option value="4.5" <?php if($ratingUrl == '4.5'){ echo 'selected'; } ?>> 4.5 כוכבים</option>
+                        <option value="5" <?php if($ratingUrl == '5'){ echo 'selected'; } ?>> 5 כוכבים </option>
+                    </select>
+                </label>
+                <div class="text_in_middle_img_hotels_locations">
+                    <button type="submit" class="">סנן</button>
+                </div>
+
+            </form>
+        </div>
+
+                <?php
+                $term_list = wp_get_post_terms($post->ID, 'destinations');
+
+                foreach ($term_list as $term){
+                    if($term->parent != 0){
+                        $current_cat = $term;
+                    }
+
+                } ?>
+
+                <?php
+                $parent_term = get_term( $current_cat->parent, 'destinations' ); //get it for sidebar txt
+
+                //check which type of destination and send to template accordingly
+                $type = get_field('type_destination', 'destinations_'.$current_id);
+                ?>
+
+              <?php
+                 $paged =  1 ;
+                  if(isset($_GET['rating']) && $_GET['rating'] != '' ) {
+                    $rating = array(
+                      'key'	 	=> 'rating',
+                      'value'	  	=> $_GET['rating'],
+                      'compare' 	=> '=',
+                    );
+                  }else{
+                    $rating = '';
+                  }
+                  //get all hotels that are connected to this taxonomy
+                  $category = get_term_by('id', $current_id, 'destinations');
+                  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+                  //echo $paged ;
+                  $args = array(
+                      'post_type' => 'hotel',
+                      'order' => 'DESC',
+                      'order_by'  => 'date',
+                      'posts_per_page' => 12,
+                      'paged' => $paged,
+                      'destinations' => $category->name,
+                      'meta_query'	=> array(
+                          $rating,
+                      ),
+                  );
+                  $custom_query = new WP_Query($args);
+                  if($custom_query->have_posts() ) { ?>
+                            <div class="content" data-equalizer>
+                                <?php
+                                while($custom_query->have_posts() ) {
+                                    $custom_query->the_post(); ?>
+                                    <div class="content-card">
+                                        <a href="<?php echo get_the_permalink();?>" class="card-wrapper">
+                                            <div class="img_in_low_box">
+                                                <?php if(get_post_type()==='hotel'){
+                                                    $rating = get_field('rating');?>
+                                                    <div class="star_icons"><?php
+                                                    for($i=0; $i<$rating; $i++){
+                                                        if ( $rating == '3.5' && $i == $rating - 0.5 || $rating == '4.5' && $i == $rating - 0.5){ ?>
+                                                            <i class="fas fa-star-half star_icon" aria-hidden="true"></i>
+                                                        <?php }else{?>
+                                                            <i class="fas fa-star star_icon" aria-hidden="true"></i>
+                                                        <?php }
+                                                    } ?>
+                                                    </div><?php
+                                                }?>
+
+
+                                                <img class="img-responsive" src="<?php the_post_thumbnail_url('thailand-thumbnail') ?>" alt="">
+                                            </div>
+                                            <div class="body-card">
+                                                <h3><?php echo get_the_title();?></h3>
+                                                <div class="p-and-btn-to-bottom">
+                                                    <p><?php echo excerpt(20);?></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <div class="pagination-content">
+                                <?php
+                                $big = 999999999; // need an unlikely integer
+                                echo paginate_links( array(
+                                    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                                    'format' => '?paged=%#%',
+                                    'type' => 'list',
+                                    'prev_text'    => __('<i class="fa fa-angle-right" aria-hidden="true"></i>'),
+                                    'next_text'    => __('<i class="fa fa-angle-left" aria-hidden="true"></i>'),
+                                    //'current' => max( $paged, get_query_var('paged') ),
+                                    'total' => $custom_query->max_num_pages
+                                ) );?>
+
+                            </div>
+
+                        <?php	wp_reset_postdata();?>
+                        <?php	}
+                        ?>
+
+                <?php
+                $sidebar_ttl = 'רוצה להזמין מלון ב' . $parent_term->name . "?";
+                ?>
+
+    </div>
+
+<?php }?>
+
+
+
+
+
+
+
 
 
 <?php get_footer(); ?>

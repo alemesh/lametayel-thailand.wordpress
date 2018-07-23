@@ -157,3 +157,7 @@ ol, ul{
 }
 /*header menu styles finish*/
 
+/*Single fkughts*/
+.hlt-wraper.flights-page .hotels-section .items .wrap-title .title{
+    color: black;!important;
+}

@@ -18,8 +18,14 @@ function lametayel_home_page_scripts_init(){
 //        wp_enqueue_style('lametayel_restaurants-page_style_css', get_stylesheet_directory_uri() . '/restaurants-page-styles/css/restaurants-main.css');
     }
 
-    if ( is_page_template('page-flights.php') || is_page_template('page-attractions.php') ||  is_page_template('search-attractions.php') || is_tax( 'destinations') ) {
+    if ( is_page_template('page-flights.php') || is_page_template('page-attractions.php') ||  is_page_template('search-attractions.php') || is_tax( 'destinations') || is_page_template('page-hotels.php') ) {
         wp_enqueue_style('lametayel_flights-page_style_css', get_stylesheet_directory_uri() . '/flights-page-styles/css/main.min.css');
+    }
+
+    if ( is_page_template('about-page.php') || is_tax( 'destinations') || is_singular('attraction') || is_singular('hotel') || is_archive() || is_singular('branch')) {
+        wp_enqueue_style('lametayel_Thailand_all_page_styles_a_css', get_stylesheet_directory_uri() . '/Lametayel-Thailand-all-page-styles/css/main.min.a.css');
+        wp_enqueue_style('lametayel_Thailand_all_page_styles_css', get_stylesheet_directory_uri() . '/Lametayel-Thailand-all-page-styles/css/main.min.css');
+        wp_enqueue_style('lametayel_Thailand_all_page_custome_styles_css', get_stylesheet_directory_uri() . '/Lametayel-Thailand-all-page-styles/css/main-all.css');
     }
 
 
@@ -69,9 +75,14 @@ function lametayel_home_page_scripts_init(){
 //        wp_register_script('lametayel_restaurants-page_googlemaps_css', get_stylesheet_directory_uri() . 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAW6GlD57glHFIOUZGbgUmqv06BJyW2q3o&callback=initMap', array(), false, true);
 //        wp_enqueue_script('lametayel_restaurants-page_googlemaps_css');
     }
-    if ( is_page_template('page-flights.php') || is_page_template('page-attractions.php') || is_tax( 'destinations') ) {
+    if ( is_page_template('page-flights.php') || is_page_template('page-attractions.php') || is_tax( 'destinations') || is_page_template('page-hotels.php') ) {
         wp_register_script('lametayel_flights-page_scripts', get_stylesheet_directory_uri() . '/flights-page-styles/js/scripts.min.js', array(), false, true);
         wp_enqueue_script('lametayel_flights-page_scripts');
+    }
+
+    if ( is_page_template('about-page.php')|| is_tax( 'destinations') || is_singular('attraction') || is_singular('hotel') || is_archive() || is_singular('branch')) {
+        wp_register_script('lametayel_Thailand_all_page_scripts', get_stylesheet_directory_uri() . '/Lametayel-Thailand-all-page-styles/js/scripts.min.js', array(), false, true);
+        wp_enqueue_script('lametayel_Thailand_all_page_scripts');
     }
 //    wp_register_script('themajax_scripts', get_template_directory_uri() . '/js/themajax.js', array(), false, true);
 //    wp_enqueue_script('themajax_scripts');

@@ -1,0 +1,21 @@
+.about-page-main-content p{
+    margin-top: 1rem;
+}
+.about-page-main-content .button-for-left-form{
+    border-radius: 25px;
+}
+.left_text_box p{
+    margin-top: 1rem;
+}
+.card-wrapper{
+    display: block;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+.content_branches .card-wrapper{
+    min-height: 350px;
+}
+.content_branches .img_in_low_box{
+    max-height: 130px;
+    overflow: hidden;
+}
