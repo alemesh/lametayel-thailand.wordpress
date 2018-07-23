@@ -167,7 +167,9 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel'){
                     <ul class="buttons tabs__caption menu-lisy">
                         <?php
 //                        var_dump($posts);
-                        foreach ($posts as $flights_buttom){?>
+                        foreach ($posts as $flights_buttom){
+//                            var_dump($flights_buttom->ID);
+                            ?>
                             <li class="button">
                                 <span>
                                     <?php if(get_field('from',$flights_buttom->ID)){
@@ -188,13 +190,15 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel'){
                     </ul>
                 </div>
                 <div class="right-section">
+                    <?php
+                    $counter = 0;
+                    foreach ($posts as $flights_buttom){?>
 
-                    <div class="wrap-img tabs__content active" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/phuket-bangkok.png)"></div>
-                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/samui-bangkok.png)"></div>
-                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/changrai-bangkok.png)"></div>
-                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/krabi-bangkok.png)"></div>
-                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/changmai-bangkok.png)"></div>
-                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/flights-single/changmai-bangkok.png)"></div>
+                    <div class="wrap-img tabs__content <?php echo ($counter == 0)?'active':'';?>" style="background-image: url(<?php echo get_post_meta( $flights_buttom->ID, '_map_image_value_key', 1 );?>)"></div>
+
+                    <?php
+                        $counter++;
+                    }?>
                 </div>
 
             </div>
@@ -263,9 +267,10 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel'){
             if( have_rows($section_var['repeaterName'], $section_var['id']) ){ ?>
 
                 <h3><?php echo $section_var['section_ttl']; ?>
-                    <?php if($section_var['section_ttl_lnk']){ ?>
-                        <a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a>
-                    <?php }?></h3>
+<!--                    --><?php //if($section_var['section_ttl_lnk']){ ?>
+<!--                        <a href="--><?php //echo $section_var['section_ttl_lnk'];?><!--" class="blue_lnk">הכל</a>-->
+<!--                    --><?php //}?>
+                </h3>
 <!--                <ul class="items slick-slider">-->
                 <ul class="items">
                     <?php
@@ -339,9 +344,10 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel'){
             if( have_rows($section_var['repeaterName'], $section_var['id']) ){ ?>
 
                 <h3><?php echo $section_var['section_ttl']; ?>
-                    <?php if($section_var['section_ttl_lnk']){ ?>
-                        <a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a>
-                    <?php }?></h3>
+<!--                    --><?php //if($section_var['section_ttl_lnk']){ ?>
+<!--                        <a href="--><?php //echo $section_var['section_ttl_lnk'];?><!--" class="blue_lnk">הכל</a>-->
+<!--                    --><?php //}?>
+                </h3>
 <!--                <ul class="items slick-slider">-->
                 <ul class="items">
                     <?php
@@ -429,15 +435,9 @@ $current_name = single_cat_title( '', false );
         </div>
         <div class="main_left_up_box">
             <div class="left_text_box">
-                <p class="black_text">
-                    למה אנחנו לא מפרסמים מחירים?
-                </p>
-                <p>
-                    חתמנו על הסכמים בלעדיים לקהל הישראלי להזמנת מלונות, טיסות ואטרקציות ברחבי תאילנד. הם אסרו עלינו
-                    להציג
-                    את המחיר הזול באופן פומבי על גבי אתר האינטרנט שלנו. נשמח לשלוח לכם במהרה את ההצעה הכי זולה ליעד
-                    שתחפצו בו.
-                </p>
+                <?php if(get_field('txt_under_form', 'option')){ ?>
+                    <?php echo get_field('txt_under_form', 'option'); ?>
+                <?php	}?>
             </div>
         </div>
     </div>
@@ -560,14 +560,9 @@ $current_name = single_cat_title( '', false );
                 </div>
                 <div class="main_left_up_box">
                     <div class="left_text_box">
-                        <h4>
-                            למה אנחנו לא מפרסמים מחירים?
-                        </h4>
-                        <p>
-                            חתמנו על הסכמים בלעדיים לקהל הישראלי להזמנת מלונות, טיסות ואטרקציות ברחבי תאילנד. הם אסרו עלינו
-                            להציג את המחיר הזול באופן פומבי על גבי אתר האינטרנט שלנו. נשמח לשלוח לכם במהרה את ההצעה הכי זולה
-                            ליעד שתחפצו בו.
-                        </p>
+                        <?php if(get_field('txt_under_form', 'option')){ ?>
+                            <?php echo get_field('txt_under_form', 'option'); ?>
+                        <?php	}?>
                     </div>
                 </div>
             </div>

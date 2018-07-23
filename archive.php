@@ -11,7 +11,7 @@ $settings = new settings();
 
 get_header();
 ?>
-<div class="content_wrapper">
+<div class="content_wrapper brunch-page">
 
     <div class="up_img">
         <div class="text_in_up_img"><?php echo post_type_archive_title(); ?></div>

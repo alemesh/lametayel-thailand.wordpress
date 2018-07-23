@@ -1,5 +1,5 @@
 <?php
-
+require_once ('inc/my_custom_fields.php');
 
 add_action( 'wp_enqueue_scripts', 'craftsandarts_child_enqueue_styles', 100);
 function craftsandarts_child_enqueue_styles() {
@@ -22,7 +22,7 @@ function lametayel_home_page_scripts_init(){
         wp_enqueue_style('lametayel_flights-page_style_css', get_stylesheet_directory_uri() . '/flights-page-styles/css/main.min.css');
     }
 
-    if ( is_page_template('about-page.php') || is_tax( 'destinations') || is_singular('attraction') || is_singular('hotel') || is_archive() || is_singular('branch')) {
+    if ( is_page_template('about-page.php') || is_tax( 'destinations') || is_singular('attraction') || is_singular('hotel') || is_archive() || is_singular('branch') || is_home() || is_tax( 'packages')) {
         wp_enqueue_style('lametayel_Thailand_all_page_styles_a_css', get_stylesheet_directory_uri() . '/Lametayel-Thailand-all-page-styles/css/main.min.a.css');
         wp_enqueue_style('lametayel_Thailand_all_page_styles_css', get_stylesheet_directory_uri() . '/Lametayel-Thailand-all-page-styles/css/main.min.css');
         wp_enqueue_style('lametayel_Thailand_all_page_custome_styles_css', get_stylesheet_directory_uri() . '/Lametayel-Thailand-all-page-styles/css/main-all.css');
@@ -80,7 +80,7 @@ function lametayel_home_page_scripts_init(){
         wp_enqueue_script('lametayel_flights-page_scripts');
     }
 
-    if ( is_page_template('about-page.php')|| is_tax( 'destinations') || is_singular('attraction') || is_singular('hotel') || is_archive() || is_singular('branch')) {
+    if ( is_page_template('about-page.php')|| is_tax( 'destinations') || is_singular('attraction') || is_singular('hotel') || is_archive() || is_singular('branch') || is_home() || is_tax( 'packages')) {
         wp_register_script('lametayel_Thailand_all_page_scripts', get_stylesheet_directory_uri() . '/Lametayel-Thailand-all-page-styles/js/scripts.min.js', array(), false, true);
         wp_enqueue_script('lametayel_Thailand_all_page_scripts');
     }

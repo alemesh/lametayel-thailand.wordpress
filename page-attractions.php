@@ -67,7 +67,7 @@ get_header();
         <div class="background-holder"></div>
         <div class="main-holder">
             <div class="button-block">
-                <a href="#" class="button"><span><?php the_title();//TODO title ?></span></a>
+                <a class="button"><span><?php the_title();//TODO title ?></span></a>
             </div>
             <div class="wrap-text-sections">
                 <div class="left-block">

@@ -161,3 +161,15 @@ ol, ul{
 .hlt-wraper.flights-page .hotels-section .items .wrap-title .title{
     color: black;!important;
 }
+/*left sitebar*/
+.left-sidebar-text h5, .left_text_box h5, .left-block h5{
+    font-size: 18px;
+}
+.left-sidebar-text p, .left_text_box p, .left-block p{
+    font-size: 16px;
+}
+/*fixt problem span background yellow*/
+.right-text-body span{
+    white-space: normal;
+    background: transparent;
+}

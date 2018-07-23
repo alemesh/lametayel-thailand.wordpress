@@ -42,8 +42,9 @@ get_header();
                 חשוב לציין שכל הסניפים הפרונטלים של המרכז למטייל ברחבי תאילנד עובדים במתכונת של:
                 ONE STOP SHOP כל השירותים תחת קורת גג אחת, להתראות!
             </p>
-            <button class="button-for-left-form" type="submit">לרשימת הסניפים שלנו<i class="fas fa-chevron-left"></i></button>
-            <a class="link-to-restaurant" href="#">
+            <button class="button-for-left-form" type="submit"><a href="<?php echo home_url('/');?>branch/">לרשימת הסניפים שלנו</a><i class="fas fa-chevron-left"></i></button>
+
+            <a class="link-to-restaurant" href="<?php echo home_url('/');?>restaurants/">
                 <!--<div class="block-for-img-on-textpage-for-allWidth"></div>-->
                 <img src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/about(big).png" alt="" class="block-for-img-on-textpage-for-allWidth">
             </a>
@@ -65,7 +66,8 @@ get_header();
             <p>
                 מסעדת המרכז למטייל ברחוב הקוואסאן פתוחה 24 שעות ומציעה לכם גם את האפשרות להנות ממבחר מאכלים מהמטבח היפני בניצוחו של שף מדופלם, כך שחגיגה של טעמים מחכה לכם אצלנו ברשת מסעדות המרכז למטייל בכל רחבי תאילנד, בבנגקוק, בצ'יאנג מאי ובקוסמוי.
             </p>
-            <button class="button-for-left-form" type="submit">לרשימת הסניפים שלנו<i class="fas fa-chevron-left"></i></button>
+            <button class="button-for-left-form" ><a href="<?php echo home_url('/');?>wp-content/uploads/2016/06/lametayel-menu-low-res.pdf">לרשימת הסניפים שלנו</a><i class="fas fa-chevron-left"></i></button>
+
 
         </div>
         <div class="left-form-body">
@@ -100,10 +102,9 @@ get_header();
                 </div>
             </div>
             <div class="left-sidebar-text">
-                <h4>למה אנחנו לא מפרסמים מחירים?</h4>
-                <p>
-                    חתמנו על הסכמים בלעדיים לקהל הישראלי להזמנת מלונות, טיסות ואטרקציות ברחבי תאילנד. הם אסרו עלינו להציג את המחיר הזול באופן פומבי על גבי אתר האינטרנט שלנו. נשמח לשלוח לכם במהרה את ההצעה הכי זולה ליעד שתחפצו בו.
-                </p>
+                <?php if(get_field('txt_under_form', 'option')){ ?>
+                    <?php echo get_field('txt_under_form', 'option'); ?>
+                <?php	}?>
             </div>
         </div>
     </div>
