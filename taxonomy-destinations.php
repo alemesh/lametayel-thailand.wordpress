@@ -14,14 +14,8 @@ $current_id = get_queried_object_id();
 
 
 $type = get_field('type_destination', 'destinations_'.$current_id);
-if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel'){
 
-
-
-
-
-
-
+if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel' && $type !=  'main'){
 
 
 ?>
@@ -413,7 +407,8 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel'){
     </div>
 
 </div>
-<?}elseif($type ==  'attraction'){?>
+
+<?php }elseif($type == 'attraction'){ ?>
 
 
 <!--TODO Attractions page-->
@@ -424,24 +419,7 @@ $current_id = get_queried_object_id();
 $current_name = single_cat_title( '', false );
 ?>
 
-<div class="content_wrapper" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="up_img">
-        <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
-        <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
-    </div>
-    <div class="up_box">
-        <div class="main_text">
-    <?php echo term_description( $current_id, 'destinations' ) ?>
-        </div>
-        <div class="main_left_up_box">
-            <div class="left_text_box">
-                <?php if(get_field('txt_under_form', 'option')){ ?>
-                    <?php echo get_field('txt_under_form', 'option'); ?>
-                <?php	}?>
-            </div>
-        </div>
-    </div>
-</div>
+
     <?php
     //get all hotels that are connected to this taxonomy
     $category = get_term_by('id', $current_id, 'destinations');
@@ -456,6 +434,24 @@ $current_name = single_cat_title( '', false );
     );
     $custom_query = new WP_Query($args);
     if($custom_query->have_posts() ) { ?>
+        <div class="content_wrapper" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <div class="up_img">
+                <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
+                <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
+            </div>
+            <div class="up_box">
+                <div class="main_text">
+                    <?php echo term_description( $current_id, 'destinations' ) ?>
+                </div>
+                <div class="main_left_up_box">
+                    <div class="left_text_box">
+                        <?php if(get_field('txt_under_form', 'option')){ ?>
+                            <?php echo get_field('txt_under_form', 'option'); ?>
+                        <?php	}?>
+                    </div>
+                </div>
+            </div>
+        </div>
 <!--        <div class="row posts_section" data-equalizer>-->
         <div class="main_low_box" data-equalizer>
             <div class="content_wrapper">
@@ -516,7 +512,7 @@ $current_name = single_cat_title( '', false );
     ?>
 
     <!--TODO Hotel page-->
-<?php }elseif($type ==  'hotel'){?>
+<?php }elseif($type ==  'hotel'){ ?>
 
 
 <?php
@@ -694,14 +690,261 @@ $current_name = single_cat_title( '', false );
 
     </div>
 
+<?php }elseif ($type ==  'main'){?>
+
+    <?php
+    $current_id = get_queried_object_id();
+    $current_name = single_cat_title( '', false );
+    ?>
+<div class="main-content">
+<!--    <div class="up_img">-->
+<!--        <div class="text_in_up_img">--><?php //the_title();// TODO title
+//            $rating = get_field('rating'); ?>
+<!--            <div class="rating">--><?php
+//                for($i=0; $i<$rating; $i++){ ?>
+<!--                    <i class="fa fa-star" aria-hidden="true"></i>-->
+<!--                --><?php //} ?>
+<!--            </div>-->
+<!--        </div>-->
+<!--        <img class="up_img_tail img-responsive" src="--><?php //echo get_stylesheet_directory_uri();?><!--/Lametayel-Thailand-all-page-styles/img/corner-img.png">-->
+<!--    </div>-->
+    <div class="up_img up_img-for-hotelPage">
+<!--        <div class="text_in_up_img">--><?php //the_title();?><!--</div>-->
+        <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
+        <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
+        <?php $rating = get_field('rating'); ?>
+        <div class="rating-hotels-main">
+            <?php
+            for($i=0; $i<$rating; $i++){
+                if ( $rating == '3.5' && $i == $rating - 0.5 || $rating == '4.5' && $i == $rating - 0.5){ ?>
+                    <i class="fas fa-star-half" aria-hidden="true"></i>
+                <?php }else{?>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                <?php }
+            } ?>
+        </div>
+    </div>
+    <div class="content-body">
+        <div class="right-text-body">
+
+            <?php if( get_field('top_page_desc', 'destinations_'.$current_id)){ ?>
+                <div class="top_desc">
+                    <?php echo  get_field('top_page_desc', 'destinations_'.$current_id); ?>
+                    <a href="#about"><?php _e('More about' ,'podium'); //להרחבה על ?> <?php echo $current_name;?></a>
+                </div>
+            <?php }?>
+
+
+            <?php
+            $id_to_send = 'destinations_'.$current_id;
+            include(locate_template('directives/content-top_section_tabs.php')); //TODO slider?>
+        </div>
+        <div class="left-form-body">
+            <div class="left-form-wrapper">
+                <h3>דברו איתנו</h3>
+                <div class="form-body-wrap">
+                    <form action="">
+                        <input type="text" placeholder="שם">
+                        <input type="text" placeholder="טלפון">
+                        <input type="text" placeholder="אימייל">
+                        <div class="input-date">
+                            <show-orange><i class="fas fa-sort-down"></i></show-orange>
+                            <show-white></show-white>
+                            <input type="date">
+
+                        </div>
+                        <div class="input-date">
+                            <show-orange><i class="fas fa-sort-down"></i></show-orange>
+                            <show-white></show-white>
+                            <input type="date">
+
+                        </div>
+                        <label>
+                            <input type="checkbox"><i></i>
+                            <span>התאריכים עוד לא ידועים לי</span>
+                        </label>
+                        <input type="text" placeholder="מספר נוסעים">
+                        <textarea name="" cols="30" rows="10" placeholder="פרטים נוספים (מספר נוסעים,
+גילאי הילדים, מסלול מועדף ועוד)"></textarea>
+                        <button class="button-for-left-form" type="submit">שלח<i class="fas fa-chevron-left"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="left-sidebar-text">
+                <?php if(get_field('txt_under_form', 'option')){ ?>
+                    <?php echo get_field('txt_under_form', 'option'); ?>
+                <?php	}?>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <?php
+    $term_list = wp_get_post_terms($post->ID, 'destinations');
+
+    foreach ($term_list as $term){
+        if($term->parent != 0){
+            $current_cat = $term;
+        }
+
+    } ?>
+
+    <?php
+    $parent_term = get_term( $current_cat->parent, 'destinations' ); //get it for sidebar txt?>
+
+        <?php //get children links
+        $term_id = $current_id;
+        $taxonomy_name = 'destinations';
+        $termchildren = get_term_children( $term_id, $taxonomy_name );
+        foreach ( $termchildren as $child ) {
+            $term = get_term_by( 'id', $child, $taxonomy_name );
+            $type = get_field('type_destination', 'destinations_'.$term->term_id);
+            switch ($type) {
+                case 'hotel':
+                    $all_hotel_lnk = get_term_link( $child, $taxonomy_name );
+                    break;
+                case 'attraction':
+                    $all_attraction_lnk = get_term_link( $child, $taxonomy_name );
+                    break;
+                case 'article':
+                    $all_article_lnk = get_term_link( $child, $taxonomy_name );
+                    break;
+                default:
+            }
+        }?>
+
+        <?php //hotels block
+        $section_var = array(
+            'repeaterName' => 'related_hotels',
+            'subFieldName' => 'hotel_post',
+            'id' => 'destinations_'.$current_id,
+            'section_ttl' => 'מלונות ב' .$current_name,
+            'section_ttl_lnk' => $all_hotel_lnk,
+        );
+        include(locate_template('directives/posts_section.php')); //TODO hotels?>
+
+        <?php //attractions block
+        $section_var = array(
+            'repeaterName' => 'related_attractions',
+            'subFieldName' => 'attraction_post',
+            'id' => 'destinations_'.$current_id,
+            'section_ttl' => 'אטרקציות ב' .$current_name,
+            'section_ttl_lnk' => $all_attraction_lnk,
+        );
+        include(locate_template('directives/posts_section.php')); //TODO attractions?>
+
+
+    <div class="content-wrap">
+
+
+        <?php if(get_field('display_flights', 'destinations_'.$current_id)){
+            $flights_display  = get_field('display_flights', 'destinations_'.$current_id);
+            switch ($flights_display) {
+                case 'yes' :
+                    if(get_field('txt_before_flights', 'destinations_'.$current_id)){
+                        the_field('txt_before_flights', 'destinations_'.$current_id);
+                    }
+                    //flights from destination
+                    $custom_query_args = array(//TODO flights
+                        'post_type' => 'flight',
+                        'order' => 'DESC',
+                        'posts_per_page' => -1,
+                        'meta_query'	=> array(
+                            'relation'		=> 'AND',
+                            array( //only featured designed posts
+                                'key'       => 'from',
+                                'value'     => $current_id,
+                                'compare'   => '==',
+                            ),
+                        )
+                    );
+                    $custom_query = new WP_Query( $custom_query_args );
+                    if ( $custom_query->have_posts() ) :?>
+                        <section class="archive_flights_list">
+                        <h5>טיסות מ<?php echo $current_name; ?></h5>
+                        <div class="row"><?php
+                            while ( $custom_query->have_posts() ) : $custom_query->the_post();?>
+                                <div class="small-12 medium-4 columns end">
+                                    <?php get_template_part( 'directives/content', 'outer_flight' ); ?>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                        </section>
+                    <?php
+                    endif;
+
+                    wp_reset_postdata();
+
+                    //flights too destination
+                    $custom_query_args = array(//TODO flights
+                        'post_type' => 'flight',
+                        'order' => 'DESC',
+                        'posts_per_page' => -1,
+                        'meta_query'	=> array(
+                            'relation'		=> 'AND',
+                            array( //only featured designed posts
+                                'key'       => 'too',
+                                'value'     => $current_id,
+                                'compare'   => '==',
+                            ),
+                        )
+                    );
+                    $custom_query = new WP_Query( $custom_query_args );
+                    if ( $custom_query->have_posts() ) :?>
+                        <section class="archive_flights_list second">
+                        <h5>טיסות ל<?php echo $current_name; ?></h5>
+                        <div class="row"><?php
+                            while ( $custom_query->have_posts() ) : $custom_query->the_post();?>
+                                <div class="small-12 medium-4 columns end">
+                                    <?php get_template_part( 'directives/content', 'outer_flight' ); ?>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                        </section>
+                    <?php
+                    endif;
+                    break;
+                case 'no':
+                    if(get_field('txt_flights_box', 'destinations_'.$current_id)){ ?>
+                        <div class="no_display_flights_block">
+                            <?php echo get_field('txt_flights_box', 'destinations_'.$current_id);?>
+                        </div> <?php
+                    }
+                    break;
+            }
+        }?>
+    </div>
+
+
+        <?php if( get_field('main_destination_desc', 'destinations_'.$current_id)){ ?>
+            <div id="about" class="content-wrap">
+                <?php echo get_field('main_destination_desc', 'destinations_'.$current_id); //TODO description?>
+            </div>
+        <?php }?>
+
+        <?php //articles block
+        $section_var = array(
+            'repeaterName' => 'related_articles',
+            'subFieldName' => 'article',
+            'id' => 'destinations_'.$current_id,
+            'section_ttl' => 'מאמרים ב' .$current_name,
+            'section_ttl_lnk' => $all_article_lnk,
+        );
+        include(locate_template('directives/posts_section.php')); //TODO articles?>
+
+
+
 <?php }?>
 
 
 
-
-
-
-
-
+<!--<style>-->
+<!--    .star_icons{-->
+<!--        display: none;-->
+<!--    }-->
+<!--</style>-->
 
 <?php get_footer(); ?>

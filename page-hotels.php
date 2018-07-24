@@ -58,6 +58,8 @@ foreach ( $allBizs_query as $biz_post ) {
 
 get_header();
 ?>
+
+
 <div class="hlt-wraper attractions-main-page">
 
     <div class="main-conten-section">

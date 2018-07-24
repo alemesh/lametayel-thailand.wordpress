@@ -150,30 +150,45 @@ get_header();
         </div>
         <div class="wrap-section">
             <div class="variable-width">
+<!--                <div class="item">-->
+<!--                    <a data-fancybox="gallery" href="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/_MG_9440-min.jpg">-->
+<!--                        <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/optimized_contents/_MG_9440-min.jpg"alt="#">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <a data-fancybox="gallery" href="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/IMG_0462-min.jpg">-->
+<!--                        <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/optimized_contents/IMG_0462-min.jpg"alt="#">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <a data-fancybox="gallery" href="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/_MG_9976-min.jpg">-->
+<!--                        <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/optimized_contents/_MG_9976-min.jpg"alt="#">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <a data-fancybox="gallery" href="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/_MG_9418-min.jpg">-->
+<!--                        <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/optimized_contents/_MG_9418-min.jpg"alt="#">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                    <a data-fancybox="gallery" href="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/_MG_9523-min.jpg">-->
+<!--                        <img src="--><?php //echo get_stylesheet_directory_uri();?><!--/restaurants-page-styles/img/optimized_contents/_MG_9523-min.jpg"alt="#">-->
+<!--                    </a>-->
+<!--                </div>-->
                 <div class="item">
-                    <a data-fancybox="gallery" href="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/_MG_9440-min.jpg">
                         <img src="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/optimized_contents/_MG_9440-min.jpg"alt="#">
-                    </a>
                 </div>
                 <div class="item">
-                    <a data-fancybox="gallery" href="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/IMG_0462-min.jpg">
                         <img src="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/optimized_contents/IMG_0462-min.jpg"alt="#">
-                    </a>
                 </div>
                 <div class="item">
-                    <a data-fancybox="gallery" href="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/_MG_9976-min.jpg">
                         <img src="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/optimized_contents/_MG_9976-min.jpg"alt="#">
-                    </a>
                 </div>
                 <div class="item">
-                    <a data-fancybox="gallery" href="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/_MG_9418-min.jpg">
                         <img src="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/optimized_contents/_MG_9418-min.jpg"alt="#">
-                    </a>
                 </div>
                 <div class="item">
-                    <a data-fancybox="gallery" href="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/_MG_9523-min.jpg">
                         <img src="<?php echo get_stylesheet_directory_uri();?>/restaurants-page-styles/img/optimized_contents/_MG_9523-min.jpg"alt="#">
-                    </a>
                 </div>
             </div>
         </div>

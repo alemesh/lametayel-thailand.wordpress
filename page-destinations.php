@@ -44,105 +44,64 @@ foreach ($categories as $cat){
 
 get_header();
 ?>
-<div id="content" class="site-content row">
-    <div class="small-12 medium-8 columns">
-        <header class="entry-header">
-            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-        </header><!-- .entry-header -->
-    </div>
-    <div class="small-12 medium-4 columns text-left">
-        <?php if(function_exists('bcn_display')){ ?>
-            <p id="breadcrumbs"> <?php bcn_display(); ?></p>
-        <?php }?>
-    </div>
-    <div id="primary" class="content-area small-12 medium-12 <?php echo $settings->getContentClass('large-9', ''); ?> columns">
-        <main id="main" class="site-main page_destinations" role="main">
+<div class="hlt-wraper attractions-main-page">
 
+    <div class="main-conten-section">
+        <div class="background-holder"></div>
+        <div class="main-holder">
+            <div class="button-block">
+                <a href="#" class="button"><span><?php the_title();//TODO title ?></span></a>
+            </div>
             <?php while ( have_posts() ) : the_post(); ?>
-
-                <div class="main_content">
-                    <?php the_content();?>
-                    <?php if(get_field('txt_read_more')){ ?>
-                        <a class="change_view" data-toggle="txt_read_more">קרא עוד <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                    <?php }?>
+                <div class="wrap-text-sections">
+                    <div class="left-block">
+                        <?php if(get_field('txt_under_form', 'option')){ ?>
+                            <?php echo get_field('txt_under_form', 'option'); ?>
+                        <?php	}?>
+                    </div>
+                    <div class="right-block">
+                        <?php the_content(); //TODO the content?>
+                        <!--                    --><?php //if(get_field('txt_read_more')){ ?>
+                        <!--                        <a class="change_view" data-toggle="txt_read_more">קרא עוד <i class="fa fa-angle-down" aria-hidden="true"></i></a>-->
+                        <!--                    --><?php //}?>
+                        <!--                    <p>ממלכת תאילנד הקסומה מציעה בפניכם שפע של אפשרויות מהנות לבילוי לכל הגילאים, לזוגות בירח דבש, למשפחות עם ילדים, למספר ח'ברה שמטיילים יחדיו ולמעשה כל אחד ואחת מכם ימצאו את האפשרות להנות מפעילות מהנה שוברת שגרה באוירה כיפית עם טעם של עוד</p>-->
+                        <!--                    <p> תאילנד, בשונה ממדינות אחרות בעולם, מציעה לכם את האפשרות להנות ממבחר רב של מופעים מהנים, כגון מופע קברט קליפסו בבנגקוק, מופעי תרבות ופלורקלור כגון מופע סיאם נירמיט בבנגקוק, להנות משייט קיאקים בתוך מערות קטנות בים ולחזות במחזות מדהימים שלא תראו באף מקום אחר בעולם. <a href="#">קרא עוד</a></p>-->
+                        <!--                    --><?php //if(get_field('txt_read_more')){ ?>
+                        <!--                        <div id="txt_read_more" data-toggler=".hide" class="hide" >-->
+                        <!--                            --><?php //echo get_field('txt_read_more'); //TODO text reed more?>
+                        <!--                        </div>-->
+                        <!--                    --><?php //}?>
+                    </div>
                 </div>
 
-                <?php if(get_field('txt_read_more')){ ?>
-                    <div id="txt_read_more" data-toggler=".hide" class="hide" >
-                        <?php echo get_field('txt_read_more'); ?>
-                    </div>
-                <?php }?>
-
-                <?php
-                if($_GET['map']==1){ ?>
-                    <div class="text-left">
-                        <a href="<?php echo get_home_url();?>/יעדים/" class="change_view"><i class="fa fa-list" aria-hidden="true"></i>תצוגת רשימה</a>
-                    </div>
-                    <div id="map-all-biz"></div>
-                <?php }else{?>
-                    <div class="text-left">
-                        <?php if(get_field('map')){ ?>
-                            <a href="?map=1" class="change_view"><i class="fa fa-map-marker" aria-hidden="true"></i>תצוגת מפה</a>
-                        <?php } ?>
-                    </div>
-                    <div class="row" data-equalizer>
+                <div class="wrap-img-section">
+                    <ul class="items">
                         <?php
                         $categories = get_terms( array( 'taxonomy' => 'destinations', 'parent' => 0, 'hide_empty' => false ) );
                         foreach ($categories as $cat){
                             if ($cat->slug == 'attractions' || $cat->slug == 'people'){  //exclude category - people and attractions
                                 continue;
                             }
+                            $image = get_field('featured_img', 'destinations_'.$cat->term_id);
                             ?>
-                            <div class="small-12 medium-4 columns end  wow fadeInUp" data-wow-delay="0.5s">
-                                <a href="<?php echo get_home_url();?>/destinations/<?php echo $cat->slug;?>">
-                                    <div class="thailand_blue_box_hover_desc item" data-equalizer-watch>
-                                        <?php
-                                        $image = get_field('featured_img', 'destinations_'.$cat->term_id);
-                                        if(($image) ): ?>
-                                            <img src="<?php echo $image['sizes']['thailand-square']; ?>" alt="<?php echo $image['alt']; ?>" />
-                                        <?php endif; ?>
-                                        <div class="txt">
-                                            <?php if( $cat->name ){ ?>
-                                                <p class="ttl"><?php echo  $cat->name;?></p>
-                                            <?php }?>
-                                        </div>
-                                        <div class="hover_txt">
-                                            <?php if( $cat->name){ ?>
-                                                <p class="ttl"><?php echo  $cat->name;?></p>
-                                            <?php }?>
-                                            <?php if( $cat->description){ ?>
-                                                <div class="desc"><?php echo  $cat->description;?></div>
-                                            <?php }?>
-                                        </div>
-                                    </div>
+                            <li class="item">
+                                <a href="<?php echo get_home_url();?>/destinations/<?php echo $cat->slug;?>" class="image" style="background-image: url(<?php echo $image['sizes']['thailand-square-2']; ?>)">
+                                    <span class="text-item"></span>
+                                    <span class="text"><?php echo  $cat->name;?></span>
                                 </a>
-                            </div>
+                            </li>
                         <?php  }   ?>
-                    </div>
-                <?php }
-            endwhile; // End of the loop. ?>
+                    </ul>
+                </div>
 
-        </main><!-- #main -->
-    </div><!-- #primary -->
-    <?php if( $settings->displaySidebar() ){ // has sidebar ?>
-        <?php
-        $sidebar_ttl = 'רוצה לתכנן חופשה בתאילנד?';
-        include(locate_template( 'directives/sidebar.php' )); ?>
-    <?php } ?>
-</div><!-- #content -->
+
+            <?php endwhile; // End of the loop. ?>
+        </div>
+    </div>
+</div>
+
+
+
 
 <?php
-if($_GET['map']==1){
-
-    wp_register_script( 'podium_js', get_template_directory_uri().'/dist/scripts/main.js' );
-
-    wp_localize_script(
-        'podium_js',
-        'businessList',
-        array( 'arr' => $businessList )
-    );
-    wp_enqueue_script( 'podium_js' );
-
-}
-
 get_footer(); ?>

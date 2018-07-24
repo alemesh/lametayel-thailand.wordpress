@@ -13,6 +13,7 @@
 <!--    <img src="--><?php //echo get_template_directory_uri();?><!--/dist/images/shoes_footer.jpg" class="footer_shoes_img" />-->
 <?php } ?>
 <section class="footer_blue_section">
+    <div class="bg-lier"></div>
     <div class="image-holder-right"></div>
     <div class="row">
         <div class="small-12 medium-3 columns first_column">

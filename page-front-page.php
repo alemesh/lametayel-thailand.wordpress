@@ -110,37 +110,37 @@ get_header();
         <div class="third-section">
             <ul class="items">
                 <li class="item">
-                    <a href="/destinations/%D7%A7%D7%95%D7%A1%D7%9E%D7%95%D7%99/" target="_blank" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-1.png);">
+                    <a href="/destinations/%D7%A7%D7%95%D7%A1%D7%9E%D7%95%D7%99/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-1.png);">
                         <span class="text-item"></span>
                         <span class="text">קוסמוי</span>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="/destinations/%D7%A6%D7%90%D7%A0%D7%92-%D7%9E%D7%90%D7%99/" target="_blank" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-3.png);">
+                    <a href="/destinations/%D7%A6%D7%90%D7%A0%D7%92-%D7%9E%D7%90%D7%99/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-3.png);">
                         <span class="text-item"></span>
                         <span class="text">צ’אנג מאי</span>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="/destinations/%D7%A7%D7%95%D7%A4%D7%A0%D7%92%D7%9F/" target="_blank" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-2.png);">
+                    <a href="/destinations/%D7%A7%D7%95%D7%A4%D7%A0%D7%92%D7%9F/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-2.png);">
                         <span class="text-item"></span>
                         <span class="text">קופנגן</span>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="/destinations/%D7%A7%D7%A0%D7%A6%D7%A0%D7%91%D7%95%D7%A8%D7%99/" target="_blank" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-4.png);">
+                    <a href="/destinations/%D7%A7%D7%A0%D7%A6%D7%A0%D7%91%D7%95%D7%A8%D7%99/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-4.png);">
                         <span class="text-item"></span>
                         <span class="text">קנצ’נבורי</span>
                     </a>
                 </li>
                 <li class="item mobile-hidden">
-                    <a href="/destinations/%D7%A4%D7%95%D7%A7%D7%98/" target="_blank" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-5.png);">
+                    <a href="/destinations/%D7%A4%D7%95%D7%A7%D7%98/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-5.png);">
                         <span class="text-item"></span>
                         <span class="text">פוקט</span>
                     </a>
                 </li>
                 <li class="item mobile-hidden">
-                    <a href="/destinations/%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7/" target="_blank" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-6.png);">
+                    <a href="/destinations/%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-6.png);">
                         <span class="text-item"></span>
                         <span class="text">בנגקוק</span>
                     </a>
