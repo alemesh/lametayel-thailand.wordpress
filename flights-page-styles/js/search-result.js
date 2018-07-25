@@ -7,7 +7,7 @@ $( document ).ready(function () {
             for (var i = 0; i < result.posts[key][1].length; i++) {
                 $('.search-conten-section .main-holder .items-wraper ul.items.city-' + key ).append(' <li class="item">\n' +
                     '                        <div class="wrap-item color-border-red">\n' +
-                    '                            <a href="#" class="wrap-image">\n' +
+                    '                            <a class="wrap-image">\n' +
                     '                                <span class="image" style="background-image: url('+ result.posts[key][1][i][1] +')"></span>\n' +
                     '                            </a>\n' +
                     '                            <div class="text-block">\n' +
@@ -30,7 +30,7 @@ $( document ).ready(function () {
                     console.log(result.posts[k][1][attr][1][i])
                     $('.search-conten-section .main-holder .items-wraper ul.items.city-'+ k +'.attr-' + attr ).append(' <li class="item">\n' +
                         '                        <div class="wrap-item color-border-red">\n' +
-                        '                            <a href="#" class="wrap-image">\n' +
+                        '                            <a class="wrap-image">\n' +
                         '                                <span class="image" style="background-image: url('+ result.posts[k][1][attr][1][i][1] +')"></span>\n' +
                         '                            </a>\n' +
                         '                            <div class="text-block">\n' +

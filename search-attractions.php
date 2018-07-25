@@ -16,7 +16,7 @@ get_header();
 ?>
 <div class="hlt-wraper search-page">
     <div class="search-conten-section">
-        <div class="background-holder"></div>
+<!--        <div class="background-holder"></div>-->
         <div class="main-holder">
             <div class="items-wraper">
 

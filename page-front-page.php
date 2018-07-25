@@ -22,7 +22,7 @@ get_header();
 
 
     <div class="hlt-wraper">
-        <div class="massange"><span>דברו איתנו </span></div>
+<!--        <div class="massange"><span>דברו איתנו </span></div>-->
         <div class="header" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/background-header.png)">
             <div class="htl-contactform-section">
                 <div class="main-holder-form">
@@ -284,7 +284,7 @@ get_header();
         </div>
 
         <div class="seventh-section">
-            <div class="background-holder"></div>
+<!--            <div class="background-holder"></div>-->
             <div class="main-holder">
                 <div class="wrap-insta">
                     <a href="https://www.instagram.com/lametayel_thailand/" target="_blank" class="insta"><i class="fab fa-instagram"></i></a>

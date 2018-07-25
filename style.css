@@ -253,3 +253,24 @@ ol, ul{
 .right-text-body a span{
     color: black;
 }
+@media only screen and (max-width : 480px) {
+    .hlt-wraper .header .htl-contactform-section {
+        margin-top: 0;
+    }
+    .hlt-wraper .header .htl-contactform-section{
+        padding-top: 180px;
+    }
+}
+@media only screen and (max-width : 768px) {
+    .hlt-wraper .seventh-section .background-holder {
+        background-image: none; !important;
+    }
+}
+.main_text p a {
+    color: black;
+    text-decoration: underline;
+}
+
+.text_in_right_box .main_text{
+    width: 90%;
+}
