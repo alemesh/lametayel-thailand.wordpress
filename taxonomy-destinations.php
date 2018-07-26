@@ -693,6 +693,7 @@ $current_name = single_cat_title( '', false );
 <?php }elseif ($type ==  'main'){?>
 
     <?php
+
     $current_id = get_queried_object_id();
     $current_name = single_cat_title( '', false );
     ?>
@@ -713,16 +714,16 @@ $current_name = single_cat_title( '', false );
         <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
         <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
         <?php $rating = get_field('rating'); ?>
-        <div class="rating-hotels-main">
-            <?php
-            for($i=0; $i<$rating; $i++){
-                if ( $rating == '3.5' && $i == $rating - 0.5 || $rating == '4.5' && $i == $rating - 0.5){ ?>
-                    <i class="fas fa-star-half" aria-hidden="true"></i>
-                <?php }else{?>
-                    <i class="fas fa-star" aria-hidden="true"></i>
-                <?php }
-            } ?>
-        </div>
+<!--        <div class="rating-hotels-main">-->
+<!--            --><?php
+//            for($i=0; $i<$rating; $i++){
+//                if ( $rating == '3.5' && $i == $rating - 0.5 || $rating == '4.5' && $i == $rating - 0.5){ ?>
+<!--                    <i class="fas fa-star-half" aria-hidden="true"></i>-->
+<!--                --><?php //}else{?>
+<!--                    <i class="fas fa-star" aria-hidden="true"></i>-->
+<!--                --><?php //}
+//            } ?>
+<!--        </div>-->
     </div>
     <div class="content-body">
         <div class="right-text-body">

@@ -136,7 +136,13 @@ $settings = new settings();
                         <div class="row">
                             <div class="small-12 columns">
                                 <div class="top-bar-right">
+                                    <?php
+                                    if( is_front_page() ) {
+                                    ?>
                                     <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/logo-header.png" class="logo"/></a>
+                                <?php }else{?>
+                                        <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/dist/images/logo-top-menu.png" class="logo"/></a>
+                                    <?php }?>
                                 </div>
                                 <div class="top-bar-left">
                                     <?php $settings->getMenu( new Top_Bar_Walker(), 'onCanvass' ); // print menu (source config.php) ?>

@@ -78,7 +78,25 @@ get_header();
                 <?php while ( have_posts() ) : the_post(); ?>
                 <div class="right-block">
                     <?php the_content(); //TODO the content?>
+
+
+
+                    <?php if(get_field('txt_read_more')){ ?>
+                        <p><a class="change_view" data-toggle="txt_read_more">קרא עוד </a></p>
+
+                    <?php }?>
+
+                    <?php if(get_field('txt_read_more')){ ?>
+                        <div id="txt_read_more" data-toggler=".hide" class="hide" >
+                            <?php echo get_field('txt_read_more'); ?>
+                        </div>
+                    <?php }?>
+
+
+
+
                 </div>
+
                 <?php endwhile; // End of the loop. ?>
             </div>
 

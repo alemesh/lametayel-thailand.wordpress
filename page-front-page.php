@@ -54,7 +54,7 @@ get_header();
                                     </select>
                                 </div>
                                 <div class="form-row center">
-                                    <select required name="attractions" id="sources-3" class="form-control custom-select attractions" placeholder="מעוניינים לשמוע על...">
+                                    <select required name="attractions" id="sources-3" class="form-control custom-select attractions" multiple="multiple" placeholder="מעוניינים לשמוע על...">
                                         <?php
                                         $taxonomy_name = 'destinations';
                                         $category = get_term_by('name', 'Attractions', $taxonomy_name);
@@ -83,22 +83,22 @@ get_header();
             <div class="main-holder">
                 <ul class="items slick-slider">
                     <li class="item">
-                        <a href="">
-                            <span>מקדימים להזמין</span>
-                            <span>חופשה בחגים ונהנים</span>
-                            <span>ממחיר אטרקטיבי </span>
+                        <a style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_1.jpg)">
+<!--                            <span>מקדימים להזמין</span>-->
+<!--                            <span>חופשה בחגים ונהנים</span>-->
+<!--                            <span>ממחיר אטרקטיבי </span>-->
                         </a>
                     </li>
                     <li class="item">
-                        <a href="">
-                            <span>קיץ חם</span>
-                            <span>ברשת המסעדות שלנו</span>
+                        <a style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_2.jpg)">
+<!--                            <span>קיץ חם</span>-->
+<!--                            <span>ברשת המסעדות שלנו</span>-->
                         </a>
                     </li>
                     <li class="item">
-                        <a href="">
-                            <span>חבילות ירח דבש</span>
-                            <span>קסומות</span>
+                        <a style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_3.jpg)">
+<!--                            <span>חבילות ירח דבש</span>-->
+<!--                            <span>קסומות</span>-->
                         </a>
                     </li>
                 </ul>
@@ -153,7 +153,7 @@ get_header();
         </div>
 
         <div class="fourth-section">
-            <div class="background-lier-fourth-section" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/background-lier-fourth-section.png)"></div>
+            <div class="background-lier-fourth-section" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/bg-lier-fourth-section.png)"></div>
             <div class="main-holder">
                 <h3>למה להזמין דרכינו חופשה?</h3>
                 <ul class="items">
@@ -187,6 +187,7 @@ get_header();
 
 
         <div class="fifth-section">
+            <div class="background-lier-fifth-section" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/background-lier-fourth-section.png)"></div>
             <div class="main-holder">
                 <h3>הפופולריים שלנו</h3>
 
@@ -357,7 +358,9 @@ get_header();
 <!--    </body>-->
 <!--    </html>-->
 
+<script>
 
+</script>
 
 
 <?php get_footer(); ?>

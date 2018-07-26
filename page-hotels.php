@@ -77,16 +77,20 @@ get_header();
                 </div>
                 <div class="right-block">
                     <?php the_content(); //TODO the content?>
-<!--                    --><?php //if(get_field('txt_read_more')){ ?>
-<!--                        <a class="change_view" data-toggle="txt_read_more">קרא עוד <i class="fa fa-angle-down" aria-hidden="true"></i></a>-->
-<!--                    --><?php //}?>
-<!--                    <p>ממלכת תאילנד הקסומה מציעה בפניכם שפע של אפשרויות מהנות לבילוי לכל הגילאים, לזוגות בירח דבש, למשפחות עם ילדים, למספר ח'ברה שמטיילים יחדיו ולמעשה כל אחד ואחת מכם ימצאו את האפשרות להנות מפעילות מהנה שוברת שגרה באוירה כיפית עם טעם של עוד</p>-->
-<!--                    <p> תאילנד, בשונה ממדינות אחרות בעולם, מציעה לכם את האפשרות להנות ממבחר רב של מופעים מהנים, כגון מופע קברט קליפסו בבנגקוק, מופעי תרבות ופלורקלור כגון מופע סיאם נירמיט בבנגקוק, להנות משייט קיאקים בתוך מערות קטנות בים ולחזות במחזות מדהימים שלא תראו באף מקום אחר בעולם. <a href="#">קרא עוד</a></p>-->
-<!--                    --><?php //if(get_field('txt_read_more')){ ?>
-<!--                        <div id="txt_read_more" data-toggler=".hide" class="hide" >-->
-<!--                            --><?php //echo get_field('txt_read_more'); //TODO text reed more?>
-<!--                        </div>-->
-<!--                    --><?php //}?>
+
+
+
+                    <?php if(get_field('txt_read_more')){ ?>
+                        <p><a class="change_view" data-toggle="txt_read_more">קרא עוד </a></p>
+
+                    <?php }?>
+
+                    <?php if(get_field('txt_read_more')){ ?>
+                        <div id="txt_read_more" data-toggler=".hide" class="hide" >
+                            <?php echo get_field('txt_read_more'); ?>
+                        </div>
+                    <?php }?>
+
                 </div>
             </div>
 
@@ -95,6 +99,7 @@ get_header();
                         <?php
                         $categories = get_terms( array('taxonomy' => 'destinations', 'parent' => 0) );
                         foreach ($categories as $cat){
+//                            var_dump($cat);
                             $term_id = $cat->term_id;
                             $taxonomy_name = 'destinations';
                             $termchildren = get_term_children( $term_id, $taxonomy_name );

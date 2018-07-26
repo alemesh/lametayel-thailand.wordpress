@@ -65,9 +65,9 @@ ol, ul {
 .hlt-wraper .header .form-grow-5 span{
     transform: translateY(-21%);
 }
-.top-bar, .top-bar ul{
-    background: transparent;
-}
+/*.top-bar, .top-bar ul{*/
+    /*background: transparent;*/
+/*}*/
 .sticky-container{
     /*margin-bottom: -103px;*/
 }
@@ -81,12 +81,13 @@ ol, ul {
 a, input, label, li, p{
     color: white;
 }
-#masthead .search label .search_icon{
-    color: white;
-}
-#masthead #menu-main-menu li.is-dropdown-submenu-parent>a:after{
-    border-color: #fff transparent transparent;
-}
+/*#masthead .search label .search_icon{*/
+    /*color: white;*/
+/*}*/
+/*#masthead #menu-main-menu li.is-dropdown-submenu-parent>a:after{*/
+    /*border-color: #fff transparent transparent;*/
+/*}*/
+
 
 
 
@@ -159,9 +160,9 @@ a, input, label, li, p{
     left: 0;
     box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
 }
-#masthead #menu-main-menu li.is-dropdown-submenu-parent .submenu{
-    background: rgba(0,0,0,.8);;
-}
+/*#masthead #menu-main-menu li.is-dropdown-submenu-parent .submenu{*/
+    /*background: rgba(0,0,0,.8);;*/
+/*}*/
 .thailand_mobile_header_wrapper .title-bar .fb .fa{
     background: transparent;
     color: white;

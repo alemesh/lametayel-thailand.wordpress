@@ -132,12 +132,12 @@ get_header();
                 <div class="right-section">
                     <div class="wrap-text">
                         <h3 class="tabs__content active">טיסות לבנגקוק</h3>
-                        <h3 class="tabs__content">טיסות לצ’אנג מאי</h3>
-                        <h3 class="tabs__content">טיסות לקוסמוי</h3>
-                        <h3 class="tabs__content">טיסות לפוקט</h3>
                         <h3 class="tabs__content">טיסות לפאטייה</h3>
+                        <h3 class="tabs__content">טיסות לפוקט</h3>
+                        <h3 class="tabs__content">טיסות לצ’אנג מאי</h3>
                         <h3 class="tabs__content">טיסות לצ’אנג ראי</h3>
                         <h3 class="tabs__content">טיסות לקו צ’אנג</h3>
+                        <h3 class="tabs__content">טיסות לקוסמוי</h3>
                         <h3 class="tabs__content">טיסות לקראבי</h3>
                         <?php while ( have_posts() ) : the_post(); ?>
                             <?php the_content();?>
@@ -146,12 +146,12 @@ get_header();
 <!--                            תאריכי טיסות רצויים, לאילו יעדים, ובמידה ומדובר במשפחות יש לציין את גילאי הילדים. אנא בדקו באופן שוטף את המייל שלכם לוודא שהמייל מאיתנו לא נכנס לדואר ספאם/גאנק. למי ששולח מייל מהעבודה נא לציין מייל פרטי בנוסף</p>-->
                     </div>
                     <div class="wrap-img tabs__content active" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map.png)"></div>
-                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-2.png)"></div>
-                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-3.png)"></div>
-                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-4.png)"></div>
                     <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-5.png)"></div>
+                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-4.png)"></div>
+                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-2.png)"></div>
                     <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-6.png)"></div>
                     <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-7.png)"></div>
+                    <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-3.png)"></div>
                     <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-8.png)"></div>
                 </div>
             </div>

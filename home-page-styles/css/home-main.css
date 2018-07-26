@@ -33,6 +33,12 @@ a, input, label, li, p{
 #masthead #menu-main-menu li.is-dropdown-submenu-parent>a:after{
     border-color: #fff transparent transparent;
 }
+#menu-main-menu li a{
+    color: white;
+}
+#masthead #menu-main-menu li.active>a, #masthead #menu-main-menu li:focus>a, #masthead #menu-main-menu li:hover>a{
+    color: white;
+}
 
 
 
@@ -112,4 +118,16 @@ a, input, label, li, p{
 }
 a img{
     height: 57px;
+}
+
+/*custome select*/
+.hlt-wraper .custom-select-wrapper .custom-option:hover{
+    background: #01013b;
+}
+.hlt-wraper .custom-select-wrapper .custom-option.selection, .hlt-wraper .custom-select-wrapper .custom-option:hover{
+    background: #01013b;
+    color: white;
+}
+.hlt-wraper .custom-select-wrapper .custom-option{
+    color: #01013b;
 }
