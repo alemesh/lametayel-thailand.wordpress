@@ -71,16 +71,77 @@ $(".custom-option:first-of-type").hover(function() {
 });
 $(".custom-select-trigger").on("click", function() {
     $('html').one('click',function() {
-        $(".custom-select").removeClass("opened");
+        // $(".custom-select").removeClass("opened");
+        $(".custom-select-1").removeClass("opened");
+        $(".custom-select-2").removeClass("opened");
+        // $(".custom-select-3").removeClass("opened");
     });
+    // $('.header').one('click',function() {
+    //     $(".custom-select-3").removeClass("opened");
+    // });
+
+
+
     $(this).parents(".custom-select").toggleClass("opened");
     event.stopPropagation();
 });
 $(".custom-option").on("click", function() {
     $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
     // $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
-    $(this).addClass("selection");
-    $(this).parents(".custom-select").removeClass("opened");
-    $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+    $(this).parents(".custom-select-1 .custom-options").find(".custom-option").removeClass("selection");
+    $(this).parents(".custom-select-2 .custom-options").find(".custom-option").removeClass("selection");
+    $(this).toggleClass("selection");
+    // $(this).parents(".custom-select").removeClass("opened");
+    $(this).parents(".custom-select-1").removeClass("opened");
+    $(this).parents(".custom-select-2").removeClass("opened");
+    // $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+
+    var SelectText = $(this).parents(".custom-select").find(".custom-select-trigger").text();
+    var SelectText3 = $(this).parents(".custom-select-3").find(".custom-select-trigger").text();
+    var SelectText2 = $(this).parents(".custom-select-2").find(".custom-select-trigger").text();
+    var SelectText1 = $(this).parents(".custom-select-1").find(".custom-select-trigger").text();
+    console.log(SelectText3);
+    console.log(SelectText2);
+    console.log(SelectText1);
+    console.log(SelectText);
+
+        $(this).parents(".custom-select-2").find(".custom-select-trigger").text($(this).text());
+        $(this).parents(".custom-select-1").find(".custom-select-trigger").text($(this).text());
+
+    if (SelectText3 === 'מעוניינים לשמוע על...'){
+        $(this).parents(".custom-select-3").find(".custom-select-trigger").text($(this).text());
+    }else{
+        $(this).parents(".custom-select-3").find(".custom-select-trigger").text(SelectText + ',' + $(this).text());
+    }
+
+
+    // console.log($(this).parents(".custom-select").find(".custom-select-trigger").text())
+
+
 });
+
+
 //==========================================
+
+
+
+//custome js
+$('.menu-icon').click(function(){
+    $('.thailand_mobile_header_wrapper .title-bar').toggleClass('menu-active');
+});
+
+
+
+
+$( function() {
+
+    $( window ).scroll( function() {
+        // console.log($( this ).scrollTop());
+        if ( $( this ).scrollTop() > 80 ) {
+            $( '.thailand_mobile_header_wrapper .title-bar' ).addClass( "myClassBgColor" );
+        } else {
+            $( '.thailand_mobile_header_wrapper .title-bar' ).removeClass( "myClassBgColor" );
+        }
+    } );
+
+} );

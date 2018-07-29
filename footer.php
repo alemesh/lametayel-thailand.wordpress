@@ -18,7 +18,7 @@
     <div class="row">
         <div class="small-12 medium-3 columns first_column">
             <?php dynamic_sidebar( 'footer-1' ); ?>
-            <a href="<?php echo get_home_url();?>/%D7%A6%D7%95%D7%A8-%D7%A7%D7%A9%D7%A8/" class="contact">צור קשר</a>
+            <a href="<?php echo get_home_url();?>/יצירת-קשר/" class="contact">צור קשר</a>
         </div>
         <div class="small-12 medium-3 columns first-menu">
             <?php dynamic_sidebar( 'footer-2' ); ?>

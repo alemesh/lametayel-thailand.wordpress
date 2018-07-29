@@ -395,3 +395,68 @@ textarea[rows]{
 .archive.tax-destinations .main_low_box{
     background: white;
 }
+
+.hide_prices p{
+    color: #01013b;
+}
+
+
+
+@media only screen and (max-width : 992px) {
+    .content-half-block.contact-text{
+        order: 2;
+    }
+    .title-bar-right a img{
+        height: 57px;
+    }
+}
+
+
+.page-template-page-thanks .site-content.row{
+    min-height: 400px;
+}
+/*Mobile menu*/
+.overlap-menu.is-active{
+    height: 100vh;
+    z-index: 2000;
+}
+.overlap-menu.is-active{
+    top: 122px;
+}
+
+/*call button*/
+@media only screen and (max-width : 650px) {
+    body #callnowbutton{
+        z-index: 1000; !important;
+    }
+}
+
+
+.single-hotel .site-content.row{
+    min-width: 320px;
+}
+
+
+/*mobile menu*/
+.overlap-menu form .button{
+    font-size: 14px;
+    justify-content: center;
+}
+.thailand_mobile_header_wrapper{
+    position: fixed;
+    top: 50px;
+}
+@media only screen and (max-width : 1023px) {
+    #masthead{
+        padding-bottom: 90px;
+    }
+    .page-template-restaurants-page #masthead{
+        padding-bottom: 70px;
+    }
+    .thailand_mobile_header_wrapper .title-bar.myClassBgColor{
+        background: rgba(1,1,59,0.9);
+    }
+}
+.up_img-for-hotelPage .text_in_up_img{
+    font-size: 30px;
+}

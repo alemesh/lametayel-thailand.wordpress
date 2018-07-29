@@ -15,7 +15,10 @@
                                     <?php }
                                 ?>
 							</span>
-        <span class="wrap-title order-1">
+        <?php
+        global $count_order;
+        ?>
+        <span class="wrap-title order-<?php echo $count_order?>">
 								<span class="title"><?php echo get_the_title();?></span>
 							</span>
         <span class="description"><?php echo excerpt(20);?></span>

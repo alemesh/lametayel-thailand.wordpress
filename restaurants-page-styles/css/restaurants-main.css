@@ -229,7 +229,11 @@ html[dir="rtl"] .fancybox-close-small{
     right: initial;
 }
 
-
-
+.thailand_mobile_header_wrapper .title-bar.menu-active{
+    background: #01013b;
+}
+.overlap-menu.hide-for-medium.is-active .submenu.menu.vertical{
+    background: transparent;
+}
 
 /*styles for restauranth pages finish*/

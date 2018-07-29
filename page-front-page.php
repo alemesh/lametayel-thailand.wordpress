@@ -35,7 +35,7 @@ get_header();
                         <form action="" name="search-attractions" id="ajax_form" class="form form-validation" method="post">
                             <div class="form-row-wrap">
                                 <div class="form-row center">
-                                    <select required name="people" id="sources" class="form-control custom-select people" placeholder="מי אתם?">
+                                    <select required name="people" id="sources" class="form-control custom-select custom-select-1 people" placeholder="מי אתם?">
                                         <?php
                                         $taxonomy_name = 'destinations';
                                         $category = get_term_by('name', 'People', $taxonomy_name);
@@ -48,13 +48,13 @@ get_header();
                                     </select>
                                 </div>
                                 <div class="form-row center">
-                                    <select required name="sources-2" id="sources-2" class="form-control custom-select sources" placeholder="לכמה זמן?">
+                                    <select required name="sources-2" id="sources-2" class="form-control custom-select custom-select-2 sources" placeholder="לכמה זמן?">
                                         <option value="בחר 1">עד עשרה ימים</option>
                                         <option value="בחר 2">מעל עשרה ימים</option>
                                     </select>
                                 </div>
                                 <div class="form-row center">
-                                    <select required name="attractions" id="sources-3" class="form-control custom-select attractions" multiple="multiple" placeholder="מעוניינים לשמוע על...">
+                                    <select required name="attractions" id="sources-3" class="form-control custom-select custom-select-3 attractions" multiple="multiple" placeholder="מעוניינים לשמוע על...">
                                         <?php
                                         $taxonomy_name = 'destinations';
                                         $category = get_term_by('name', 'Attractions', $taxonomy_name);
@@ -83,20 +83,20 @@ get_header();
             <div class="main-holder">
                 <ul class="items slick-slider">
                     <li class="item">
-                        <a style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_1.jpg)">
+                        <a href="<?php echo get_home_url();?>/packages/טיולי-משפחות/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_4.jpg)">
 <!--                            <span>מקדימים להזמין</span>-->
 <!--                            <span>חופשה בחגים ונהנים</span>-->
 <!--                            <span>ממחיר אטרקטיבי </span>-->
                         </a>
                     </li>
                     <li class="item">
-                        <a style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_2.jpg)">
+                        <a href="http://landing.lametayel-thailand.com/lp2/" target="_blank" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_2.jpg)">
 <!--                            <span>קיץ חם</span>-->
 <!--                            <span>ברשת המסעדות שלנו</span>-->
                         </a>
                     </li>
                     <li class="item">
-                        <a style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_3.jpg)">
+                        <a href="<?php echo get_home_url();?>/restaurants/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_3.jpg)">
 <!--                            <span>חבילות ירח דבש</span>-->
 <!--                            <span>קסומות</span>-->
                         </a>
@@ -110,31 +110,31 @@ get_header();
         <div class="third-section">
             <ul class="items">
                 <li class="item">
-                    <a href="/destinations/%D7%A7%D7%95%D7%A1%D7%9E%D7%95%D7%99/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-1.png);">
+                    <a href="<?php echo get_home_url();?>/destinations/%D7%A7%D7%95%D7%A1%D7%9E%D7%95%D7%99/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-1.png);">
                         <span class="text-item"></span>
                         <span class="text">קוסמוי</span>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="/destinations/%D7%A6%D7%90%D7%A0%D7%92-%D7%9E%D7%90%D7%99/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-3.png);">
+                    <a href="<?php echo get_home_url();?>/destinations/%D7%A6%D7%90%D7%A0%D7%92-%D7%9E%D7%90%D7%99/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-3.png);">
                         <span class="text-item"></span>
                         <span class="text">צ’אנג מאי</span>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="/destinations/%D7%A7%D7%95%D7%A4%D7%A0%D7%92%D7%9F/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-2.png);">
+                    <a href="<?php echo get_home_url();?>/destinations/%D7%A7%D7%95%D7%A4%D7%A0%D7%92%D7%9F/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-2.png);">
                         <span class="text-item"></span>
                         <span class="text">קופנגן</span>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="/destinations/%D7%A7%D7%A0%D7%A6%D7%A0%D7%91%D7%95%D7%A8%D7%99/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-4.png);">
+                    <a href="<?php echo get_home_url();?>/destinations/%D7%A7%D7%A0%D7%A6%D7%A0%D7%91%D7%95%D7%A8%D7%99/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-4.png);">
                         <span class="text-item"></span>
                         <span class="text">קנצ’נבורי</span>
                     </a>
                 </li>
                 <li class="item mobile-hidden">
-                    <a href="/destinations/%D7%A4%D7%95%D7%A7%D7%98/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-5.png);">
+                    <a href="<?php echo get_home_url();?>/destinations/%D7%A4%D7%95%D7%A7%D7%98/" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/third-section-item-5.png);">
                         <span class="text-item"></span>
                         <span class="text">פוקט</span>
                     </a>
@@ -148,7 +148,7 @@ get_header();
 
             </ul>
             <div class="wrap-button">
-                <a href="/%D7%99%D7%A2%D7%93%D7%99%D7%9D/" class="button">לרשימת היעדים המלאה</a>
+                <a href="<?php echo get_home_url();?>/%D7%99%D7%A2%D7%93%D7%99%D7%9D/" class="button">לרשימת היעדים המלאה</a>
             </div>
         </div>
 
@@ -194,6 +194,8 @@ get_header();
 
                 <ul class="items slick-slider-2">
                     <?php
+                    define('count_order', '0') ;
+                    $count_order = 1;
                     if( have_rows('pages') ):?>
                         <?php while ( have_rows('pages') ) : the_row();
                             $post_object = get_sub_field('post');
@@ -201,25 +203,31 @@ get_header();
                                 $post = $post_object;
                                 setup_postdata( $post );
                                 ?>
-                                <?php get_template_part( 'directives/content', 'post_block_1' ); ?>
+                                <?php get_template_part( 'directives/content', 'post_block_1' );
+                                $count_order++;
+                                ?>
                             <?php endif;
                             wp_reset_postdata();?>
                         <?php endwhile; ?>
                     <?php endif;?>
-                    <?php while ( have_rows('posts') ) : the_row();
+                    <?php
+                    while ( have_rows('posts') ) : the_row();
                         $post_object = get_sub_field('post');
                         if( $post_object ):
                             $post = $post_object;
                             setup_postdata( $post );
                             ?>
-                                <?php get_template_part( 'directives/content', 'post_block_1' ); ?>
+                                <?php get_template_part( 'directives/content', 'post_block_1' );
+                            $count_order++;
+                                ?>
                         <?php endif;
                         wp_reset_postdata();?>
                     <?php endwhile; ?>
 
 
+
                     <li class="item">
-                        <a href="/restaurants/">
+                        <a href="<?php echo get_home_url();?>/restaurants/">
 							<span class="wrap-img">
 								<img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/fifth-section-item-5.png" alt="">
 							</span>
@@ -244,7 +252,7 @@ get_header();
 								<span class="title">בנגקוק - מדוע היא כה<br> פופולארית לתיירים</span>
 							</span>
 							<span class="description">בירת תאילנד היא אחת הערים המתוירות ביותר בעולם. לפי חברת המחקר...</span>
-							<a href="/%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7-%D7%9E%D7%93%D7%95%D7%A2-%D7%94%D7%99%D7%90-%D7%9B%D7%94-%D7%A4%D7%95%D7%A4%D7%95%D7%9C%D7%90%D7%A8%D7%99%D7%AA-%D7%9C%D7%AA%D7%99%D7%99%D7%A8%D7%99%D7%9D/" class="button">לכתבה המלאה</a>
+							<a href="<?php echo get_home_url();?>/%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7-%D7%9E%D7%93%D7%95%D7%A2-%D7%94%D7%99%D7%90-%D7%9B%D7%94-%D7%A4%D7%95%D7%A4%D7%95%D7%9C%D7%90%D7%A8%D7%99%D7%AA-%D7%9C%D7%AA%D7%99%D7%99%D7%A8%D7%99%D7%9D/" class="button">לכתבה המלאה</a>
 						</span>
                     </li>
                     <li class="item">
@@ -254,7 +262,7 @@ get_header();
 								<span class="title">7 דברים שצריך לדעת<br> לקראת טיול ג'יפים בתאילנד</span>
 							</span>
 							<span class="description">תאילנד היא מדינה פופולרית מאד לחופשות ולטיולים, במיוחד בקרב...</span>
-							<a href="/7-%D7%93%D7%91%D7%A8%D7%99%D7%9D-%D7%A9%D7%A6%D7%A8%D7%99%D7%9A-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9C%D7%A7%D7%A8%D7%90%D7%AA-%D7%98%D7%99%D7%95%D7%9C-%D7%92%D7%99%D7%A4%D7%99%D7%9D-%D7%91%D7%AA%D7%90/" class="button">לכתבה המלאה</a>
+							<a href="<?php echo get_home_url();?>/7-%D7%93%D7%91%D7%A8%D7%99%D7%9D-%D7%A9%D7%A6%D7%A8%D7%99%D7%9A-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9C%D7%A7%D7%A8%D7%90%D7%AA-%D7%98%D7%99%D7%95%D7%9C-%D7%92%D7%99%D7%A4%D7%99%D7%9D-%D7%91%D7%AA%D7%90/" class="button">לכתבה המלאה</a>
 						</span>
                     </li>
                     <li class="item">
@@ -264,7 +272,7 @@ get_header();
 								<span class="title">אטרקציות לילדים בבנגקוק</span>
 							</span>
 							<span class="description">בנגקוק הינה יעד אטרקטיבי לא רק למטיילים בודדים או לזוגות שבאו...</span>
-							<a href="/%D7%90%D7%98%D7%A8%D7%A7%D7%A6%D7%99%D7%95%D7%AA-%D7%9C%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%91%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7/" class="button">לכתבה המלאה</a>
+							<a href="<?php echo get_home_url();?>/%D7%90%D7%98%D7%A8%D7%A7%D7%A6%D7%99%D7%95%D7%AA-%D7%9C%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%91%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7/" class="button">לכתבה המלאה</a>
 						</span>
                     </li>
                     <li class="item">
@@ -274,12 +282,12 @@ get_header();
 								<span class="title">טיול ירח דבש בתאילנד</span>
 							</span>
 							<span class="description">אין ספק שתאילנד האקזוטית נמנית על היעדים המבוקשים ביותר לירח דבש... </span>
-							<a href="/%D7%98%D7%99%D7%95%D7%9C-%D7%99%D7%A8%D7%97-%D7%93%D7%91%D7%A9-%D7%91%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93/" class="button">לכתבה המלאה</a>
+							<a href="<?php echo get_home_url();?>/%D7%98%D7%99%D7%95%D7%9C-%D7%99%D7%A8%D7%97-%D7%93%D7%91%D7%A9-%D7%91%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93/" class="button">לכתבה המלאה</a>
 						</span>
                     </li>
                 </ul>
                 <div class="wrap-button">
-                    <a href="/%D7%90%D7%98%D7%A8%D7%A7%D7%A6%D7%99%D7%95%D7%AA-%D7%91%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93/" class="button">למגזין המלא</a>
+                    <a href="<?php echo get_home_url();?>/%D7%90%D7%98%D7%A8%D7%A7%D7%A6%D7%99%D7%95%D7%AA-%D7%91%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93/" class="button">למגזין המלא</a>
                 </div>
             </div>
         </div>

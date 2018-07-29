@@ -76,6 +76,8 @@ function lametayel_home_page_scripts_init(){
     if ( is_page_template('restaurants-page.php') ) {
         wp_register_script('lametayel_restaurants-page_scripts', get_stylesheet_directory_uri() . '/restaurants-page-styles/js/scripts.min.js', array(), false, true);
         wp_enqueue_script('lametayel_restaurants-page_scripts');
+        wp_register_script('lametayel_restaurants_page_restauranth_script_scripts', get_stylesheet_directory_uri() . '/restaurants-page-styles/js/restauranth-script.js', array(), false, true);
+        wp_enqueue_script('lametayel_restaurants_page_restauranth_script_scripts');
 //        wp_register_script('lametayel_restaurants-page_googlemaps_css', get_stylesheet_directory_uri() . 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAW6GlD57glHFIOUZGbgUmqv06BJyW2q3o&callback=initMap', array(), false, true);
 //        wp_enqueue_script('lametayel_restaurants-page_googlemaps_css');
     }

@@ -281,36 +281,7 @@ $current_ttl = get_the_title();
 
 
             <div class="left-form-body">
-                <div class="left-form-wrapper">
-                    <h3>דברו איתנו</h3>
-                    <div class="form-body-wrap">
-                        <form action="">
-                            <input type="text" placeholder="שם">
-                            <input type="text" placeholder="טלפון">
-                            <input type="text" placeholder="אימייל">
-                            <div class="input-date">
-                                <show-orange><i class="fas fa-sort-down"></i></show-orange>
-                                <show-white></show-white>
-                                <input type="date">
-
-                            </div>
-                            <div class="input-date">
-                                <show-orange><i class="fas fa-sort-down"></i></show-orange>
-                                <show-white></show-white>
-                                <input type="date">
-
-                            </div>
-                            <label>
-                                <input type="checkbox"><i></i>
-                                <span>התאריכים עוד לא ידועים לי</span>
-                            </label>
-                            <input type="text" placeholder="מספר נוסעים">
-                            <textarea name="" cols="30" rows="10" placeholder="פרטים נוספים (מספר נוסעים,
-גילאי הילדים, מסלול מועדף ועוד)"></textarea>
-                            <button class="button-for-left-form" type="submit">שלח<i class="fas fa-chevron-left"></i></button>
-                        </form>
-                    </div>
-                </div>
+                <?php include(locate_template( 'directives/left-sidebar-form.php' )); ?>
                 <div class="left-sidebar-text">
                     <?php if(get_field('txt_under_form', 'option')){ ?>
                         <?php echo get_field('txt_under_form', 'option'); ?>

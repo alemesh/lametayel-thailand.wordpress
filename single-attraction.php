@@ -107,36 +107,7 @@ get_header();
 
         </div>
         <div class="left-form-body">
-            <div class="left-form-wrapper">
-                <h3>דברו איתנו</h3>
-                <div class="form-body-wrap">
-                    <form action="">
-                        <input type="text" placeholder="שם">
-                        <input type="text" placeholder="טלפון">
-                        <input type="text" placeholder="אימייל">
-                        <div class="input-date">
-                            <show-orange><i class="fas fa-sort-down"></i></show-orange>
-                            <show-white></show-white>
-                            <input type="date">
-
-                        </div>
-                        <div class="input-date">
-                            <show-orange><i class="fas fa-sort-down"></i></show-orange>
-                            <show-white></show-white>
-                            <input type="date">
-
-                        </div>
-                        <label>
-                            <input type="checkbox"><i></i>
-                            <span>התאריכים עוד לא ידועים לי</span>
-                        </label>
-                        <input type="text" placeholder="מספר נוסעים">
-                        <textarea name="" cols="30" rows="10" placeholder="פרטים נוספים (מספר נוסעים,
-גילאי הילדים, מסלול מועדף ועוד)"></textarea>
-                        <button class="button-for-left-form" type="submit">שלח<i class="fas fa-chevron-left"></i></button>
-                    </form>
-                </div>
-            </div>
+            <?php include(locate_template( 'directives/left-sidebar-form.php' )); ?>
             <div class="left-sidebar-text">
                 <?php if(get_field('txt_under_form', 'option')){ ?>
                     <?php echo get_field('txt_under_form', 'option'); ?>
@@ -161,16 +132,22 @@ get_header();
 <?php //get connected destination
 
 $term_list = wp_get_post_terms($post->ID, 'destinations');
+
 foreach ($term_list as $term){
+//    var_dump($term->parent);
     if($term->parent != 0){
         $current_cat = $term;
+        break;//current cat name
     }
 }
+//var_dump($current_cat);
 $parent_term = get_term( $current_cat->parent, 'destinations' );
+//var_dump($parent_term);
 $termchildren = get_term_children( $parent_term->term_id, 'destinations' );
 foreach ( $termchildren as $child ) {
     $term = get_term_by( 'id', $child, 'destinations' );
     $type = get_field('type_destination', 'destinations_'.$term->term_id);
+
     if($type === 'attraction'){
         $all_attraction_lnk = get_term_link( $child, 'destinations' );
         break;
@@ -192,10 +169,12 @@ $section_var = array(
 //include(locate_template('directives/posts_section.php')); // TODO get attractions bottom?>
 
 <?php //print posts section
+//var_dump($section_var);
 if( have_rows($section_var['repeaterName'], $section_var['id']) ){ ?>
     <div class="main_low_box">
         <div class="content_wrapper">
             <span class="first_text_in_low_box"><?php echo $section_var['section_ttl']; ?></span>
+<!--            <span class="first_text_in_low_box">אטרקציות מומלצות ב</span>-->
             <?php if($section_var['section_ttl_lnk']){ ?>
                 <div class="text_in_middle_img"><a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a></div>
             <?php }?>

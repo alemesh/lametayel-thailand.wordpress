@@ -122,12 +122,52 @@ a img{
 
 /*custome select*/
 .hlt-wraper .custom-select-wrapper .custom-option:hover{
-    background: #01013b;
+    background: #6a6a99;
 }
-.hlt-wraper .custom-select-wrapper .custom-option.selection, .hlt-wraper .custom-select-wrapper .custom-option:hover{
+.hlt-wraper .custom-select-wrapper .custom-option.selection{
     background: #01013b;
     color: white;
 }
 .hlt-wraper .custom-select-wrapper .custom-option{
     color: #01013b;
+}
+
+
+@media only screen and (max-width : 992px){
+    .hlt-wraper .second-section .slick-slider .slick-slide{
+        min-height: 195px;
+    }
+    .hlt-wraper .second-section .items a{
+        /*background-size: contain;*/
+        /*background-repeat: no-repeat;*/
+        max-width: 359px;
+        min-height: 221px;
+    }
+    .hlt-wraper .second-section .items .item{
+        /*max-width: 359px;*/
+    }
+
+}
+
+.hlt-wraper .fifth-section .items .order-1{
+    border-bottom: 4px solid #00b3cb;
+}
+.hlt-wraper .fifth-section .items .order-2{
+    border-bottom: 4px solid #dc4f26;
+}
+.hlt-wraper .fifth-section .items .order-3{
+    border-bottom: 4px solid #fcaf17;
+}
+.hlt-wraper .fifth-section .items .order-4{
+    border-bottom: 4px solid #ea475a;
+}
+
+/*Mobile menu*/
+.thailand_mobile_header_wrapper .title-bar.menu-active{
+    background: #01013b;
+}
+
+/*search home*/
+.hlt-wraper .custom-select-wrapper .custom-select-trigger{
+    overflow: hidden;
 }

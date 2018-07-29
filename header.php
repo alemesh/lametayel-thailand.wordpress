@@ -140,7 +140,7 @@ $settings = new settings();
                                     if( is_front_page() ) {
                                     ?>
                                     <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/logo-header.png" class="logo"/></a>
-                                <?php }else{?>
+                                    <?php }else{?>
                                         <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/dist/images/logo-top-menu.png" class="logo"/></a>
                                     <?php }?>
                                 </div>
@@ -170,7 +170,16 @@ $settings = new settings();
                 <div class="hide-for-large">
                     <div class="title-bar">
                         <div class="title-bar-right">
-                            <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/logo-header.png" class="logo" alt="למטייל תאילנד"/></a>
+<!--                            <a href="--><?php //echo get_home_url();?><!--"><img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/logo-header.png" class="logo" alt="למטייל תאילנד"/></a>-->
+
+                            <?php
+                            if( is_front_page() ) {
+                                ?>
+                                <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/logo-header.png" class="logo" alt="למטייל תאילנד"/></a>
+                            <?php }else{?>
+                                <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/dist/images/logo-top-menu.png" class="logo" alt="למטייל תאילנד"/></a>
+                            <?php }?>
+
                         </div>
                         <div class="title-bar-left">
                             <?php if(get_field('fb_lnk', 'option')){ ?>
