@@ -7,7 +7,8 @@ $( document ).ready(function () {
             var tmp = options[i].getAttribute('data-value')
             optionArray.push(tmp)
         }
-        console.log(optionArray)
+        console.log(optionArray);
+
         var formData = {
             'action'      : 'search_attractions',
             'people'      : $('.people .custom-option.selection').data('value'),
@@ -23,7 +24,7 @@ $( document ).ready(function () {
             encode    : true,
         })
             .done( function( response ) { // response from the PHP action
-                console.log(response)
+                console.log(response);
                 localStorage.setItem('searchResult', JSON.stringify(response.data))
                 // window.location = '/search'
                window.location = '/?page_id=662439'
@@ -32,7 +33,9 @@ $( document ).ready(function () {
 
             // something went wrong
             .fail( function() {
-                console.log(settings.error )
+                console.log(settings.error );
+                $('.hlt-wraper .header .htl-contactform-section .custom-select-3').css("border", "1px solid red");
+                $('.hlt-wraper .header .htl-contactform-section .custom-select-3 .custom-select-trigger').css("color", "red");
             })
 
             // after all this time?
@@ -76,9 +79,10 @@ $(".custom-select-trigger").on("click", function() {
         $(".custom-select-2").removeClass("opened");
         // $(".custom-select-3").removeClass("opened");
     });
-    // $('.header').one('click',function() {
-    //     $(".custom-select-3").removeClass("opened");
-    // });
+
+    $('.header, .second-section').on('click', function() {
+        $(".custom-select-3").removeClass("opened");
+    });
 
 
 
@@ -86,6 +90,8 @@ $(".custom-select-trigger").on("click", function() {
     event.stopPropagation();
 });
 $(".custom-option").on("click", function() {
+    $('.hlt-wraper .header .htl-contactform-section .custom-select-3 .custom-select-trigger').css("color", "black");
+    $('.hlt-wraper .header .htl-contactform-section .custom-select-3').css("border", "none");
     $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
     // $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
     $(this).parents(".custom-select-1 .custom-options").find(".custom-option").removeClass("selection");
@@ -100,10 +106,9 @@ $(".custom-option").on("click", function() {
     var SelectText3 = $(this).parents(".custom-select-3").find(".custom-select-trigger").text();
     var SelectText2 = $(this).parents(".custom-select-2").find(".custom-select-trigger").text();
     var SelectText1 = $(this).parents(".custom-select-1").find(".custom-select-trigger").text();
-    console.log(SelectText3);
-    console.log(SelectText2);
-    console.log(SelectText1);
-    console.log(SelectText);
+    // var filterSelect = SelectText.replace(',' + $(this).text(),'');
+    var filterSelect = SelectText.replace($(this).text(),'');
+
 
         $(this).parents(".custom-select-2").find(".custom-select-trigger").text($(this).text());
         $(this).parents(".custom-select-1").find(".custom-select-trigger").text($(this).text());
@@ -111,11 +116,30 @@ $(".custom-option").on("click", function() {
     if (SelectText3 === 'מעוניינים לשמוע על...'){
         $(this).parents(".custom-select-3").find(".custom-select-trigger").text($(this).text());
     }else{
-        $(this).parents(".custom-select-3").find(".custom-select-trigger").text(SelectText + ',' + $(this).text());
+
+        if(SelectText.search($(this).text()) === -1){
+            // console.log(1);
+            $(this).parents(".custom-select-3").find(".custom-select-trigger").text(SelectText + ' ' + $(this).text());
+        }else{
+            // console.log(2);
+            $(this).parents(".custom-select-3").find(".custom-select-trigger").text(filterSelect);
+
+            //do this method better
+            if (filterSelect === '' || filterSelect == ' ' || filterSelect == '  ' || filterSelect == '   ' || filterSelect == '    ' || filterSelect == '     ' || filterSelect == '      ' || filterSelect == '       ' || filterSelect == '        '){
+                // console.log($(this).parents(".custom-select-3").find(".custom-select-trigger").text('מעוניינים לשמוע על...'));
+                $(this).parents(".custom-select-3").find(".custom-select-trigger").text('מעוניינים לשמוע על...');
+            }
+        }
+
+        // $(this).parents(".custom-select-3").find(".custom-select-trigger").text(SelectText + ',' + $(this).text());
     }
 
 
-    // console.log($(this).parents(".custom-select").find(".custom-select-trigger").text())
+
+
+
+    // console.log($(this).parents(".custom-select").find(".custom-select-trigger").text());
+    // console.log($(this).text());
 
 
 });

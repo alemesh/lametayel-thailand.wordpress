@@ -56,6 +56,10 @@ get_header();
                         </div>
                     </div>
                     <textarea name="user_comments" id="user_comments" rows="3" placeholder="פרטים נוספים (גילאי הילדים, מסלול מועדף ועוד)"></textarea>
+                    <label class="req">
+                        <span class="show-for-sr"><?php _e( 'If you are human please skip this field', 'podium' ); ?></span>
+                        <input name="address" id="user_address" type="text" placeholder="<?php _e( 'If you are human please skip this field', 'podium' ); ?>">
+                    </label>
                     <input type="hidden" name="action" value="sidebar_form"/>
                     <input type="hidden" name="contact_page_form" id="contact_page_form" value="yes"/>
                     <input type="hidden" name="ttl" id="ttl" value="<?php the_title();?>"/>

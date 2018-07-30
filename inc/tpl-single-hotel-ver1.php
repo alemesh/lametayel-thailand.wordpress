@@ -1,5 +1,6 @@
 <?php
 $current_ttl = get_the_title();
+
 ?>
 <div id="content" class="site-content row single_hotel_page old-design">
 

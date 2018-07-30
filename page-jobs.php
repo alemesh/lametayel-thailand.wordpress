@@ -45,6 +45,10 @@ get_header();
 
                         </div>
                     </div>
+                    <label class="req">
+                        <span class="show-for-sr"><?php _e( 'If you are human please skip this field', 'podium' ); ?></span>
+                        <input name="address" id="user_address" type="text" placeholder="<?php _e( 'If you are human please skip this field', 'podium' ); ?>">
+                    </label>
                     <input type="hidden" name="action" value="jobs_form"/>
                     <input type="hidden" name="ttl" id="ttl" value="<?php the_title();?>"/>
                     <input type="hidden" name="url" value="<?php the_permalink();?>"/>

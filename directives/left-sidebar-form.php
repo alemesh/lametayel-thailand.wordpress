@@ -1,6 +1,6 @@
 <div class="left-form-wrapper">
     <h3>דברו איתנו</h3>
-    <div class="form-body-wrap">
+    <div class="form-body-wrap" id="thailand_form">
         <form action="" method="post">
             <input type="text"	name="user_name" id="user_name" placeholder="שם" required/>
             <input type="text" name="user_phone" id="user_phone" placeholder="טלפון" required/>
@@ -16,15 +16,22 @@
                 <input type="date" id="leave_dt" name="leave_date">
             </div>
             <label>
-                <input type="checkbox" name="checkname"><i></i>
+                <input type="checkbox" name="dates_unknown" value="התאריכים עוד לא ידועים לי"><i></i>
                 <span>התאריכים עוד לא ידועים לי</span>
             </label>
             <input type="number" min="1" name="num_passengers" placeholder="מספר נוסעים" id="num_passengers"/>
             <textarea name="user_comments" id="user_comments" rows="3" placeholder="פרטים נוספים (גילאי הילדים, מסלול מועדף ועוד)"></textarea>
+            <label class="req">
+                <span class="show-for-sr"><?php _e( 'If you are human please skip this field', 'podium' ); ?></span>
+                <input name="address" id="user_address" type="text" placeholder="<?php _e( 'If you are human please skip this field', 'podium' ); ?>">
+            </label>
             <input type="hidden" name="action" value="sidebar_form"/>
-            <input type="hidden" name="contact_page_form" id="contact_page_form" value="yes"/>
-            <input type="hidden" name="ttl" id="ttl" value="<?php the_title();?>"/>
-            <input type="hidden" name="url" value="<?php the_permalink();?>"/>
+            <?php if( is_archive() ){ ?>
+                <input type="hidden" name="ttl" id="ttl" value="<?php echo single_cat_title( '', false );?>"/>
+            <?php }else{ ?>
+                <input type="hidden" name="ttl" id="ttl" value="<?php the_title();?>"/>
+            <?php } ?>
+            <input type="hidden" name="url" id="ttl" value="<?php the_permalink();?>"/>
             <?php
             if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
                 $ip = $_SERVER['HTTP_CLIENT_IP'];

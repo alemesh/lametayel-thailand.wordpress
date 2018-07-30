@@ -417,7 +417,7 @@ textarea[rows]{
 }
 /*Mobile menu*/
 .overlap-menu.is-active{
-    height: 100vh;
+    height: 550px;
     z-index: 2000;
 }
 .overlap-menu.is-active{
@@ -459,4 +459,12 @@ textarea[rows]{
 }
 .up_img-for-hotelPage .text_in_up_img{
     font-size: 30px;
+}
+.left-form-body span{
+    margin-right: 0;
+}
+@media only screen and (max-width : 480px) {
+    .hlt-wraper .right-section {
+        margin-bottom: 70px;
+    }
 }

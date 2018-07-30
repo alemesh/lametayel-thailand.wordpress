@@ -259,7 +259,7 @@ function search_attractions() {
                 wp_send_json_success(__($data));
             }
         } else {
-            wp_send_json_error();
+//            wp_send_json_error();
         }
     }
     wp_reset_postdata();

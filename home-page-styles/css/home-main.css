@@ -171,3 +171,22 @@ a img{
 .hlt-wraper .custom-select-wrapper .custom-select-trigger{
     overflow: hidden;
 }
+.form-row .multi-choese{
+    color: white;
+    font-size: 12px;
+    text-align: right;
+    display: inherit;
+    margin-right: 15px;
+}
+.form-row.button.form-grow-5{
+    align-items: flex-start;
+}
+.hlt-wraper .header .form-grow-5 span{
+    transform: translateY(-30%);
+}
+.hlt-wraper .custom-select-wrapper .custom-select.opened .custom-select-trigger:after{
+    z-index: 9;
+}
+.custom-select-3 .custom-select-trigger{
+    height: 30px;
+}

@@ -32,7 +32,7 @@ get_header();
                         <h3 class="mob"><span>תודה!</span><br> פרטיך התקבלו בהצלחה.</h3>
                     </div>
                     <div class="contact-form">
-                        <form action="" name="search-attractions" id="ajax_form" class="form form-validation" method="post">
+                        <form action="" name="search-attractions" id="ajax_form" class="form form-validation" method="post" novalidate>
                             <div class="form-row-wrap">
                                 <div class="form-row center">
                                     <select required name="people" id="sources" class="form-control custom-select custom-select-1 people" placeholder="מי אתם?">
@@ -65,6 +65,7 @@ get_header();
                                             <option value="<?=$child ?>"><?= $term->name ?></option>
                                         <?php } ?>
                                     </select>
+                                    <span class="multi-choese">(ניתן לבחור מספר אפשרויות)</span>
                                 </div>
                                 <div class="form-row button form-grow-5">
                                     <span><i class="fas fa-search"></i></span>
