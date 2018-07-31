@@ -7,7 +7,7 @@ $( document ).ready(function () {
             var tmp = options[i].getAttribute('data-value')
             optionArray.push(tmp)
         }
-        console.log(optionArray);
+        // console.log(optionArray);
 
         var formData = {
             'action'      : 'search_attractions',
@@ -24,7 +24,7 @@ $( document ).ready(function () {
             encode    : true,
         })
             .done( function( response ) { // response from the PHP action
-                console.log(response);
+                // console.log(response);
                 localStorage.setItem('searchResult', JSON.stringify(response.data))
                 // window.location = '/search'
                window.location = '/?page_id=662439'
@@ -33,7 +33,7 @@ $( document ).ready(function () {
 
             // something went wrong
             .fail( function() {
-                console.log(settings.error );
+                // console.log(settings.error );
                 $('.hlt-wraper .header .htl-contactform-section .custom-select-3').css("border", "1px solid red");
                 $('.hlt-wraper .header .htl-contactform-section .custom-select-3 .custom-select-trigger').css("color", "red");
             })
@@ -80,8 +80,13 @@ $(".custom-select-trigger").on("click", function() {
         // $(".custom-select-3").removeClass("opened");
     });
 
-    $('.header, .second-section').on('click', function() {
-        $(".custom-select-3").removeClass("opened");
+    $('.header, .second-section').on('click', function(e) {
+        // console.log($('.custom-options'));
+        // console.log(e.target.nodeName);
+        if(e.target.nodeName !== 'SPAN' ){
+            $(".custom-select-3").removeClass("opened");
+        }
+
     });
 
 

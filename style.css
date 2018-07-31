@@ -468,3 +468,17 @@ textarea[rows]{
         margin-bottom: 70px;
     }
 }
+
+
+/*iphone 5*/
+@media only screen and (max-width : 320px) {
+    #masthead .top_bar_header a.contact {
+        font-size: 12px;
+    }
+    .thailand_mobile_header_wrapper{
+        top: 43px;
+    }
+    #masthead .top_bar_header a{
+        font-size: 16px;
+    }
+}
