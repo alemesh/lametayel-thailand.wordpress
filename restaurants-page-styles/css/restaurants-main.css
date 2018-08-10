@@ -236,4 +236,7 @@ html[dir="rtl"] .fancybox-close-small{
     background: transparent;
 }
 
+.sec-head-text h3{
+    padding-bottom: 20px;
+}
 /*styles for restauranth pages finish*/

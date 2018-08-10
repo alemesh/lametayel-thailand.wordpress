@@ -14,6 +14,7 @@
 <?php } ?>
 <section class="footer_blue_section">
     <div class="bg-lier"></div>
+<!--    <a href="http://www.gofmans.co.il/" target="_blank"><span class="label-gofman">Gofman creative</span></a>-->
     <div class="image-holder-right"></div>
     <div class="row">
         <div class="small-12 medium-3 columns first_column">
@@ -39,7 +40,10 @@
     <div class="row">
         <div class="site-info small-12 medium-6 columns text-center medium-text-right">
 <!--            <p>כל הזכויות שמורות למרכז למטייל תאילנד 2016</p>-->
+
             <p>כל הזכויות שמורות למרכז למטייל תאילנד 2018</p>
+            <a href="http://www.gofmans.co.il/" target="_blank" class="label-gofman-link"><span class="label-gofman">Gofman creative</span></a>
+            <a href="https://www.idanbenor.co.il/" target="_blank" class="label-gofman-link"><span class="label-idanbenor">קידום אתרים עידן בן אור</span></a>
         </div>
         <div class="site-info small-12 medium-6 columns text-center medium-text-left">
 <!--            <p><img src="--><?php //echo get_template_directory_uri(); ?><!--/dist/images/logo-footer.png" class="logo-footer" alt="למטייל תאילנד"/>-->

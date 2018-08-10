@@ -14,3 +14,29 @@ $( function() {
     } );
 
 } );
+
+
+
+$(document).on('submit', '#ajax_form_restouran', function (e) {
+    e.preventDefault();
+    var ajaxserialize = $(this).serialize();
+    var action = 'sendermail';
+
+    $.ajax({
+        url: '/wp-admin/admin-ajax.php',
+        method: 'post',
+        data: {
+            action: action,
+            search: {
+                formserialize: ajaxserialize,
+            }
+        },
+        success: function (response) {
+            console.log(response);
+            window.location.href = '/';
+        },
+        error: function ($e) {
+            console.log($e);
+        }
+    });
+});

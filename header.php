@@ -139,9 +139,9 @@ $settings = new settings();
                                     <?php
                                     if( is_front_page() ) {
                                     ?>
-                                    <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/logo-header.png" class="logo"/></a>
+                                    <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/logo-header.png" alt="למטייל תאילנד" class="logo"/></a>
                                     <?php }else{?>
-                                        <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/dist/images/logo-top-menu.png" class="logo"/></a>
+                                        <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/dist/images/logo-top-menu.png" alt="למטייל תאילנד" class="logo"/></a>
                                     <?php }?>
                                 </div>
                                 <div class="top-bar-left">

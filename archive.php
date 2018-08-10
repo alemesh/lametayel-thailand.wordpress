@@ -8,13 +8,13 @@
  */
 use Podium\Config\Settings as settings;
 $settings = new settings();
-
 get_header();
 ?>
 <div class="content_wrapper brunch-page">
 
     <div class="up_img">
-        <div class="text_in_up_img"><?php echo post_type_archive_title(); ?></div>
+<!--        <div class="text_in_up_img">--><?php //echo post_type_archive_title(); ?><!--</div>-->
+        <h1 class="text_in_up_img"><?php echo post_type_archive_title(); ?></h1>
         <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
     </div>
 

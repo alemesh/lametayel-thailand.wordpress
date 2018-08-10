@@ -142,7 +142,8 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel' && $type !=
     <div class="wrap-header-section tabs">
         <div class="main-holder">
             <div class="button-section">
-                <a href="<?php echo $url;?>"><?php echo single_cat_title( '', false );?></a>
+<!--                <a href="--><?php //echo $url;?><!--">--><?php //echo single_cat_title( '', false );?><!--</a>-->
+                <h1><?php echo single_cat_title( '', false );?></h1>
             </div>
             <div class="wrap-holder ">
 
@@ -188,8 +189,7 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel' && $type !=
                     $counter = 0;
                     foreach ($posts as $flights_buttom){?>
 
-                    <div class="wrap-img tabs__content <?php echo ($counter == 0)?'active':'';?>" style="background-image: url(<?php echo get_post_meta( $flights_buttom->ID, '_map_image_value_key', 1 );?>)"></div>
-
+                        <div class="wrap-img tabs__content <?php echo ($counter == 0)?'active':'';?>" style="background-image: url(<?php echo get_field('map-image', $flights_buttom->ID);?>)"></div>
                     <?php
                         $counter++;
                     }?>
@@ -436,7 +436,7 @@ $current_name = single_cat_title( '', false );
     if($custom_query->have_posts() ) { ?>
         <div class="content_wrapper" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="up_img">
-                <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
+                <h1 class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></h1>
                 <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
             </div>
             <div class="up_box">
@@ -444,6 +444,11 @@ $current_name = single_cat_title( '', false );
                     <?php echo term_description( $current_id, 'destinations' ) ?>
                 </div>
                 <div class="main_left_up_box">
+                    <div class="bredcrumbs hidden-xs">
+                        <?php if(function_exists('bcn_display')){ ?>
+                            <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                        <?php }?>
+                    </div>
                     <div class="left_text_box">
                         <?php if(get_field('txt_under_form', 'option')){ ?>
                             <?php echo get_field('txt_under_form', 'option'); ?>
@@ -544,7 +549,7 @@ $current_name = single_cat_title( '', false );
         <div class="content_wrapper">
 
             <div class="up_img">
-                <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
+                <h1 class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></h1>
                 <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
             </div>
 
@@ -555,6 +560,11 @@ $current_name = single_cat_title( '', false );
 
                 </div>
                 <div class="main_left_up_box">
+                    <div class="bredcrumbs hidden-xs">
+                        <?php if(function_exists('bcn_display')){ ?>
+                            <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                        <?php }?>
+                    </div>
                     <div class="left_text_box">
                         <?php if(get_field('txt_under_form', 'option')){ ?>
                             <?php echo get_field('txt_under_form', 'option'); ?>
@@ -711,7 +721,7 @@ $current_name = single_cat_title( '', false );
 <!--    </div>-->
     <div class="up_img up_img-for-hotelPage">
 <!--        <div class="text_in_up_img">--><?php //the_title();?><!--</div>-->
-        <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
+        <h1 class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></h1>
         <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
         <?php $rating = get_field('rating'); ?>
 <!--        <div class="rating-hotels-main">-->
@@ -741,6 +751,11 @@ $current_name = single_cat_title( '', false );
             include(locate_template('directives/content-top_section_tabs.php')); //TODO slider?>
         </div>
         <div class="left-form-body">
+            <div class="bredcrumbs hidden-xs">
+                <?php if(function_exists('bcn_display')){ ?>
+                    <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                <?php }?>
+            </div>
             <?php include(locate_template( 'directives/left-sidebar-form.php' )); ?>
             <div class="left-sidebar-text">
                 <?php if(get_field('txt_under_form', 'option')){ ?>

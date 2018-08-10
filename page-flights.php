@@ -21,7 +21,7 @@ get_header();
     <div class="wrap-header-section">
         <div class="main-holder">
             <div class="button-section">
-                <a href="">טיסות בתאילנד</a>
+                <h1>טיסות בתאילנד</h1>
             </div>
             <div class="wrap-holder tabs">
                 <div class="left-section ">

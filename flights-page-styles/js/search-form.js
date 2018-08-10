@@ -27,7 +27,8 @@ $( document ).ready(function () {
                 // console.log(response);
                 localStorage.setItem('searchResult', JSON.stringify(response.data))
                 // window.location = '/search'
-               window.location = '/?page_id=662439'
+               // window.location = '/?page_id=662439'
+               window.location = '/?page_id=664245'//for lic site page id
 
             })
 

@@ -32,7 +32,7 @@ get_header();
 <div class="content_wrapper">
 
     <div class="up_img">
-        <div class="text_in_up_img"><?php the_title();?></div>
+        <h1 class="text_in_up_img"><?php the_title();?></h1>
         <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
     </div>
 
@@ -70,6 +70,11 @@ get_header();
         </div>
 
         <div class="main_left_up_box">
+            <div class="bredcrumbs hidden-xs">
+                <?php if(function_exists('bcn_display')){ ?>
+                    <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                <?php }?>
+            </div>
             <div class="left_text_box">
                     <?php if(get_field('txt_under_form', 'option')){ ?>
                             <?php echo get_field('txt_under_form', 'option'); ?>

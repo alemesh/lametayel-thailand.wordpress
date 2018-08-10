@@ -185,9 +185,9 @@ a img{
 .form-row .multi-choese{
     color: white;
     font-size: 12px;
-    text-align: right;
+    /*text-align: right;*/
     display: inherit;
-    margin-right: 15px;
+    /*margin-right: 15px;*/
 }
 .form-row.button.form-grow-5{
     align-items: flex-start;
@@ -204,4 +204,14 @@ a img{
 
 .hlt-wraper .sixth-section .slick-slider-3 .slick-slide{
     outline:none;
+}
+.hlt-wraper .sixth-section .items .wrap-title a{
+    font-family: almoni-dl-aaa-bold;
+    line-height: 1.2;
+    font-size: 23px;
+    color: #01013b;
+    text-decoration: none;
+}
+.hlt-wraper .sixth-section .items .wrap-title a:hover{
+    text-decoration: underline;
 }

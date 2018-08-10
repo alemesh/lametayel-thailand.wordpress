@@ -20,7 +20,8 @@ if ($type == 'main'){
 
     <div class="main-content packeges-page">
         <div class="up_img">
-            <div class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></div>
+<!--            <div class="text_in_up_img">--><?php //echo single_cat_title( '', false ); ?><!--</div>-->
+            <h1 class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></h1>
             <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
         </div>
         <div class="content-body">
@@ -34,6 +35,11 @@ if ($type == 'main'){
                 </div>
             </div>
             <div class="left-form-body">
+                <div class="bredcrumbs hidden-xs">
+                    <?php if(function_exists('bcn_display')){ ?>
+                        <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                    <?php }?>
+                </div>
                 <?php include(locate_template( 'directives/left-sidebar-form.php' )); ?>
                 <div class="left-sidebar-text">
                         <?php if(get_field('txt_under_form', 'option')){ ?>

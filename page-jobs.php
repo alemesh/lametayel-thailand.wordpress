@@ -20,7 +20,8 @@ get_header();
 
 <div class="main-holder">
     <div class="cloud">
-        <span><?php the_title();?></span>
+<!--        <span>--><?php //the_title();?><!--</span>-->
+        <h1 class="text_in_up_img"><?php the_title();?></h1>
     </div>
     <div class="content wrap-align">
         <div class="content-half-block">

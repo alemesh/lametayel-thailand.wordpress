@@ -91,7 +91,7 @@ get_header();
                         </a>
                     </li>
                     <li class="item">
-                        <a href="http://landing.lametayel-thailand.com/lp2/" target="_blank" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_2.jpg)">
+                        <a href="http://landing.lametayel-thailand.com/lp2/" target="_blank"  rel="nofollow" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/banner_2.jpg)">
 <!--                            <span>קיץ חם</span>-->
 <!--                            <span>ברשת המסעדות שלנו</span>-->
                         </a>
@@ -250,7 +250,10 @@ get_header();
 						<span class="wrap-list">
 							<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/sixth-section-item-1.png)"></span>
 							<span class="wrap-title">
-								<span class="title">בנגקוק - מדוע היא כה<br> פופולארית לתיירים</span>
+                                <a href="<?php echo get_home_url();?>/%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7-%D7%9E%D7%93%D7%95%D7%A2-%D7%94%D7%99%D7%90-%D7%9B%D7%94-%D7%A4%D7%95%D7%A4%D7%95%D7%9C%D7%90%D7%A8%D7%99%D7%AA-%D7%9C%D7%AA%D7%99%D7%99%D7%A8%D7%99%D7%9D/">
+                                    <span class="title">בנגקוק - מדוע היא כה<br> פופולארית לתיירים</span>
+                                </a>
+
 							</span>
 							<span class="description">בירת תאילנד היא אחת הערים המתוירות ביותר בעולם. לפי חברת המחקר...</span>
 							<a href="<?php echo get_home_url();?>/%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7-%D7%9E%D7%93%D7%95%D7%A2-%D7%94%D7%99%D7%90-%D7%9B%D7%94-%D7%A4%D7%95%D7%A4%D7%95%D7%9C%D7%90%D7%A8%D7%99%D7%AA-%D7%9C%D7%AA%D7%99%D7%99%D7%A8%D7%99%D7%9D/" class="button">לכתבה המלאה</a>
@@ -260,7 +263,9 @@ get_header();
 						<span class="wrap-list">
 							<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/sixth-section-item-2.png)"></span>
 							<span class="wrap-title">
-								<span class="title">7 דברים שצריך לדעת<br> לקראת טיול ג'יפים בתאילנד</span>
+                                <a href="<?php echo get_home_url();?>/7-%D7%93%D7%91%D7%A8%D7%99%D7%9D-%D7%A9%D7%A6%D7%A8%D7%99%D7%9A-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9C%D7%A7%D7%A8%D7%90%D7%AA-%D7%98%D7%99%D7%95%D7%9C-%D7%92%D7%99%D7%A4%D7%99%D7%9D-%D7%91%D7%AA%D7%90/">
+                                    <span class="title">7 דברים שצריך לדעת<br> לקראת טיול ג'יפים בתאילנד</span>
+                                </a>
 							</span>
 							<span class="description">תאילנד היא מדינה פופולרית מאד לחופשות ולטיולים, במיוחד בקרב...</span>
 							<a href="<?php echo get_home_url();?>/7-%D7%93%D7%91%D7%A8%D7%99%D7%9D-%D7%A9%D7%A6%D7%A8%D7%99%D7%9A-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9C%D7%A7%D7%A8%D7%90%D7%AA-%D7%98%D7%99%D7%95%D7%9C-%D7%92%D7%99%D7%A4%D7%99%D7%9D-%D7%91%D7%AA%D7%90/" class="button">לכתבה המלאה</a>
@@ -270,7 +275,9 @@ get_header();
 						<span class="wrap-list">
 							<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/sixth-section-item-3.png)"></span>
 							<span class="wrap-title">
-								<span class="title">אטרקציות לילדים בבנגקוק</span>
+                                <a href="<?php echo get_home_url();?>/%D7%90%D7%98%D7%A8%D7%A7%D7%A6%D7%99%D7%95%D7%AA-%D7%9C%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%91%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7/">
+                                    <span class="title">אטרקציות לילדים בבנגקוק</span>
+                                </a>
 							</span>
 							<span class="description">בנגקוק הינה יעד אטרקטיבי לא רק למטיילים בודדים או לזוגות שבאו...</span>
 							<a href="<?php echo get_home_url();?>/%D7%90%D7%98%D7%A8%D7%A7%D7%A6%D7%99%D7%95%D7%AA-%D7%9C%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%91%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7/" class="button">לכתבה המלאה</a>
@@ -280,7 +287,9 @@ get_header();
 						<span class="wrap-list">
 							<span class="image" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/sixth-section-item-4.png)"></span>
 							<span class="wrap-title">
-								<span class="title">טיול ירח דבש בתאילנד</span>
+                                <a href="<?php echo get_home_url();?>/%D7%98%D7%99%D7%95%D7%9C-%D7%99%D7%A8%D7%97-%D7%93%D7%91%D7%A9-%D7%91%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93/">
+                                    <span class="title">טיול ירח דבש בתאילנד</span>
+                                </a>
 							</span>
 							<span class="description">אין ספק שתאילנד האקזוטית נמנית על היעדים המבוקשים ביותר לירח דבש... </span>
 							<a href="<?php echo get_home_url();?>/%D7%98%D7%99%D7%95%D7%9C-%D7%99%D7%A8%D7%97-%D7%93%D7%91%D7%A9-%D7%91%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93/" class="button">לכתבה המלאה</a>
@@ -288,7 +297,7 @@ get_header();
                     </li>
                 </ul>
                 <div class="wrap-button">
-                    <a href="<?php echo get_home_url();?>/%D7%90%D7%98%D7%A8%D7%A7%D7%A6%D7%99%D7%95%D7%AA-%D7%91%D7%AA%D7%90%D7%99%D7%9C%D7%A0%D7%93/" class="button">למגזין המלא</a>
+                    <a href="<?php echo get_home_url();?>/בלוג/" class="button">למגזין המלא</a>
                 </div>
             </div>
         </div>

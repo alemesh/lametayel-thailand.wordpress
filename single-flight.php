@@ -131,6 +131,11 @@ get_header();
             <?php endwhile; // End of the loop. ?>
         </div>
         <div class="left-form-body">
+            <div class="bredcrumbs hidden-xs">
+                <?php if(function_exists('bcn_display')){ ?>
+                    <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                <?php }?>
+            </div>
             <div class="left-sidebar-text">
                 <?php if(get_field('txt_under_form', 'option')){ ?>
                     <?php echo get_field('txt_under_form', 'option'); ?>

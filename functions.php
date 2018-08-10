@@ -267,13 +267,56 @@ function search_attractions() {
 }
 
 
-//function wpb_admin_account(){
-//$user = 'aaaleks';
-//$pass = 'aaaleks';
-//$email = 'aaaleks@example.com';
-//if ( !username_exists( $user )  && !email_exists( $email ) ) {
-//$user_id = wp_create_user( $user, $pass, $email );
-//$user = new WP_User( $user_id );
-//$user->set_role( 'administrator' );
-//} }
-//add_action('init','wpb_admin_account');
+
+
+//sender mail restourant page
+function sendermail() {
+    if (isset($_POST['search'])) {
+        parse_str($_POST['search']['formserialize'], $data);
+
+        //sending email
+        $senderName = 'https://www.lametayel-thailand.com/restaurants/';
+        $senderEmail = $_SERVER['SERVER_NAME'];
+        $targetEmail = [];
+        $targetEmail = ['tair@lametayel-thailand.com'];
+
+
+        $messageSubject = 'Message from web-site - '. $_SERVER['SERVER_NAME'];
+        $redirectToReferer = true;
+        $redirectURL = $_SERVER['SERVER_NAME'];
+//****************************************
+
+// mail content
+
+        $ufname = $data['name'];
+
+        $uphone = $data['tel'];
+        $umail = $data['email'];
+
+
+
+
+        // prepare message text
+        $messageText =	'Name: '.$ufname."\n".
+            'Phone: '.$uphone."\n".
+            'Email: '.$umail."\n";
+
+
+// send email
+        $senderName = "=?UTF-8?B?" . base64_encode($senderName) . "?=";
+        $messageSubject = "=?UTF-8?B?" . base64_encode($messageSubject) . "?=";
+        $messageHeaders = "From: " . $senderName . " <" . $senderEmail . ">\r\n"
+            . "MIME-Version: 1.0" . "\r\n"
+            . "Content-type: text/plain; charset=UTF-8" . "\r\n";
+
+
+        foreach ($targetEmail as $val){
+            mail($val, $messageSubject, $messageText, $messageHeaders);
+        }
+
+    }
+    wp_die();
+}
+
+add_action( 'wp_ajax_sendermail', 'sendermail' );
+add_action( 'wp_ajax_nopriv_sendermail', 'sendermail' );

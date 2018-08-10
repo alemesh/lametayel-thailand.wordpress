@@ -12,13 +12,13 @@ get_header();
 
 <div class="main-content">
     <div class="up_img">
-        <div class="text_in_up_img"><?php the_title();// TODO title
+        <h1 class="text_in_up_img"><?php the_title();// TODO title
             $rating = get_field('rating'); ?>
             <div class="rating"><?php
                 for($i=0; $i<$rating; $i++){ ?>
                     <i class="fa fa-star" aria-hidden="true"></i>
                 <?php } ?>
-            </div></div>
+            </div></h1>
         <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
     </div>
     <div class="content-body">
@@ -107,6 +107,11 @@ get_header();
 
         </div>
         <div class="left-form-body">
+            <div class="bredcrumbs hidden-xs">
+                <?php if(function_exists('bcn_display')){ ?>
+                    <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                <?php }?>
+            </div>
             <?php include(locate_template( 'directives/left-sidebar-form.php' )); ?>
             <div class="left-sidebar-text">
                 <?php if(get_field('txt_under_form', 'option')){ ?>
