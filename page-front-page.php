@@ -26,7 +26,8 @@ get_header();
         <div class="header" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/background-header.png)">
             <div class="htl-contactform-section">
                 <div class="main-holder-form">
-                    <h3>קשת של אפשרויות לחופשה קסומה בתאילנד</h3>
+<!--                    <h3>קשת של אפשרויות לחופשה קסומה בתאילנד</h3>-->
+                    <h3><?php esc_html_e( 'Rainbow of magical holiday options in Thailand', 'podium' ); ?></h3>
                     <div class="succes-nsg" hidden>
                         <h3 class="desc"><span>תודה!</span> פרטיך התקבלו בהצלחה.</h3>
                         <h3 class="mob"><span>תודה!</span><br> פרטיך התקבלו בהצלחה.</h3>
@@ -35,7 +36,9 @@ get_header();
                         <form action="" name="search-attractions" id="ajax_form" class="form form-validation" method="post" novalidate>
                             <div class="form-row-wrap">
                                 <div class="form-row center">
-                                    <select required name="people" id="sources" class="form-control custom-select custom-select-1 people" placeholder="מי אתם?">
+<!--                                    <select required name="people" id="sources" class="form-control custom-select custom-select-1 people" placeholder="מי אתם?">-->
+                                    <select required name="people" id="sources" class="form-control custom-select custom-select-1 people" placeholder="<?php esc_html_e( 'who are you?
+', 'podium' ); ?>">
                                         <?php
                                         $taxonomy_name = 'destinations';
                                         $category = get_term_by('name', 'People', $taxonomy_name);
@@ -48,13 +51,15 @@ get_header();
                                     </select>
                                 </div>
                                 <div class="form-row center">
-                                    <select required name="sources-2" id="sources-2" class="form-control custom-select custom-select-2 sources" placeholder="לכמה זמן?">
+<!--                                    <select required name="sources-2" id="sources-2" class="form-control custom-select custom-select-2 sources" placeholder="לכמה זמן?">-->
+                                    <select required name="sources-2" id="sources-2" class="form-control custom-select custom-select-2 sources" placeholder="<?php esc_html_e( 'How long?', 'podium' ); ?>">
                                         <option value="בחר 1">עד עשרה ימים</option>
                                         <option value="בחר 2">מעל עשרה ימים</option>
                                     </select>
                                 </div>
                                 <div class="form-row center">
-                                    <select required name="attractions" id="sources-3" class="form-control custom-select custom-select-3 attractions" multiple="multiple" placeholder="מעוניינים לשמוע על...">
+<!--                                    <select required name="attractions" id="sources-3" class="form-control custom-select custom-select-3 attractions" multiple="multiple" placeholder="מעוניינים לשמוע על...">-->
+                                    <select required name="attractions" id="sources-3" class="form-control custom-select custom-select-3 attractions" multiple="multiple" placeholder="<?php esc_html_e( 'Interested in hearing about ...', 'podium' ); ?>">
                                         <?php
                                         $taxonomy_name = 'destinations';
                                         $category = get_term_by('name', 'Attractions', $taxonomy_name);
@@ -65,12 +70,14 @@ get_header();
                                             <option value="<?=$child ?>"><?= $term->name ?></option>
                                         <?php } ?>
                                     </select>
-                                    <span class="multi-choese">(ניתן לבחור מספר אפשרויות)</span>
+<!--                                    <span class="multi-choese">(ניתן לבחור מספר אפשרויות)</span>-->
+                                    <span class="multi-choese"><?php esc_html_e( '(You can select several options)', 'podium' ); ?></span>
                                 </div>
                                 <div class="form-row button form-grow-5">
                                     <span><i class="fas fa-search"></i></span>
                                     <!--<button type="submit" id="btn" class="btn"><span class="btn-txt">צרפו אותנו </span></button>-->
-                                    <input type="submit" id="btn" class="btn" value="מצא לי חופשה"/>
+<!--                                    <input type="submit" id="btn" class="btn" value="מצא לי חופשה"/>-->
+                                    <input type="submit" id="btn" class="btn" value="<?php esc_html_e( 'Find me a vacation', 'podium' ); ?>"/>
                                 </div>
                             </div>
                         </form>
@@ -103,7 +110,8 @@ get_header();
                         </a>
                     </li>
                 </ul>
-                <h3>יעדים נבחרים</h3>
+<!--                <h3>יעדים נבחרים</h3>-->
+                <h3><?php esc_html_e( 'Selected goals', 'podium' ); ?></h3>
             </div>
         </div>
 
@@ -149,14 +157,16 @@ get_header();
 
             </ul>
             <div class="wrap-button">
-                <a href="<?php echo get_home_url();?>/%D7%99%D7%A2%D7%93%D7%99%D7%9D/" class="button">לרשימת היעדים המלאה</a>
+<!--                <a href="--><?php //echo get_home_url();?><!--/%D7%99%D7%A2%D7%93%D7%99%D7%9D/" class="button">לרשימת היעדים המלאה</a>-->
+                <a href="<?php echo get_home_url();?>/%D7%99%D7%A2%D7%93%D7%99%D7%9D/" class="button"><?php esc_html_e( 'To the full list of destinations', 'podium' ); ?></a>
             </div>
         </div>
 
         <div class="fourth-section">
             <div class="background-lier-fourth-section" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/bg-lier-fourth-section.png)"></div>
             <div class="main-holder">
-                <h3>למה להזמין דרכינו חופשה?</h3>
+<!--                <h3>למה להזמין דרכינו חופשה?</h3>-->
+                <h3><?php esc_html_e( 'Why invite us to vacation?', 'podium' ); ?></h3>
                 <ul class="items">
                     <li class="item">
                         <div class="wrap-img">
@@ -190,7 +200,8 @@ get_header();
         <div class="fifth-section">
             <div class="background-lier-fifth-section" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/background-lier-fourth-section.png)"></div>
             <div class="main-holder">
-                <h3>הפופולריים שלנו</h3>
+<!--                <h3>הפופולריים שלנו</h3>-->
+                <h3><?php esc_html_e( 'Our popular', 'podium' ); ?></h3>
 
 
                 <ul class="items slick-slider-2">
@@ -297,7 +308,8 @@ get_header();
                     </li>
                 </ul>
                 <div class="wrap-button">
-                    <a href="<?php echo get_home_url();?>/בלוג/" class="button">למגזין המלא</a>
+<!--                    <a href="--><?php //echo get_home_url();?><!--/בלוג/" class="button">למגזין המלא</a>-->
+                    <a href="<?php echo get_home_url();?>/בלוג/" class="button"><?php esc_html_e( 'For the full magazine', 'podium' ); ?></a>
                 </div>
             </div>
         </div>
@@ -308,7 +320,8 @@ get_header();
                 <div class="wrap-insta">
                     <a href="https://www.instagram.com/lametayel_thailand/" target="_blank" class="insta"><i class="fab fa-instagram"></i></a>
                 </div>
-                <h3>עקבו אחרנו</h3>
+<!--                <h3>עקבו אחרנו</h3>-->
+                <h3><?php esc_html_e( 'Follow us', 'podium' ); ?></h3>
                 <?php dynamic_sidebar( 'instagram-1' ); ?>
 
 <!--                <ul class="instagram-pics instagram-size-thumbnail">-->

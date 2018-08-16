@@ -15,6 +15,10 @@ use Podium\Config\Settings as settings;
 $settings = new settings();
 
 get_header();
+
+$restaurant_page = get_fields();
+$post_id = get_the_ID();
+//$the_items_of_the_best_sellers_section = get_field('the_items_of_the_best_sellers_section', $post_id);
 ?>
 
 
@@ -110,7 +114,7 @@ get_header();
                     </div>
                 </div>
                 <div class="address-item tabs__content">
-                    <h3>המרכז למטייל צ’אנג מאי</h3>
+                    <h3>מסעדת המרכז למטייל סניף צ'אנג מאי</h3>
                     <p class="en">ADDRESS 86/1 SRIDONCHAI ROAD CHANGKLAN MUANG  CHIANGMAI 50100</p>
                     <p class="he"> 86/1 ถนนศรีดอนไชย ตำบลช้างคลาน อำเภอเมือง เชียงใหม่ 50100 ( ตรงข้ามพันทิปพลาซ่าเชียงใหม่ )</p>
                     <div class="button-section">
