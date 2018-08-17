@@ -239,4 +239,7 @@ html[dir="rtl"] .fancybox-close-small{
 .sec-head-text h3{
     padding-bottom: 20px;
 }
+#masthead .search{
+    top: 58%
+}
 /*styles for restauranth pages finish*/

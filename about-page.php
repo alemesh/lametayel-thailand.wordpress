@@ -15,7 +15,8 @@ get_header();
 ?>
 <div class="main-content">
     <div class="up_img">
-        <h1 class="text_in_up_img">אודותינו</h1>
+<!--        <h1 class="text_in_up_img">אודותינו</h1>-->
+        <h1 class="text_in_up_img"><?php the_title();?></h1>
         <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
     </div>
     <div class="content-body">

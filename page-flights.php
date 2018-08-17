@@ -21,7 +21,8 @@ get_header();
     <div class="wrap-header-section">
         <div class="main-holder">
             <div class="button-section">
-                <h1>טיסות בתאילנד</h1>
+<!--                <h1>טיסות בתאילנד</h1>-->
+                <h1><?php esc_html_e( 'Flights in Thailand', 'podium' ); ?></h1>
             </div>
             <div class="wrap-holder tabs">
                 <div class="left-section ">
@@ -60,7 +61,8 @@ get_header();
                             <li class="item <?php echo ($counter == 0)?'active':'';?>">
 								<span class="image" style="background-image: url(<?php echo $image['sizes']['thailand-square-3']; ?>)">
 									<span class="text-item"></span>
-									<span class="text">טיסות ל<?php echo  $cat->name;?></span>
+<!--									<span class="text">טיסות ל--><?php //echo  $cat->name;?><!--</span>-->
+									<span class="text"><?php esc_html_e( 'Flights to', 'podium' ); ?><?php echo  $cat->name;?></span>
 								</span>
                             </li>
 
@@ -105,16 +107,17 @@ get_header();
                                     <a href="<?php echo $my_link[$counter_acriv];?>">
                                             <?php if(get_field('from',$flights_buttom->ID)){
                                                 $from = get_term_by('id', get_field('from',$flights_buttom->ID), 'destinations');
-                                                echo 'מ'.$from->name;
+//                                                echo 'מ'.$from->name;
+                                                echo esc_html_e( 'from', 'podium' ).$from->name;
                                             }
                                             if(get_field('too',$flights_buttom->ID)){
                                                 $too = get_term_by('id', get_field('too',$flights_buttom->ID), 'destinations');
-                                                echo ' ל'.$too->name;
+//                                                echo ' ל'.$too->name;
+                                                echo esc_html_e( 'to', 'podium' ).$too->name;
                                             }?>
                                     </a>
 
                                 </li>
-
                                 <?php
                             }
                             wp_reset_postdata();
@@ -131,19 +134,53 @@ get_header();
 
                 <div class="right-section">
                     <div class="wrap-text">
-                        <h3 class="tabs__content active">טיסות לבנגקוק</h3>
-                        <h3 class="tabs__content">טיסות לפאטייה</h3>
-                        <h3 class="tabs__content">טיסות לפוקט</h3>
-                        <h3 class="tabs__content">טיסות לצ’אנג מאי</h3>
-                        <h3 class="tabs__content">טיסות לצ’אנג ראי</h3>
-                        <h3 class="tabs__content">טיסות לקו צ’אנג</h3>
-                        <h3 class="tabs__content">טיסות לקוסמוי</h3>
-                        <h3 class="tabs__content">טיסות לקראבי</h3>
+
+
+
+
+
+                        <?php
+                        $my_arr =[];
+                        $my_link =[];
+                        $lem_parent_cat_id = [];
+                        $categories = get_terms( array('taxonomy' => 'destinations', 'parent' => 0) );
+                        $counter = 0;
+                        foreach ($categories as $cat){  setup_postdata($post);
+
+                            $term_id = $cat->term_id;
+                            $taxonomy_name = 'destinations';
+                            $termchildren = get_term_children( $term_id, $taxonomy_name );
+                            $lnk = "";
+                            foreach ( $termchildren as $child ) {   setup_postdata($post);
+
+                                $term = get_term_by( 'id', $child, $taxonomy_name );
+                                $type = get_field('type_destination', 'destinations_'.$term->term_id);
+                                if($type === 'flights'){
+                                    $my_arr[] = $child;
+                                    $lnk = get_term_link( $child, $taxonomy_name );
+                                }
+                            }
+                            wp_reset_postdata();
+                            //only if destination has child category type hotel display it
+                            if($lnk){?>
+                                <?php $image = get_field('featured_img', 'destinations_'.$cat->term_id); ?>
+
+                                <?php
+                                $lem_parent_cat_id[] = $cat->term_id;
+                                $my_link[] = $lnk;
+                                ?>
+                                <h3 class="tabs__content <?php echo ($counter == 0)?'active':'';?>"><?php esc_html_e( 'Flights to', 'podium' ); ?><?php echo  $cat->name;?></h3>
+
+
+                            <?php $counter++;  }
+
+                        }
+                        wp_reset_postdata();
+                        ?>
+
                         <?php while ( have_posts() ) : the_post(); ?>
                             <?php the_content();?>
                         <?php endwhile; // End of the loop. ?>
-<!--                        <p><span>ע"מ לקבל הצעה אטרקטיבית לטיסות פנים בתאילנד, אנא פנו אלינו עם הפרטים הבאים:</span>-->
-<!--                            תאריכי טיסות רצויים, לאילו יעדים, ובמידה ומדובר במשפחות יש לציין את גילאי הילדים. אנא בדקו באופן שוטף את המייל שלכם לוודא שהמייל מאיתנו לא נכנס לדואר ספאם/גאנק. למי ששולח מייל מהעבודה נא לציין מייל פרטי בנוסף</p>-->
                     </div>
                     <div class="wrap-img tabs__content active" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map.png)"></div>
                     <div class="wrap-img tabs__content" style="background-image: url(<?php echo get_stylesheet_directory_uri();?>/flights-page-styles/img/map-5.png)"></div>
@@ -186,7 +223,8 @@ get_header();
                 </div>
 
                 <div class="wrap-button">
-                    <a href="" class="button" id="mybtn" data-btn="btnopen"><span>מידע נוסף</span></a>
+<!--                    <a href="" class="button" id="mybtn" data-btn="btnopen"><span>מידע נוסף</span></a>-->
+                    <a href="" class="button" id="mybtn" data-btn="btnopen"><span><?php esc_html_e( 'More info', 'podium' ); ?></span></a>
                 </div>
                 <div class="second-block">
                     <?php echo get_field('txt_read_more'); ?>

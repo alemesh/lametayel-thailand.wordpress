@@ -149,14 +149,7 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel' && $type !=
 
                 <div class="left-section">
                     <div class="wrap-text">
-<!--                        <h3>קוסמוי-בנגקוק</h3>-->
-                        <h3><?php the_title()?></h3>
-<!--                        --><?php //var_dump(wp_get_current_user())?>
-<!--                        <p>--><?php //echo $posts[0]->post_content;?><!--</p>-->
-<!--                        --><?php //echo term_description( $current_id, 'destinations' ); ?>
-
-<!--                        <p>ע"מ לקבל הצעה אטרקטיבית לטיסות פנים בתאילנד, אנא פנו אלינו עם הפרטים הבאים:-->
-<!--                            תאריכי טיסות רצויים, לאילו יעדים, ובמידה ומדובר במשפחות יש לציין את גילאי הילדים. אנא בדקו באופן שוטף את המייל שלכם לוודא שהמייל מאיתנו לא נכנס לדואר ספאם/גאנק. למי ששולח מייל מהעבודה נא לציין מייל פרטי בנוסף</p>-->
+<!--                        <h3>--><?php //the_title()?><!--</h3>-->
                     </div>
 
                     <ul class="buttons tabs__caption menu-lisy">
@@ -169,11 +162,12 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel' && $type !=
                                 <span>
                                     <?php if(get_field('from',$flights_buttom->ID)){
                                         $from = get_term_by('id', get_field('from',$flights_buttom->ID), 'destinations');
-                                        echo 'מ'.$from->name;
+//                                        echo 'מ'.$from->name;
+                                        echo esc_html_e( 'from', 'podium' ).$from->name;
                                     }
                                     if(get_field('too',$flights_buttom->ID)){
                                         $too = get_term_by('id', get_field('too',$flights_buttom->ID), 'destinations');
-                                        echo ' ל'.$too->name;
+                                        echo esc_html_e( 'to', 'podium' ).$too->name;
                                     }?>
                                 </span>
                             </li>
@@ -460,8 +454,10 @@ $current_name = single_cat_title( '', false );
 <!--        <div class="row posts_section" data-equalizer>-->
         <div class="main_low_box" data-equalizer>
             <div class="content_wrapper">
-                <span class="first_text_in_low_box">מומלצות <?php echo single_cat_title( '', false ); ?></span>
-                <div class="text_in_middle_img"><a href="<?php echo $url = get_home_url().'/אטרקציות-בתאילנד/';?>">הצג הכל</a></div>
+<!--                <span class="first_text_in_low_box">מומלצות --><?php //echo single_cat_title( '', false ); ?><!--</span>-->
+                <span class="first_text_in_low_box"> <?php echo single_cat_title( '', false ); ?></span>
+<!--                <div class="text_in_middle_img"><a href="--><?php //echo $url = get_home_url().'/אטרקציות-בתאילנד/';?><!--">הצג הכל</a></div>-->
+                <div class="text_in_middle_img"><a href="<?php echo $url = get_home_url().'/אטרקציות-בתאילנד/';?>">יעדים אחרים</a></div>
                 <div class="just_line_in_low_box"></div>
                 <?php
                 $count_4_items = 1;
