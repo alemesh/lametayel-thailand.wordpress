@@ -88,7 +88,8 @@ get_header();
 
 
                     <?php if(get_field('txt_read_more')){ ?>
-                        <p><a class="change_view" data-toggle="txt_read_more">קרא עוד </a></p>
+<!--                        <p><a class="change_view" data-toggle="txt_read_more">קרא עוד </a></p>-->
+                        <p><a class="change_view" data-toggle="txt_read_more"><?php echo esc_html_e( 'Read More', 'podium' )?> </a></p>
 
                     <?php }?>
 

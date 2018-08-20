@@ -32,18 +32,21 @@ get_header();
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="wrap-two-col-form">
                         <div class="form-half-block">
-                            <input type="text"	name="user_name" placeholder="שם" id="user_name" required/>
-                            <input type="text" name="user_phone" placeholder="אימייל" id="user_phone" required/>
+<!--                            <input type="text"	name="user_name" placeholder="שם*" id="user_name" required/>-->
+                            <input type="text"	name="user_name" placeholder="<?php echo esc_html_e( '*Name', 'podium' )?>" id="user_name" required/>
+<!--                            <input type="text" name="user_phone" placeholder="טלפון*" id="user_phone" required/>-->
+                            <input type="text" name="user_phone" placeholder="<?php echo esc_html_e( '*phone', 'podium' )?>" id="user_phone" required/>
                         </div>
                         <div class="form-half-block">
-                            <input type="email"	name="user_email" placeholder="דואר אלקטרוני" id="user_email" required/>
+<!--                            <input type="email"	name="user_email" placeholder="דואר אלקטרוני" id="user_email" required/>-->
+                            <input type="email"	name="user_email" placeholder="<?php echo esc_html_e( '*Email', 'podium' )?>" id="user_email" required/>
                             <div class="file_loader">
                                 <label>
                                     <input type="file" class="imgs_input" name="fileToUpload" id="fileToUpload" value="">
-                                    <span>+ צרף קורות חיים</span>
+<!--                                    <span>+ צרף קורות חיים</span>-->
+                                    <span><?php echo esc_html_e( '+ Attach resume', 'podium' )?></span>
                                 </label>
                             </div>
-
                         </div>
                     </div>
                     <label class="req">
@@ -62,7 +65,8 @@ get_header();
                         $ip = $_SERVER['REMOTE_ADDR'];
                     }?>
                     <input type="hidden" name="user_ip" id="user_ip" value="<?php echo $ip; ?>"/>
-                    <button class="button-for-left-form" type="submit">שלח<i class="fas fa-chevron-left"></i></button>
+<!--                    <button class="button-for-left-form" type="submit">שלח<i class="fas fa-chevron-left"></i></button>-->
+                    <button class="button-for-left-form" type="submit"><?php echo esc_html_e( 'Send', 'podium' )?><i class="fas fa-chevron-left"></i></button>
                 </form>
             </div>
         </div>

@@ -451,13 +451,11 @@ $current_name = single_cat_title( '', false );
                 </div>
             </div>
         </div>
-<!--        <div class="row posts_section" data-equalizer>-->
         <div class="main_low_box" data-equalizer>
             <div class="content_wrapper">
-<!--                <span class="first_text_in_low_box">מומלצות --><?php //echo single_cat_title( '', false ); ?><!--</span>-->
                 <span class="first_text_in_low_box"> <?php echo single_cat_title( '', false ); ?></span>
-<!--                <div class="text_in_middle_img"><a href="--><?php //echo $url = get_home_url().'/אטרקציות-בתאילנד/';?><!--">הצג הכל</a></div>-->
-                <div class="text_in_middle_img"><a href="<?php echo $url = get_home_url().'/אטרקציות-בתאילנד/';?>">יעדים אחרים</a></div>
+<!--                <div class="text_in_middle_img"><a href="--><?php //echo $url = get_home_url().'/אטרקציות-בתאילנד/';?><!--">יעדים אחרים</a></div>-->
+                <div class="text_in_middle_img"><a href="<?php echo $url = get_home_url().'/אטרקציות-בתאילנד/';?>"><?php echo esc_html_e( 'Other goals', 'podium' )?></a></div>
                 <div class="just_line_in_low_box"></div>
                 <?php
                 $count_4_items = 1;
@@ -470,7 +468,6 @@ $current_name = single_cat_title( '', false );
                     <a href="<?php echo get_the_permalink();?>" class="content-card">
                         <div class="card-wrapper">
                             <div class="img_in_low_box">
-<!--                                <img class="img-responsive" src="--><?php //echo get_stylesheet_directory_uri();?><!--/Lametayel-Thailand-all-page-styles/img/img2_in_low_box.png" alt="">-->
                                 <?php get_thailand_featured_image('thailand-thumbnail');?>
                             </div>
                             <div class="body-card">
