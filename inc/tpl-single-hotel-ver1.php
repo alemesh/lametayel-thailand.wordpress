@@ -34,7 +34,8 @@ $current_ttl = get_the_title();
 
                     <?php if( get_field('top_page_desc')){ ?>
                             <?php echo  get_field('top_page_desc'); //TODO about description?>
-                            <span><a href="#about">להרחבה על המלון</a></span>
+<!--                            <span><a href="#about">להרחבה על המלון</a></span>-->
+                            <span><a href="#about"><?php echo esc_html_e( 'For more information about the hotel', 'podium' )?></a></span>
                     <?php }?>
 
 
@@ -48,13 +49,13 @@ $current_ttl = get_the_title();
                         <div class="row collapse destination_top_tabs">
                             <ul class="nav-under-slider tabs" id="thailand_top_tabs" data-tabs>
                                 <?php if(get_field('img_slider', $id_to_send)){?>
-                                    <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true">תמונות</a></li><!--TODO tabs-->
+                                    <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true"><?php echo esc_html_e( 'Photos', 'podium' )?></a></li><!--TODO tabs-->
                                 <?php } ?>
                                 <?php if(get_field('map', $id_to_send)){?>
-                                    <li class="tabs-title"><a href="#panel2v">מפה</a></li><!--TODO tabs-->
+                                    <li class="tabs-title"><a href="#panel2v"><?php echo esc_html_e( 'a map', 'podium' )?></a></li><!--TODO tabs-->
                                 <?php } ?>
                                 <?php if(get_field('video', $id_to_send)){?>
-                                    <li class="tabs-title"><a href="#panel3v">וידאו</a></li><!--TODO tabs-->
+                                    <li class="tabs-title"><a href="#panel3v"><?php echo esc_html_e( 'video', 'podium' )?></a></li><!--TODO tabs-->
                                 <?php } ?>
                             </ul>
 
@@ -106,7 +107,8 @@ $current_ttl = get_the_title();
                         </div>
                     <?php } ?>
 
-                    <a class="contact_lnk_hotel_page hide-for-medium" href="#sidebar">צרו קשר</a>
+<!--                    <a class="contact_lnk_hotel_page hide-for-medium" href="#sidebar">צרו קשר</a>-->
+                    <a class="contact_lnk_hotel_page hide-for-medium" href="#sidebar"><?php echo esc_html_e( 'Contact', 'podium' )?></a>
 
                 <?php endwhile; // End of the loop. ?>
 
@@ -114,16 +116,20 @@ $current_ttl = get_the_title();
                 <div class="tabs-for-main-text-hotels-single">
                     <ul class="tabs nav nav-tabs tabs-for-text" data-tabs id="single_hotel_description_tabs">
                         <?php if(get_field('desc')){ ?>
-                            <li class="tabs-title is-active nav-item"><a href="#panel1" aria-selected="true">תאור</a></li>
+<!--                            <li class="tabs-title is-active nav-item"><a href="#panel1" aria-selected="true">תאור</a></li>-->
+                            <li class="tabs-title is-active nav-item"><a href="#panel1" aria-selected="true"><?php echo esc_html_e( 'description', 'podium' )?></a></li>
                         <?php } ?>
                         <?php if(get_field('hotel_amenities')){ ?>
-                            <li class="tabs-title"><a href="#panel2">מאפייני המלון</a></li>
+<!--                            <li class="tabs-title"><a href="#panel2">מאפייני המלון</a></li>-->
+                            <li class="tabs-title"><a href="#panel2"><?php echo esc_html_e( 'Hotel Features', 'podium' )?></a></li>
                         <?php } ?>
                         <?php if( have_rows('recomendations') ): ?>
-                            <li class="tabs-title"><a href="#panel3">המלצות</a></li>
+<!--                            <li class="tabs-title"><a href="#panel3">המלצות</a></li>-->
+                            <li class="tabs-title"><a href="#panel3"><?php echo esc_html_e( 'Recommendations', 'podium' )?></a></li>
                         <?php endif; ?>
                         <?php if( have_rows('room_galleries') ): ?>
-                            <li class="tabs-title"><a href="#panel4">חדרים</a></li>
+<!--                            <li class="tabs-title"><a href="#panel4">חדרים</a></li>-->
+                            <li class="tabs-title"><a href="#panel4"><?php echo esc_html_e( 'Rooms', 'podium' )?></a></li>
                         <?php endif; ?>
                     </ul>
                     <div class="tabs-content tabs_single_hotel_description" data-tabs-content="single_hotel_description_tabs">
@@ -139,7 +145,8 @@ $current_ttl = get_the_title();
                                 $value = $field['value'];
                                 $choices = $field['choices'];
                                 if( $value ): ?>
-                                    <h3>מתקנים</h3>
+<!--                                    <h3>מתקנים</h3>-->
+                                    <h3><?php echo esc_html_e( 'Facilities', 'podium' )?></h3>
                                     <ul class="list">
                                         <?php foreach( $value as $v ): ?>
                                             <li>
@@ -158,10 +165,13 @@ $current_ttl = get_the_title();
                                     </ul>
                                 <?php endif; ?>
                                 <?php if(get_field('free_internet')){ ?>
-                                    <p class="free_intenet"><i class="fa fa-check" aria-hidden="true"></i> חיבור לאינטרנט אלחוטי חינם</p>
+<!--                                    <p class="free_intenet"><i class="fa fa-check" aria-hidden="true"></i> חיבור לאינטרנט אלחוטי חינם</p>-->
+                                    <p class="free_intenet"><i class="fa fa-check" aria-hidden="true"></i> <?php echo esc_html_e( 'Free wireless internet connection', 'podium' )?></p>
                                 <?php } ?>
-                                <h3>שימו לב</h3>
-                                <p class="notice">מתקני המלון ותיאור המלון התקבלו מהמלון והינם באחריותו הבלעדית של המלון. חלק מהשירותים ניתנים בתשלום ע"י המלון ויכולים להשתנות ללא הודעה מוקדמת.</p>
+<!--                                <h3>שימו לב</h3>-->
+                                <h3><?php echo esc_html_e( 'Pay attention', 'podium' )?></h3>
+<!--                                <p class="notice">מתקני המלון ותיאור המלון התקבלו מהמלון והינם באחריותו הבלעדית של המלון. חלק מהשירותים ניתנים בתשלום ע"י המלון ויכולים להשתנות ללא הודעה מוקדמת.</p>-->
+                                <p class="notice"><?php echo esc_html_e( 'Information about this property has been sent to us by the property itself. Some of the services the property has to offer are provided at a fee and can change with no notice.', 'podium' )?></p>
                             </div>
                         <?php } ?>
                         <?php if( have_rows('recomendations') ): ?>
@@ -192,18 +202,19 @@ $current_ttl = get_the_title();
                                                 <a data-open="gallery_model<?php echo $y; ?>">
                                                     <div class="image">
                                                         <img src="<?php echo $images[0]['sizes']['thailand-thumbnail']; ?>" alt="<?php echo $images[0]['alt']; ?>" />
-                                                        <span class="overlay_txt">לגלריה המלאה</span>
+<!--                                                        <span class="overlay_txt">לגלריה המלאה</span>-->
+                                                        <span class="overlay_txt"><?php echo esc_html_e( 'To the full gallery', 'podium' )?></span>
                                                     </div>
                                                 </a>
                                                 <div class="reveal single_hotel_gallery_reveal large" id="gallery_model<?php echo $y; ?>" data-reveal>
                                                     <div class="row">
                                                         <div class="small-12 columns">
-                                                            <h3 class="room_ttl">תכולת החדר
+                                                            <h3 class="room_ttl"><?php echo esc_html_e( 'Room contents', 'podium' )?>
                                                                 <?php if(get_sub_field('room_name')){ ?>
                                                                     <span class="name"><?php echo get_sub_field('room_name');?></span>
                                                                 <?php }?>
                                                                 <?php if(get_sub_field('room_size')){ ?>
-                                                                    <span class="size"><?php echo get_sub_field('room_size');?> מ"ר</span>
+                                                                    <span class="size"><?php echo get_sub_field('room_size');?> <?php echo esc_html_e( 'Mr', 'podium' )?></span>
                                                                 <?php }?>
                                                             </h3>
                                                         </div>
@@ -325,11 +336,12 @@ $current_ttl = get_the_title();
         }
         ?>
         <?php //recommended hotel block
+        $text_item2 = __( 'More recommended hotels in ', 'podium' );
         $section_var = array(
             'repeaterName' => 'recommended_hotels',
             'subFieldName' => 'hotel',
             'id' => get_the_ID(),
-            'section_ttl' => 'עוד מלונות מומלצים ב'. $parent_term->name,
+            'section_ttl' => $text_item2. $parent_term->name,
             'section_ttl_lnk' => $all_hotels_lnk,
         );
 //        include(locate_template('directives/posts_section.php')); ?>
@@ -338,7 +350,7 @@ $current_ttl = get_the_title();
         <div class="content_wrapper">
             <span class="first_text_in_low_box"><?php echo $section_var['section_ttl']; ?></span>
             <?php if($section_var['section_ttl_lnk']){ ?>
-            <div class="text_in_middle_img"><a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a></div>
+            <div class="text_in_middle_img"><a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk"><?php echo esc_html_e( 'Everything', 'podium' )?></a></div>
             <div class="just_line_in_low_box"></div>
             <?php }?>
 
@@ -389,11 +401,12 @@ $current_ttl = get_the_title();
         } ?>
 
         <?php //recommended attrctions block
+        $recomended_at = __( 'Recommended attractions at', 'podium' );
         $section_var = array(
             'repeaterName' => 'recommended_attractions',
             'subFieldName' => 'attraction',
             'id' => get_the_ID(),
-            'section_ttl' => 'אטרקציות מומלצות ב'. $parent_term->name,
+            'section_ttl' => $recomended_at. $parent_term->name,
             'section_ttl_lnk' => $all_attraction_lnk,
         );
 //        include(locate_template('directives/posts_section.php')); ?>
@@ -402,7 +415,7 @@ $current_ttl = get_the_title();
             <div class="content_wrapper">
                 <span class="first_text_in_low_box"><?php echo $section_var['section_ttl']; ?></span>
                 <?php if($section_var['section_ttl_lnk']){ ?>
-                    <div class="text_in_middle_img"><a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a></div>
+                    <div class="text_in_middle_img"><a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk"><?php echo esc_html_e( 'Everything', 'podium' )?></a></div>
                     <div class="just_line_in_low_box"></div>
                 <?php }?>
 

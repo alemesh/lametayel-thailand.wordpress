@@ -7,13 +7,13 @@ if (get_field('img_slider', $id_to_send) || get_field('map', $id_to_send) || get
     <div class="row collapse destination_top_tabs">
         <ul class="tabs" id="thailand_top_tabs" data-tabs>
             <?php if(get_field('img_slider', $id_to_send)){?>
-                <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true">תמונות</a></li><!--TODO tabs-->
+                <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true"><?php echo esc_html_e( 'Photos', 'podium' )?></a></li><!--TODO tabs-->
             <?php } ?>
             <?php if(get_field('map', $id_to_send)){?>
-                <li class="tabs-title"><a href="#panel2v">מפה</a></li><!--TODO tabs-->
+                <li class="tabs-title"><a href="#panel2v"><?php echo esc_html_e( 'a map', 'podium' )?></a></li><!--TODO tabs-->
             <?php } ?>
             <?php if(get_field('video', $id_to_send)){?>
-                <li class="tabs-title"><a href="#panel3v">וידאו</a></li><!--TODO tabs-->
+                <li class="tabs-title"><a href="#panel3v"><?php echo esc_html_e( 'video', 'podium' )?></a></li><!--TODO tabs-->
             <?php } ?>
         </ul>
         <div class="tabs-content" data-tabs-content="thailand_top_tabs">

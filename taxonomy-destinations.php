@@ -575,8 +575,9 @@ $current_name = single_cat_title( '', false );
             <form class="sort_hotels" action="<?php echo $sort_url; ?>">
                 <label>
                     <select name="rating">
-                        <option value="">כמה כוכבים?</option>
-                        <option value="3" <?php if($ratingUrl == '3'){ echo 'selected'; } ?>> 3 כוכבים </option>
+<!--                        <option value="">כמה כוכבים?</option>-->
+                        <option value=""><?php echo esc_html_e( 'How many stars?', 'podium' )?></option>
+                        <option value="3" <?php if($ratingUrl == '3'){ echo 'selected'; } ?>> 3 <?php echo esc_html_e( 'Stars', 'podium' )?> </option>
                         <option value="3.5" <?php if($ratingUrl == '3.5'){ echo 'selected'; } ?>> 3.5 כוכבים </option>
                         <option value="4" <?php if($ratingUrl == '4'){ echo 'selected'; } ?>> 4 כוכבים </option>
                         <option value="4.5" <?php if($ratingUrl == '4.5'){ echo 'selected'; } ?>> 4.5 כוכבים</option>
@@ -584,7 +585,8 @@ $current_name = single_cat_title( '', false );
                     </select>
                 </label>
                 <div class="text_in_middle_img_hotels_locations">
-                    <button type="submit" class="">סנן</button>
+<!--                    <button type="submit" class="">סנן</button>-->
+                    <button type="submit" class=""><?php echo esc_html_e( 'Filter', 'podium' )?></button>
                 </div>
 
             </form>
@@ -701,32 +703,11 @@ $current_name = single_cat_title( '', false );
     $current_name = single_cat_title( '', false );
     ?>
 <div class="main-content">
-<!--    <div class="up_img">-->
-<!--        <div class="text_in_up_img">--><?php //the_title();// TODO title
-//            $rating = get_field('rating'); ?>
-<!--            <div class="rating">--><?php
-//                for($i=0; $i<$rating; $i++){ ?>
-<!--                    <i class="fa fa-star" aria-hidden="true"></i>-->
-<!--                --><?php //} ?>
-<!--            </div>-->
-<!--        </div>-->
-<!--        <img class="up_img_tail img-responsive" src="--><?php //echo get_stylesheet_directory_uri();?><!--/Lametayel-Thailand-all-page-styles/img/corner-img.png">-->
-<!--    </div>-->
+
     <div class="up_img up_img-for-hotelPage">
-<!--        <div class="text_in_up_img">--><?php //the_title();?><!--</div>-->
         <h1 class="text_in_up_img"><?php echo single_cat_title( '', false ); ?></h1>
         <img class="up_img_tail img-responsive" src="<?php echo get_stylesheet_directory_uri();?>/Lametayel-Thailand-all-page-styles/img/corner-img.png">
         <?php $rating = get_field('rating'); ?>
-<!--        <div class="rating-hotels-main">-->
-<!--            --><?php
-//            for($i=0; $i<$rating; $i++){
-//                if ( $rating == '3.5' && $i == $rating - 0.5 || $rating == '4.5' && $i == $rating - 0.5){ ?>
-<!--                    <i class="fas fa-star-half" aria-hidden="true"></i>-->
-<!--                --><?php //}else{?>
-<!--                    <i class="fas fa-star" aria-hidden="true"></i>-->
-<!--                --><?php //}
-//            } ?>
-<!--        </div>-->
     </div>
     <div class="content-body">
         <div class="right-text-body">

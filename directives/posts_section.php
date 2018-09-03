@@ -4,7 +4,7 @@ if( have_rows($section_var['repeaterName'], $section_var['id']) ){ ?>
     <div class="content_wrapper">
         <span class="first_text_in_low_box"><?php echo $section_var['section_ttl']; ?></span>
         <?php if($section_var['section_ttl_lnk']){ ?>
-        <div class="text_in_middle_img"><a href="<?php echo $section_var['section_ttl_lnk'];?>">הצג הכל</a></div>
+        <div class="text_in_middle_img"><a href="<?php echo $section_var['section_ttl_lnk'];?>"><?php echo esc_html_e( 'Show all', 'podium' )?></a></div>
         <?php }?>
         <div class="just_line_in_low_box"></div>
 

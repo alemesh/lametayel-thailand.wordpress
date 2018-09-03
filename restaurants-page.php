@@ -105,7 +105,7 @@ $slides = get_field('slides', $post_id);
                 <?php $counter = 0; ?>
                 <?php foreach ($map_section as $block): ?>
                 <div class="address-item tabs__content <?php echo ($counter == 0)?'active':'';?>">
-                    <h3><?php echo $block['text'];?></h3>
+                    <h3><?php echo $block['title'];?></h3>
                     <p class="en"><?php echo $block['text_en'];?></p>
                     <p class="he"><?php echo $block['text_he'];?></p>
                     <div class="button-section">

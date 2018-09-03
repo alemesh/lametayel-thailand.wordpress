@@ -28,7 +28,8 @@ get_header();
                 <?php if( get_field('top_page_desc')){ ?>
                     <p>
                         <?php echo  get_field('top_page_desc'); // TODO description?>
-                        <a href="#about"><span>להרחבה על האטרקציה</span></a>
+<!--                        <a href="#about"><span>להרחבה על האטרקציה</span></a>-->
+                        <a href="#about"><span><?php echo esc_html_e( 'For more details on the attraction', 'podium' )?></span></a>
                     </p>
                 <?php }?>
 
@@ -40,13 +41,13 @@ get_header();
                     <div class="row collapse destination_top_tabs">
                         <ul class="nav-under-slider tabs" id="thailand_top_tabs" data-tabs>
                             <?php if(get_field('img_slider', $id_to_send)){?>
-                                <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true">תמונות</a></li><!--TODO tabs-->
+                                <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true"><?php echo esc_html_e( 'Photos', 'podium' )?></a></li><!--TODO tabs-->
                             <?php } ?>
                             <?php if(get_field('map', $id_to_send)){?>
-                                <li class="tabs-title"><a href="#panel2v">מפה</a></li><!--TODO tabs-->
+                                <li class="tabs-title"><a href="#panel2v"><?php echo esc_html_e( 'a map', 'podium' )?></a></li><!--TODO tabs-->
                             <?php } ?>
                             <?php if(get_field('video', $id_to_send)){?>
-                                <li class="tabs-title"><a href="#panel3v">וידאו</a></li><!--TODO tabs-->
+                                <li class="tabs-title"><a href="#panel3v"><?php echo esc_html_e( 'video', 'podium' )?></a></li><!--TODO tabs-->
                             <?php } ?>
                         </ul>
                         <div class="tabs-content" data-tabs-content="thailand_top_tabs">
@@ -164,11 +165,14 @@ foreach ( $termchildren as $child ) {
 ?>
 
 <?php //recommended attrctions block
+//$text_item = 'אטרקציות מומלצות ב';
+$text_item = __( 'Recommended attractions at', 'podium' );
+
 $section_var = array(
     'repeaterName' => 'recommended_attractions',
     'subFieldName' => 'attraction',
     'id' => get_the_ID(),
-    'section_ttl' => 'אטרקציות מומלצות ב'. $parent_term->name,
+    'section_ttl' => $text_item. $parent_term->name,
     'section_ttl_lnk' => $all_attraction_lnk,
 );
 //include(locate_template('directives/posts_section.php')); // TODO get attractions bottom?>
@@ -181,7 +185,8 @@ if( have_rows($section_var['repeaterName'], $section_var['id']) ){ ?>
             <span class="first_text_in_low_box"><?php echo $section_var['section_ttl']; ?></span>
 <!--            <span class="first_text_in_low_box">אטרקציות מומלצות ב</span>-->
             <?php if($section_var['section_ttl_lnk']){ ?>
-                <div class="text_in_middle_img"><a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk">הכל</a></div>
+<!--                <div class="text_in_middle_img"><a href="--><?php //echo $section_var['section_ttl_lnk'];?><!--" class="blue_lnk">הכל</a></div>-->
+                <div class="text_in_middle_img"><a href="<?php echo $section_var['section_ttl_lnk'];?>" class="blue_lnk"><?php echo esc_html_e( 'Everything', 'podium' )?></a></div>
             <?php }?>
             <div class="just_line_in_low_box"></div>
 
@@ -219,11 +224,13 @@ if( have_rows($section_var['repeaterName'], $section_var['id']) ){ ?>
 
 
 <?php //recommended hotel block
+//$text_item2 = 'מלונות מומלצים ב';
+$text_item2 = __( 'Featured hotels in', 'podium' );
 $section_var = array(
     'repeaterName' => 'recommended_hotels',
     'subFieldName' => 'hotel',
     'id' => get_the_ID(),
-    'section_ttl' => 'מלונות מומלצים ב'. $parent_term->name,
+    'section_ttl' => $text_item2. $parent_term->name,
     'section_ttl_lnk' => $all_hotel_lnk,
 );
 //include(locate_template('directives/posts_section.php')); ?>
