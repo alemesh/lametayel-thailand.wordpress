@@ -120,7 +120,7 @@ $settings = new settings();
                                     <?php }
                                 }else{
                                     if(get_field('international', 'option')){ ?>
-                                        <a href="tel:<?php echo get_field('international', 'option'); ?>"><?php _e('To call from Israel' , 'podium');?> <?php echo get_field('international', 'option');?></a>
+                                        <a href="tel:<?php echo get_field('international', 'option'); ?>"><?php _e('To call from Israel' , 'podium');?> <span dir="ltr"><?php echo get_field('international', 'option');?></span></a>
                                     <?php }
                                 }?>
                                 <?php if( get_field( 'arabic_lnk', 'option') ){ ?>
@@ -137,10 +137,18 @@ $settings = new settings();
                             <div class="small-12 columns">
                                 <div class="top-bar-right">
                                     <?php
-                                    if( is_front_page() ) {
+                                    if( is_front_page() && home_url() != site_url().'/ar') {
                                     ?>
                                     <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/logo-header.png" alt="למטייל תאילנד" class="logo"/></a>
-                                    <?php }else{?>
+                                    <?php
+                                    }elseif( is_front_page() && home_url() == site_url().'/ar') {?>
+                                    <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/arabic/152331_logo_arabic-negative.png" alt="למטייל תאילנד" class="logo"/></a>
+                                    <?php
+                                    }elseif (!is_front_page() && home_url() == site_url().'/ar'){
+                                        ?>
+                                        <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/arabic/152331_logo_arabic.png" alt="למטייל תאילנד" class="logo"/></a>
+                                        <?php
+                                    }else{?>
                                         <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/dist/images/logo-top-menu.png" alt="למטייל תאילנד" class="logo"/></a>
                                     <?php }?>
                                 </div>
@@ -173,12 +181,29 @@ $settings = new settings();
 <!--                            <a href="--><?php //echo get_home_url();?><!--"><img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/logo-header.png" class="logo" alt="למטייל תאילנד"/></a>-->
 
                             <?php
-                            if( is_front_page() ) {
+                            if( is_front_page() && home_url() != site_url().'/ar') {
                                 ?>
-                                <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/logo-header.png" class="logo" alt="למטייל תאילנד"/></a>
-                            <?php }else{?>
-                                <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/dist/images/logo-top-menu.png" class="logo" alt="למטייל תאילנד"/></a>
+                                <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/home-page-styles/img/logo-header.png" alt="למטייל תאילנד" class="logo"/></a>
+                                <?php
+                            }elseif( is_front_page() && home_url() == site_url().'/ar') {?>
+                                <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/arabic/152331_logo_arabic-negative.png" alt="למטייל תאילנד" class="logo"/></a>
+                                <?php
+                            }elseif (!is_front_page() && home_url() == site_url().'/ar'){
+                                ?>
+                                <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/arabic/152331_logo_arabic.png" alt="למטייל תאילנד" class="logo"/></a>
+                                <?php
+                            }else{?>
+                                <a href="<?php echo get_home_url();?>"><img src="<?php echo get_stylesheet_directory_uri();?>/dist/images/logo-top-menu.png" alt="למטייל תאילנד" class="logo"/></a>
                             <?php }?>
+
+
+<!--                            --><?php
+//                            if( is_front_page() ) {
+//                                ?>
+<!--                                <a href="--><?php //echo get_home_url();?><!--"><img src="--><?php //echo get_stylesheet_directory_uri();?><!--/home-page-styles/img/logo-header.png" class="logo" alt="למטייל תאילנד"/></a>-->
+<!--                            --><?php //}else{?>
+<!--                                <a href="--><?php //echo get_home_url();?><!--"><img src="--><?php //echo get_stylesheet_directory_uri();?><!--/dist/images/logo-top-menu.png" class="logo" alt="למטייל תאילנד"/></a>-->
+<!--                            --><?php //}?>
 
                         </div>
                         <div class="title-bar-left">

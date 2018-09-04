@@ -74,7 +74,8 @@ get_header();
                 <div class="left-block">
                     <div class="bredcrumbs hidden-xs">
                         <?php if(function_exists('bcn_display')){ ?>
-                            <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                            <p id="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList"> <?php bcn_display(); ?></p>
+<!--                            <p id="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList" itemscope itemtype="http://schema.org/BreadcrumbList"> --><?php //bcn_display(); ?><!--</p>-->
                         <?php }?>
                     </div>
                     <?php if(get_field('txt_under_form', 'option')){ ?>

@@ -19,7 +19,7 @@
     <div class="row">
         <div class="small-12 medium-3 columns first_column">
             <?php dynamic_sidebar( 'footer-1' ); ?>
-            <a href="<?php echo get_home_url();?>/יצירת-קשר/" class="contact">צור קשר</a>
+            <a href="<?php echo get_home_url();?>/יצירת-קשר/" class="contact"><?php esc_html_e( 'Contact us', 'podium' ); ?></a>
         </div>
         <div class="small-12 medium-3 columns first-menu">
             <?php dynamic_sidebar( 'footer-2' ); ?>
@@ -41,7 +41,8 @@
         <div class="site-info small-12 medium-6 columns text-center medium-text-right">
 <!--            <p>כל הזכויות שמורות למרכז למטייל תאילנד 2016</p>-->
 
-            <p>כל הזכויות שמורות למרכז למטייל תאילנד 2018</p>
+<!--            <p>כל הזכויות שמורות למרכז למטייל תאילנד 2018</p>-->
+            <p><?php esc_html_e( 'All rights reserved', 'podium' ); ?> 2018</p>
             <a href="http://www.gofmans.co.il/" target="_blank" class="label-gofman-link"><span class="label-gofman">Gofman creative</span></a>
             <a href="https://www.idanbenor.co.il/" target="_blank" class="label-gofman-link"><span class="label-idanbenor">קידום אתרים עידן בן אור</span></a>
         </div>

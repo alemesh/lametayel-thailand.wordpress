@@ -46,7 +46,7 @@ if($type !=  'flights' && $type != 'attraction' && $type !=  'hotel' && $type !=
     </div>
     <div class="small-12 medium-4 columns text-left">
         <?php if(function_exists('bcn_display')){ ?>
-            <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+            <p id="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList"> <?php bcn_display(); ?></p>
         <?php }?>
     </div>
     <div id="primary" class="content-area small-12 medium-12 <?php echo $settings->getContentClass('large-9', 'large-12'); ?> columns  wow fadeInUp" data-wow-delay="0.5s">
@@ -440,7 +440,7 @@ $current_name = single_cat_title( '', false );
                 <div class="main_left_up_box">
                     <div class="bredcrumbs hidden-xs">
                         <?php if(function_exists('bcn_display')){ ?>
-                            <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                            <p id="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList" > <?php bcn_display(); ?></p>
                         <?php }?>
                     </div>
                     <div class="left_text_box">
@@ -555,7 +555,7 @@ $current_name = single_cat_title( '', false );
                 <div class="main_left_up_box">
                     <div class="bredcrumbs hidden-xs">
                         <?php if(function_exists('bcn_display')){ ?>
-                            <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                            <p id="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList"> <?php bcn_display(); ?></p>
                         <?php }?>
                     </div>
                     <div class="left_text_box">
@@ -727,7 +727,7 @@ $current_name = single_cat_title( '', false );
         <div class="left-form-body">
             <div class="bredcrumbs hidden-xs">
                 <?php if(function_exists('bcn_display')){ ?>
-                    <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                    <p id="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList"> <?php bcn_display(); ?></p>
                 <?php }?>
             </div>
             <?php include(locate_template( 'directives/left-sidebar-form.php' )); ?>

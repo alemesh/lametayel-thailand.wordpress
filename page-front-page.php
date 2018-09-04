@@ -48,15 +48,19 @@ $items_of_the_third_section = get_field('items_of_the_third_section', $post_id);
                                 <div class="form-row center">
 <!--                                    <select required name="people" id="sources" class="form-control custom-select custom-select-1 people" placeholder="מי אתם?">-->
                                     <select required name="people" id="sources" class="form-control custom-select custom-select-1 people" placeholder="<?php esc_html_e( 'who are you?', 'podium' ); ?>">
-                                        <?php
-                                        $taxonomy_name = 'destinations';
-                                        $category = get_term_by('name', 'People', $taxonomy_name);
-                                        $children = get_term_children($category->term_id, 'destinations');
-                                        foreach ($children as $child) {
-                                            $term = get_term_by('id', $child, $taxonomy_name)
-                                            ?>
-                                            <option value="<?=$child ?>"><?= $term->name ?></option>
-                                        <?php } ?>
+<!--                                        --><?php
+//                                        $taxonomy_name = 'destinations';
+//                                        $category = get_term_by('name', 'People', $taxonomy_name);
+//                                        $children = get_term_children($category->term_id, 'destinations');
+//                                        foreach ($children as $child) {
+//                                            $term = get_term_by('id', $child, $taxonomy_name)
+//                                            ?>
+<!--                                            <option value="--><?//=$child ?><!--">--><?//= $term->name ?><!--</option>-->
+<!--                                        --><?php //} ?>
+                                        <option value="578"><?php esc_html_e( 'Couples', 'podium' ); ?></option>
+                                        <option value="580"><?php esc_html_e( 'Everyone', 'podium' ); ?></option>
+                                        <option value="582"><?php esc_html_e( 'Families', 'podium' ); ?></option>
+                                        <option value="584"><?php esc_html_e( 'Young people', 'podium' ); ?></option>
                                     </select>
                                 </div>
                                 <div class="form-row center">
@@ -69,17 +73,26 @@ $items_of_the_third_section = get_field('items_of_the_third_section', $post_id);
                                     </select>
                                 </div>
                                 <div class="form-row center">
-<!--                                    <select required name="attractions" id="sources-3" class="form-control custom-select custom-select-3 attractions" multiple="multiple" placeholder="מעוניינים לשמוע על...">-->
                                     <select required name="attractions" id="sources-3" class="form-control custom-select custom-select-3 attractions" multiple="multiple" placeholder="<?php esc_html_e( 'Interested in hearing about ...', 'podium' ); ?>">
-                                        <?php
-                                        $taxonomy_name = 'destinations';
-                                        $category = get_term_by('name', 'Attractions', $taxonomy_name);
-                                        $children = get_term_children($category->term_id, 'destinations');
-                                        foreach ($children as $child) {
-                                            $term = get_term_by('id', $child, $taxonomy_name)
-                                            ?>
-                                            <option value="<?=$child ?>"><?= $term->name ?></option>
-                                        <?php } ?>
+<!--                                        --><?php
+//                                        $taxonomy_name = 'destinations';
+//                                        $category = get_term_by('name', 'Attractions', $taxonomy_name);
+//                                        $children = get_term_children($category->term_id, 'destinations');
+//                                        foreach ($children as $child) {
+//                                            $term = get_term_by('id', $child, $taxonomy_name)
+//                                            ?>
+<!--                                            <option value="--><?//=$child ?><!--">--><?//= $term->name ?><!--</option>-->
+<!--                                        --><?php //} ?>
+
+                                        <option value="588"><?php esc_html_e( 'culture', 'podium' ); ?></option>
+                                        <option value="590"><?php esc_html_e( 'romantic', 'podium' ); ?></option>
+                                        <option value="592"><?php esc_html_e( 'Culinary', 'podium' ); ?></option>
+                                        <option value="594"><?php esc_html_e( 'Water Park', 'podium' ); ?></option>
+                                        <option value="596"><?php esc_html_e( 'Off the Beaten Track', 'podium' ); ?></option>
+                                        <option value="598"><?php esc_html_e( 'Tours', 'podium' ); ?></option>
+                                        <option value="600"><?php esc_html_e( 'Animals', 'podium' ); ?></option>
+                                        <option value="602"><?php esc_html_e( 'extreme', 'podium' ); ?></option>
+
                                     </select>
 <!--                                    <span class="multi-choese">(ניתן לבחור מספר אפשרויות)</span>-->
                                     <span class="multi-choese"><?php esc_html_e( '(You can select several options)', 'podium' ); ?></span>

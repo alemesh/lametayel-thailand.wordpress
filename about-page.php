@@ -28,7 +28,7 @@ get_header();
         <div class="left-form-body">
             <div class="bredcrumbs hidden-xs">
                 <?php if(function_exists('bcn_display')){ ?>
-                    <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                    <p id="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList"> <?php bcn_display(); ?></p>
                 <?php }?>
             </div>
             <?php include(locate_template( 'directives/left-sidebar-form.php' )); ?>

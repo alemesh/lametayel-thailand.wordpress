@@ -37,7 +37,7 @@ get_header();
                         <div class="main_left_up_box">
                             <div class="bredcrumbs hidden-xs">
                                 <?php if(function_exists('bcn_display')){ ?>
-                                    <p id="breadcrumbs"> <?php bcn_display(); ?></p>
+                                    <p id="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList"> <?php bcn_display(); ?></p>
                                 <?php }?>
                             </div>
                             <div class="left_text_box">

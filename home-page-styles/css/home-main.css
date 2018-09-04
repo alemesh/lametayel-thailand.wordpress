@@ -215,3 +215,11 @@ a img{
 .hlt-wraper .sixth-section .items .wrap-title a:hover{
     text-decoration: underline;
 }
+
+/*arabic sub menu*/
+#masthead .thailand_header_wrapper .dropdown.menu li.is-dropdown-submenu-parent .submenu{
+    background: rgba(0,0,0,.8);
+}
+#masthead .thailand_header_wrapper .dropdown.menu li.is-dropdown-submenu-parent>a:after{
+    border-color: white transparent transparent
+}

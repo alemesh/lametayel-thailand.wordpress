@@ -674,3 +674,27 @@ h1.text_in_up_img{
 #masthead .is-stuck .search{
     top: 50%;
 }
+
+/*arabic mobile menu*/
+#masthead .top_bar_header a.fb{
+    margin-right: 20px;
+}
+
+html[lang=ar] #masthead .search{
+    top: 50%;
+}
+html[lang=ar] .is-dropdown-submenu-parent a:after{
+    top: 35%;
+}
+html[lang=ar] .is-stuck .is-dropdown-submenu-parent a:after{
+    top: 50%;
+}
+html[lang=ar] #masthead .top_bar_header a{
+    font-size: 15px;
+}
+html[lang=ar] .thailand_mobile_header_wrapper{
+    top: 42px;
+}
+html[lang=ar] .overlap-menu.is-active{
+    top: 115px;
+}
